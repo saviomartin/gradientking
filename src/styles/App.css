@@ -1,5 +1,39 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.App {
+  min-height: 100vh;
+  width: 100vw;
+  background: #fff;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.colorCont {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.gradient {
+  background: #fff;
+  border: 1px solid #36d9f7;
+  box-shadow: 0 11px 26px 0 rgba(66, 213, 235, 48%);
+  padding: 15px;
+  margin: 10px;
+  z-index: 1;
+  transition: 0.5s;
+}
+.gradient:hover {
+  box-shadow: 0 21px 36px 0 rgba(66, 213, 235, 78%);
+}
+.gradientPriview {
+  height: 200px;
+  width: 280px;
 }
