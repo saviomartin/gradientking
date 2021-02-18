@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Gradient from "./components/Gradient";
 import "./styles/App.css";
 
 const App = () => {
@@ -14,9 +15,9 @@ const App = () => {
         console.log(response);
         return response.json();
       })
-      .then(function (myJson) {
-        console.log(myJson);
-        setData(myJson);
+      .then(function (data) {
+        console.log(data);
+        setData(data);
       });
   };
   useEffect(() => {
@@ -24,10 +25,12 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <h1>
-        {data && data.length > 0 && data.map((item) => <p>{item.about}</p>)}
-      </h1>
+    <div className="App">
+      <div className="colorCont flex">
+        {data.map((gradient) => (
+          <Gradient gradient={gradient} />
+        ))}
+      </div>
     </div>
   );
 };
