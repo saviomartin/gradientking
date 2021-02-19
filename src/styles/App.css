@@ -5,10 +5,13 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
+body {
+  overflow-x: hidden;
+}
 .App {
   min-height: 100vh;
   width: 100vw;
-  background: #fff;
+  background: #fcfdfd;
 }
 .flex {
   display: flex;
@@ -23,17 +26,26 @@
 }
 .gradient {
   background: #fff;
-  border: 1px solid #36d9f7;
-  box-shadow: 0 11px 26px 0 rgba(66, 213, 235, 48%);
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
   padding: 15px;
   margin: 10px;
   z-index: 1;
   transition: 0.5s;
+  color: #fff;
+  border-radius: 5px;
+}
+.gradient h4 {
+  font-weight: 400;
 }
 .gradient:hover {
-  box-shadow: 0 21px 36px 0 rgba(66, 213, 235, 78%);
+  box-shadow: 0 21px 36px 0 rgba(0, 64, 128, 0.3);
 }
 .gradientPriview {
   height: 200px;
   width: 280px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10px;
 }
