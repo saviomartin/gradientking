@@ -1,4 +1,5 @@
 import { Button } from "@material-ui/core";
+import { Code } from "@material-ui/icons";
 import React from "react";
 
 const Gradient = ({ gradient }) => {
@@ -18,16 +19,58 @@ const Gradient = ({ gradient }) => {
           >
             <h4>{gradient.name}</h4>
           </div>
-          <div className="bottom">
+          <div className="bottom flex">
+            <div className="allColors flex">
+              <h5
+                style={{ color: `${gradient.colors[0]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[0]}`)
+                }
+              >
+                {gradient.colors[0]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[1]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[1]}`)
+                }
+              >
+                {gradient.colors[1]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[2]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[2]}`)
+                }
+              >
+                {gradient.colors[2]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[3]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[3]}`)
+                }
+              >
+                {gradient.colors[3]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[4]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[4]}`)
+                }
+              >
+                {gradient.colors[4]}
+              </h5>
+            </div>
             <Button
               variant="contained"
               onClick={() =>
-                navigator.clipboard.writeText(`
-              background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]}, ${gradient.colors[3]}, ${gradient.colors[4]})
-              `)
+                navigator.clipboard.writeText(
+                  `background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]}, ${gradient.colors[3]}, ${gradient.colors[4]})`
+                )
               }
             >
-              Copy to clipboard
+              <Code />
             </Button>
           </div>
         </>
@@ -41,7 +84,41 @@ const Gradient = ({ gradient }) => {
           >
             <h4>{gradient.name}</h4>
           </div>
-          <div className="bottom">
+          <div className="bottom flex">
+            <div className="allColors flex">
+              <h5
+                style={{ color: `${gradient.colors[0]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[0]}`)
+                }
+              >
+                {gradient.colors[0]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[1]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[1]}`)
+                }
+              >
+                {gradient.colors[1]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[2]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[2]}`)
+                }
+              >
+                {gradient.colors[2]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[3]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[3]}`)
+                }
+              >
+                {gradient.colors[3]}
+              </h5>
+            </div>
             <Button
               variant="contained"
               onClick={() =>
@@ -50,7 +127,7 @@ const Gradient = ({ gradient }) => {
                 )
               }
             >
-              Copy to clipboard
+              <Code />
             </Button>
           </div>
         </>
@@ -59,21 +136,48 @@ const Gradient = ({ gradient }) => {
           <div
             className="gradientPriview flex"
             style={{
-              background: `linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]});`,
+              background: `linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]})`,
             }}
           >
             <h4>{gradient.name}</h4>
           </div>
-          <div className="bottom">
+
+          <div className="bottom flex">
+            <div className="allColors flex">
+              <h5
+                style={{ color: `${gradient.colors[0]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[0]}`)
+                }
+              >
+                {gradient.colors[0]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[1]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[1]}`)
+                }
+              >
+                {gradient.colors[1]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[2]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[2]}`)
+                }
+              >
+                {gradient.colors[2]}
+              </h5>
+            </div>
             <Button
               variant="contained"
               onClick={() =>
-                navigator.clipboard.writeText(`
-              background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]});
-              `)
+                navigator.clipboard.writeText(
+                  `background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]}, ${gradient.colors[2]});`
+                )
               }
             >
-              Copy to clipboard
+              <Code />
             </Button>
           </div>
         </>
@@ -87,16 +191,35 @@ const Gradient = ({ gradient }) => {
           >
             <h4>{gradient.name}</h4>
           </div>
-          <div className="bottom">
+          <div className="bottom flex">
+            <div className="allColors flex">
+              <h5
+                style={{ color: `${gradient.colors[0]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[0]}`)
+                }
+              >
+                {gradient.colors[0]}
+              </h5>
+              <h5
+                style={{ color: `${gradient.colors[1]}` }}
+                onClick={() =>
+                  navigator.clipboard.writeText(`${gradient.colors[1]}`)
+                }
+              >
+                {gradient.colors[1]}
+              </h5>
+            </div>
             <Button
               variant="contained"
+              className="btn"
               onClick={() =>
-                navigator.clipboard.writeText(`
-              background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]});
-              `)
+                navigator.clipboard.writeText(
+                  `background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]});`
+                )
               }
             >
-              Copy to clipboard
+              <Code />
             </Button>
           </div>
         </>

@@ -7,6 +7,7 @@
 }
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth !important;
 }
 .App {
   min-height: 100vh;
@@ -34,7 +35,7 @@ body {
   color: #fff;
   border-radius: 5px;
 }
-.gradient h4 {
+.gradientPriview h4 {
   font-weight: 400;
 }
 .gradient:hover {
@@ -48,4 +49,77 @@ body {
   align-items: flex-end;
   justify-content: flex-start;
   padding: 10px;
+}
+.bottom {
+  width: 280px;
+  color: #000;
+  justify-content: space-between;
+}
+.bottom h5 {
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 0 3px;
+  cursor: pointer;
+}
+.allColors {
+  height: 100%;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  max-width: 225px;
+  overflow: hidden;
+}
+.MuiButton-contained {
+  margin: none !important;
+  margin-top: 5px !important;
+  margin-right: -17.5px !important;
+  padding: 5px;
+  border: none;
+  background: none !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2) !important;
+}
+.btn:hover {
+  box-shadow: 0 21px 36px 0 rgba(0, 64, 128, 0.3);
+  border: 1px solid #ccc !important;
+}
+.header {
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  margin-bottom: 15px;
+}
+.logo {
+  margin: 10px;
+}
+.logo h1 {
+  background: linear-gradient(to right, #cc2b5e, #5433ff, #20bdff, #47f090);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.search {
+  width: 50%;
+  height: 100%;
+  background: #eee;
+}
+.navlink {
+  border: 1px solid #ccc !important;
+  margin-right: 35px !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  padding: 10px !important;
+}
+.input {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif !important;
+  background: #fff !important;
+  border: 1px solid #ccc !important;
+  padding: 5px 12px;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  border-radius: 5px;
+}
+::selection {
+  background: #4b0082;
+  color: #fff;
 }
