@@ -17,8 +17,13 @@ const Header = () => {
 
   return (
     <div className="header flex">
-      <div className="logo" onClick={gotoHome}>
+      <div className="logo flex" onClick={gotoHome}>
         <h1>Gradient King</h1>
+        <img
+          src="https://raw.githubusercontent.com/saviomartin/gradientking/main/public/assets/logo192.png?token=AOYHIIAZQFSOUDUKFRPNA33AHIT7C"
+          alt=""
+          className="crown"
+        />
       </div>
       <Tooltip title="Search" aria-label="add">
         <Search />

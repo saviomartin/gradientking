@@ -19,6 +19,10 @@ body {
   align-items: center;
   justify-content: center;
 }
+.crown {
+  height: 50px;
+  margin-left: 5px;
+}
 .colorCont {
   width: 100%;
   overflow-x: hidden;
@@ -106,7 +110,7 @@ body {
   margin: 10px;
 }
 .logo h1 {
-  background: linear-gradient(to right, #cc2b5e, #5433ff, #20bdff, #47f090);
+  background: linear-gradient(to left, #ff8008, #ffc837);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
