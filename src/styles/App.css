@@ -32,7 +32,7 @@ body {
   padding: 15px;
   margin: 10px;
   z-index: 1;
-  transition: 0.5s;
+  transition: 0.5s !important;
   color: #fff;
   border-radius: 5px;
 }
