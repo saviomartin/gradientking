@@ -22,7 +22,7 @@ body {
 .colorCont {
   width: 100%;
   overflow-x: hidden;
-
+  padding-bottom: 50px;
   height: 100%;
   flex-wrap: wrap;
 }
@@ -194,4 +194,17 @@ input[type="file"] {
 .copybtn:hover {
   border: 1px solid #aaa !important;
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.8) !important;
+}
+.footer {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 500;
+}
+.footer a {
+  background: linear-gradient(to right, #cc2b5e, #5433ff, #20bdff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 3px;
 }

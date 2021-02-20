@@ -40,15 +40,21 @@ const App = () => {
               {data.map((gradient) => (
                 <Gradient gradient={gradient} />
               ))}
-              <br />
-              <br />
             </div>
+            <h3 className="footer">
+              Made with 💖 by
+              <a href="https://github.com/sanvimerin">Sanvi Merin</a>
+            </h3>
           </div>
         </Route>
         <Route path="/gradient_generator" exact>
           <ToastContainer limit={2} />
           <Header />
           <GradientGenerator />
+          <h3 className="footer">
+            Made with 💖 by
+            <a href="https://github.com/sanvimerin">Sanvi Merin</a>
+          </h3>
         </Route>
       </Switch>
     </Router>

@@ -14,7 +14,7 @@ const Gradient = ({ gradient }) => {
     toast("Copied CSS 🚀");
   };
   return (
-    <div className="gradient" data-aos="fade-up-left">
+    <div className="gradient" data-aos="fade-left">
       {gradient.colors.length == 5 ? (
         <>
           <div
