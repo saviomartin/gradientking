@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { Button, Tooltip } from "@material-ui/core";
 import { FormatColorFill } from "@material-ui/icons";
 import React from "react";
 import { useHistory } from "react-router-dom";
@@ -20,10 +20,14 @@ const Header = () => {
       <div className="logo" onClick={gotoHome}>
         <h1>Gradient King</h1>
       </div>
-      <Search />
-      <Button onClick={gotoGenerator} className="navlink">
-        <FormatColorFill />
-      </Button>
+      <Tooltip title="Search" aria-label="add">
+        <Search />
+      </Tooltip>
+      <Tooltip title="Gradient Generator" aria-label="add">
+        <Button onClick={gotoGenerator} className="navlink">
+          <FormatColorFill />
+        </Button>
+      </Tooltip>
     </div>
   );
 };
