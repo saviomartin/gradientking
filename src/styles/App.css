@@ -41,9 +41,7 @@ body {
   border-radius: 5px;
 }
 .gradient .MuiSvgIcon-root {
-  font-size: 16px !important;
-  margin-bottom: -3px !important;
-  margin-right: 5px;
+  font-size: 21px !important;
 }
 .gradient a {
   color: #fff;
@@ -190,7 +188,7 @@ input[type="file"] {
 }
 .gradientGenerator .copybtn {
   border: 1px solid #ccc !important;
-  padding: 12px !important;
+  padding: 8px !important;
   margin-top: -1px !important;
   margin-left: 5px !important;
   transition: 0.5s !important;
