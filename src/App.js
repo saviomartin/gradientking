@@ -39,7 +39,10 @@ const App = () => {
             <Header />
             <div className="colorCont flex">
               {data.map((gradient) => (
-                <Gradient gradient={gradient} />
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.colors[0] + gradient.colors[1]}
+                />
               ))}
             </div>
             <Footer />
