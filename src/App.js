@@ -5,6 +5,7 @@ import "./styles/App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import GradientGenerator from "./components/GradientGenerator";
 import { ToastContainer } from "react-toastify";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -41,20 +42,14 @@ const App = () => {
                 <Gradient gradient={gradient} />
               ))}
             </div>
-            <h3 className="footer">
-              Made with 💖 by
-              <a href="https://github.com/sanvimerin">Sanvi Merin</a>
-            </h3>
+            <Footer />
           </div>
         </Route>
         <Route path="/gradient_generator" exact>
           <ToastContainer limit={2} />
           <Header />
           <GradientGenerator />
-          <h3 className="footer">
-            Made with 💖 by
-            <a href="https://github.com/sanvimerin">Sanvi Merin</a>
-          </h3>
+          <Footer />
         </Route>
       </Switch>
     </Router>
