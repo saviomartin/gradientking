@@ -87,7 +87,7 @@ body {
   overflow: hidden;
 }
 .MuiButton-contained {
-  margin: none !important;
+  margin: 10px 0;
   margin-top: 5px !important;
   margin-right: -17.5px !important;
   padding: 10px !important;
