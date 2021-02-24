@@ -6,14 +6,15 @@ import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 import Gradient from "../components/Gradient";
 import Header from "../components/Header";
+import useLocalStorage from "../hooks/useLocalStorage";
 import GradientGenerator from "../components/GradientGenerator";
 import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [align, setAlign] = useState("left");
-  const [dark, setDark] = useState(false);
+  const [align, setAlign] = useLocalStorage("align:", "left");
+  const [dark, setDark] = useLocalStorage("mode:", false);
 
   const getData = () => {
     fetch("data.json", {

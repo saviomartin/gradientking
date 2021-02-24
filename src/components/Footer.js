@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <h3 className="footer">
       Made with 💖 by
-      <a href="https://github.com/sanvimerin">Sanvi Merin</a>
+      <a href="https://github.com/saviomartin">Savio Martin</a>
     </h3>
   );
 };
