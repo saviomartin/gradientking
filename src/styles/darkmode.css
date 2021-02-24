@@ -1,0 +1,48 @@
+.dark .App {
+  background: #333;
+}
+.dark .header {
+  background: #222;
+}
+.dark .gradient {
+  background: #222;
+  border: 1px solid #444;
+}
+.dark .bottom .MuiSvgIcon-root {
+  color: #eee;
+}
+.dark .gradient .MuiButton-contained {
+  border: 1px solid #444 !important;
+  background: #181717da !important;
+}
+.dark .header .MuiSvgIcon-root {
+  color: #eee !important;
+}
+.dark .input {
+  background: #333 !important;
+  color: #fff !important;
+  border: 1px solid #666;
+}
+.dark .gradientGenerator {
+  background: #333;
+}
+.dark .uploadImage {
+  border: 1px solid #444 !important;
+  background: #181717da !important;
+  color: #fff !important;
+}
+.dark .gradientGenerator .MuiSvgIcon-root {
+  color: #fff;
+}
+.dark .fullpage {
+  background: #333;
+}
+.dark textarea,
+.dark .fullpage__bottom .MuiButtonBase-root {
+  background: #222 !important;
+  color: #fff !important;
+  border: 1px solid #666;
+}
+.dark .ghicon {
+  color: #aaa;
+}

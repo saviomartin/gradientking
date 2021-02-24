@@ -1,10 +1,10 @@
 import { Button, Tooltip } from "@material-ui/core";
-import { FormatColorFill } from "@material-ui/icons";
+import { Brightness4, FormatColorFill, RotateRight } from "@material-ui/icons";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Search from "./Search";
 
-const Header = () => {
+const Header = ({ rotate, changeMode }) => {
   let history = useHistory();
 
   const gotoGenerator = () => {
@@ -19,20 +19,27 @@ const Header = () => {
     <div className="header flex">
       <div className="logo flex" onClick={gotoHome}>
         <h1>Gradient King</h1>
-        <img
-          src="https://raw.githubusercontent.com/saviomartin/gradientking/main/public/assets/logo192.png?token=AOYHIIAZQFSOUDUKFRPNA33AHIT7C"
-          alt=""
-          className="crown"
-        />
       </div>
-      <Tooltip title="Search" aria-label="add">
-        <Search />
-      </Tooltip>
-      <Tooltip title="Gradient Generator" aria-label="add">
-        <Button onClick={gotoGenerator} className="navlink">
-          <FormatColorFill />
-        </Button>
-      </Tooltip>
+      <div className="rightBtns flex">
+        <Tooltip title="Search" aria-label="add">
+          <Search />
+        </Tooltip>
+        <Tooltip title="Rotate" aria-label="add">
+          <Button onClick={rotate} className="navbtns">
+            <RotateRight />
+          </Button>
+        </Tooltip>
+        <Tooltip title="Dark Mode" aria-label="add">
+          <Button onClick={changeMode} className="navbtns">
+            <Brightness4 />
+          </Button>
+        </Tooltip>
+        <Tooltip title="Gradient Generator" aria-label="add">
+          <Button onClick={gotoGenerator} className="navbtns">
+            <FormatColorFill />
+          </Button>
+        </Tooltip>
+      </div>
     </div>
   );
 };

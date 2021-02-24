@@ -9,7 +9,8 @@ const Search = () => {
   };
   return (
     <div className="search">
-      <Input
+      <input
+        type="text"
         placeholder="Search for a Color or Gradient name"
         className="input"
         onKeyDown={(e) => findSearchWord(e)}

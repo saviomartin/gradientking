@@ -1,10 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@import url(./Header.css);
+@import url(./Fullpage.css);
+@import url(./darkmode.css);
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Fira Code", sans-serif;
 }
+
 body {
   overflow-x: hidden;
   scroll-behavior: smooth !important;
@@ -12,17 +18,17 @@ body {
 .App {
   min-height: 100vh;
   width: 100vw;
-  background: #fcfdfd;
+  overflow-x: hidden !important;
+  background: #f5effc;
+  transition: 0.5s !important;
+  transition: background 1s ease-out;
 }
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.crown {
-  height: 50px;
-  margin-left: 5px;
-}
+
 .colorCont {
   width: 100%;
   overflow-x: hidden;
@@ -32,16 +38,20 @@ body {
 }
 .gradient {
   background: #fff;
-  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.1);
   padding: 15px;
   margin: 10px;
   z-index: 1;
   transition: 0.5s !important;
   color: #fff;
   border-radius: 5px;
+  border: 1px solid #eee;
+  cursor: pointer;
 }
-.gradient .MuiSvgIcon-root {
-  font-size: 21px !important;
+.gradientPriview .MuiSvgIcon-root {
+  font-size: 18px !important;
+  margin-right: 5px;
+  margin-bottom: -2px;
 }
 .gradient a {
   color: #fff;
@@ -76,6 +86,8 @@ body {
   text-transform: uppercase;
   margin: 0 3px;
   cursor: pointer;
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #aaa;
 }
 .allColors {
   height: 100%;
@@ -84,56 +96,19 @@ body {
   max-width: 225px;
   overflow: hidden;
 }
-.MuiButton-contained {
-  margin: 10px 0;
-  margin-top: 5px !important;
+.gradient .MuiButton-contained {
+  margin-top: 7.5px !important;
   margin-right: -17.5px !important;
-  padding: 10px !important;
-  border: none;
+  padding: 8px 10px !important;
   background: none !important;
   border: 1px solid #ddd !important;
-  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2) !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.4) !important;
 }
 .btn:hover {
   box-shadow: 0 21px 36px 0 rgba(0, 64, 128, 0.3);
   border: 1px solid #ccc !important;
 }
-.header {
-  width: 100%;
-  justify-content: space-between;
-  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
-  margin-bottom: 15px;
-}
-.logo {
-  margin: 10px;
-}
-.logo h1 {
-  background: linear-gradient(to left, #ff8008, #ffc837);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  cursor: pointer;
-}
-.search {
-  width: 50%;
-  height: 100%;
-  background: #eee;
-}
-.navlink {
-  border: 1px solid #ccc !important;
-  margin-right: 35px !important;
-  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
-  padding: 10px !important;
-}
-.input {
-  height: 100%;
-  width: 100%;
-  font-family: "Poppins", sans-serif !important;
-  background: #fff !important;
-  border: 1px solid #ccc !important;
-  padding: 5px 12px;
-  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
-  border-radius: 5px;
-}
+
 ::selection {
   background: #4b0082;
   color: #fff;
