@@ -17,6 +17,7 @@ const Fullpage = ({ data, align }) => {
   const notify = () => {
     toast("Copied CSS 🚀");
   };
+
   return (
     <div className="fullpage flex">
       <div className="fullpage__left flex">
