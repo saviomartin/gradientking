@@ -123,9 +123,13 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start): for routing
 - [AWS Amplify](https://aws.amazon.com/amplify/): for hosting
 
-## License
+## License 🛡️
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
+
+## Deploy 🚀
+
+<a href="https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/saviomartin/gradientking"><img src="src/assets/delpoy-btn.svg"></a>
 
 ## 🙏 Support
 
