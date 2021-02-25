@@ -89,9 +89,11 @@ const App = () => {
             </Route>
             <Route path="/contributors" exact>
               <Header rotate={rotate} changeMode={changeMode} />
-              {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))}
+              <div className="contributors flex">
+                {data.map((contributor) => (
+                  <Contributors contributor={contributor} />
+                ))}
+              </div>
               <Footer />
             </Route>
           </Switch>
@@ -129,9 +131,11 @@ const App = () => {
             </Route>
             <Route path="/contributors" exact>
               <Header rotate={rotate} changeMode={changeMode} />
-              {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))}
+              <div className="contributors flex">
+                {data.map((contributor) => (
+                  <Contributors contributor={contributor} />
+                ))}
+              </div>
               <Footer />
             </Route>
           </Switch>
