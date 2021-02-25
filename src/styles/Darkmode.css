@@ -1,6 +1,10 @@
-html,
-body {
+.dark {
   background: #333;
+}
+.dark .footer {
+  margin-bottom: -20px;
+  padding-bottom: 20px;
+  color: #fff;
 }
 .dark .App {
   background: #333;
@@ -27,7 +31,7 @@ body {
   color: #fff !important;
   border: 1px solid #666;
 }
-.dark .gradientGenerator {
+.dark .gradientGeneratorMain {
   background: #333;
 }
 .dark .uploadImage {

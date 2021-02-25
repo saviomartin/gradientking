@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer">
       <h3 className="footer">
         Made with 💖 by
-        <a href="https://github.com/saviomartin">Savio Martin</a>
+        <a href="https://github.com/saviomartin"> Savio Martin</a>
       </h3>
     </div>
   );
