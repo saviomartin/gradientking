@@ -41,7 +41,7 @@ Gradient king can help you. We provide a huge collection of gradients and you co
 ## 🚀 Demo
 
 <a href="https://saviomartin.github.io/gh-profile-readme-generator" target="blank">
-<img src="https://img.shields.io/website?url=https%3A%2F%2Fsaviomartin.github.io%2Fgh-profile-readme-generator&logo=github&style=flat-square" />
+<img src="src/assets/coverImage.png" />
 </a>
 
 Try the tool: [Gradient King](https://saviomartin.github.io/gradientking)
