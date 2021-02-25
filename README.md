@@ -61,7 +61,7 @@ Provides you a huge collection of awesome, elegant gradients. You can use it abs
 - **Elegant animations**
 - **PWA, Installable app**
 - **Dark mode**
-- **Minimal UI, Efficient work**
+- **Minimal UI, Lightning Fast**
 - **Fully Responsive**
 
 Gradient King is super productive enough to grad the best gradients for your next app. ✨️
