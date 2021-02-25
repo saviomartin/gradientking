@@ -33,12 +33,12 @@ const Header = ({ rotate, changeMode }) => {
           <Search />
         </Tooltip>
         <Tooltip title="Rotate" aria-label="add">
-          <Button onClick={rotate} className="navbtns">
+          <Button onClick={rotate} className="navbtns rotateBtn">
             <RotateRight />
           </Button>
         </Tooltip>
         <Tooltip title="Rotate" aria-label="add">
-          <Button onClick={gototGithub} className="navbtns">
+          <Button onClick={gototGithub} className="navbtns addBtn">
             <AddToPhotos />
           </Button>
         </Tooltip>

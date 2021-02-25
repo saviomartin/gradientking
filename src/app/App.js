@@ -10,6 +10,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import GradientGenerator from "../components/GradientGenerator";
 import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
+import Contributors from "../components/Contributors";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -86,6 +87,13 @@ const App = () => {
               <Header rotate={rotate} changeMode={changeMode} />
               <Fullpage data={data} align={align} />
             </Route>
+            <Route path="/contributors" exact>
+              <Header rotate={rotate} changeMode={changeMode} />
+              {data.map((contributor) => (
+                <Contributors contributor={contributor} />
+              ))}
+              <Footer />
+            </Route>
           </Switch>
         </div>
       ) : (
@@ -118,6 +126,13 @@ const App = () => {
               <ToastContainer limit={2} />
               <Header rotate={rotate} changeMode={changeMode} />
               <Fullpage data={data} align={align} />
+            </Route>
+            <Route path="/contributors" exact>
+              <Header rotate={rotate} changeMode={changeMode} />
+              {data.map((contributor) => (
+                <Contributors contributor={contributor} />
+              ))}
+              <Footer />
             </Route>
           </Switch>
         </div>

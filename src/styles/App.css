@@ -5,7 +5,7 @@
 @import url(./Fullpage.css);
 @import url(./Darkmode.css);
 @import url(./Footer.css);
-
+@import url(./Responsive.css);
 * {
   margin: 0;
   padding: 0;
