@@ -37,7 +37,7 @@ const Header = ({ rotate, changeMode }) => {
             <RotateRight />
           </Button>
         </Tooltip>
-        <Tooltip title="Rotate" aria-label="add">
+        <Tooltip title="Add Gradient" aria-label="add">
           <Button onClick={gototGithub} className="navbtns addBtn">
             <AddToPhotos />
           </Button>
