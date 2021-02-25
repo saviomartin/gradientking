@@ -56,7 +56,7 @@ Provides you a huge collection of awesome, elegant gradients. You can use it abs
 - **Generate your own gradients**
 - **Copy CSS code of gradients**
 - **Check for browser support**
-- **Contributor page, and see your name on the main page and all other pages**[ >Contributing](#Contributing)
+- **Contributor page, and see your name on the main page and all other pages**[ >>Contributing](#-contributing)
 - **Elegant animations**
 - **PWA, Installable app**
 - **Dark mode**
@@ -123,7 +123,7 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start): for routing
 - [AWS Amplify](https://aws.amazon.com/amplify/): for hosting
 
-## License 🛡️
+## 🛡️ License
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
