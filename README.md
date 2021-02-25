@@ -1,11 +1,8 @@
 <p align="center">
   <a href="https://saviomartin.github.io/gh-profile-readme-generator">
-    <img alt="Gradient King" src="./public/assets/android-chrome-192x192.png" width="120" />
+    <img alt="Gradient King" src="public/assets/logotext.png" width="300" />
   </a>
 </p>
-<h1 align="center">
-  Gradient King
-</h1>
 <h4 align="center">Never again run out of Gradients✨️</h4>
 
 <p align="center">
