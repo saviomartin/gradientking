@@ -138,7 +138,7 @@ I'm pretty sure that I will be constantly adding more and more extrordinary feat
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
 
-## Deploy 🚀
+## 🦄 Deploy
 
 <a href="https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/saviomartin/gradientking"><img src="src/assets/delpoy-btn.svg"></a>
 

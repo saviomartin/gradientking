@@ -20,7 +20,7 @@ const Header = ({ rotate, changeMode }) => {
     history.push("/");
   };
   const gototGithub = () => {
-    window.open("https://github.com/saviomartin/gradientking");
+    window.open("https://github.com/saviomartin/gradientking#-contributing");
   };
 
   return (
