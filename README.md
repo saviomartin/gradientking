@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://saviomartin.github.io/gh-profile-readme-generator">
+  <a href="https://gradient-king.vercel.app/">
     <img alt="Gradient King" src="public/assets/logotext.png" width="300" />
   </a>
 </p>
@@ -27,7 +27,7 @@
 <p align="center"><img src="public/assets/app.gif" alt="gradientking gif" /></p>
 
 <p align="center">
-    <a href="https://saviomartin.github.io/gh-profile-readme-generator" target="blank">View Demo</a>
+    <a href="https://gradient-king.vercel.app/" target="blank">View Demo</a>
     ·
     <a href="https://github.com/saviomartin/gradientking/issues/new/choose">Report Bug</a>
     ·
@@ -40,7 +40,7 @@ Gradient king can help you. We provide a huge collection of gradients and you co
 
 ## 🚀 Demo
 
-<a href="https://saviomartin.github.io/gh-profile-readme-generator" target="blank">
+<a href="https://gradient-king.vercel.app/" target="blank">
 <img src="src/assets/coverImage.png" />
 </a>
 
@@ -54,6 +54,7 @@ Provides you a huge collection of awesome, elegant gradients. You can use it abs
 
 - **100+ gradients**
 - **Generate your own gradients**
+- **Seperate page for each gradient**
 - **Copy CSS code of gradients**
 - **Check for browser support**
 - **Contributor page, and see your name on the main page and all other pages**[ >>Contributing](#-contributing)
@@ -95,7 +96,7 @@ npm start
 
 ## 🍰 Contributing
 
-Head over to [public/data.json](public/data.json) and add your gradient at the bottom of the list. Here is an example contribution 👇
+Head over to [`public/data.json`](public/data.json) and add your gradient at the bottom of the list. Here is an example contribution 👇
 
 > Make sure that you have all the required items
 
@@ -117,6 +118,7 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 ## 💻 Built with
 
 - [React](https://reactjs.org/)
+- [Jquery](https://jquery.com/)
 - [Material UI](http://material-ui.com/): for styling and Icons
 - [Animate.css](https://animate.style/): for smooth Animations
 - [AOS](https://michalsnik.github.io/aos/): for scroll animations
