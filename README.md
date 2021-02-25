@@ -130,7 +130,7 @@ I'm pretty sure that I will be constantly adding more and more extrordinary feat
 - Voting
 - User authentication
 - Comments
-- Generate gradient from a website url (working now)
+- Generate gradient from a website url (in progress)
 - Generate gradient from a word, eg: love - red gradient
 - Chrome extension which does the features
 
