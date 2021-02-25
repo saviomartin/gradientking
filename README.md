@@ -95,17 +95,17 @@ npm start
 
 ## 🍰 Contributing
 
-Head over to [public/data.json](public/data.json) and add your gradient at the bottom of the list.
+Head over to [public/data.json](public/data.json) and add your gradient at the bottom of the list. Here is an example contribution 👇
 
 > Make sure that you have all the required items
 
 ```json
 {
-  "id": 104, //your ID
-  "githubUsername": "YOUR_GITHUB_USERNAME",
+  "id": 104,
+  "githubUsername": "saviomatin",
   "colors": [
-    "#3CA55C", //color 1
-    "#B5AC49" //color 2
+    "#3CA55C",
+    "#B5AC49"
   ]
 },
 ```
