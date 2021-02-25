@@ -123,6 +123,17 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start): for routing
 - [AWS Amplify](https://aws.amazon.com/amplify/): for hosting
 
+## 🌈 What's next
+
+I'm pretty sure that I will be constantly adding more and more extrordinary features as I consider this as my biggest project till date. These all are the things I have planned to do in next days
+
+- Voting
+- User authentication
+- Comments
+- Generate gradient from a website url (working now)
+- Generate gradient from a word, eg: love - red gradient
+- Chrome extension which does the features
+
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
