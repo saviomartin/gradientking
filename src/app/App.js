@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import "animate.css/animate.css";
 
 import Footer from "../components/Footer";
 import Gradient from "../components/Gradient";

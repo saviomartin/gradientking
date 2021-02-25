@@ -20,7 +20,7 @@ const Fullpage = ({ data, align }) => {
 
   return (
     <div className="fullpage flex">
-      <div className="fullpage__left flex">
+      <div className="fullpage__left flex animate__animated animate__fadeInLeft">
         <div className="fullpage_colors flex">
           <Tooltip title="Copy Color" aria-label="add">
             <h1
@@ -64,7 +64,7 @@ const Fullpage = ({ data, align }) => {
           </h3>
         </div>
       </div>
-      <div className="fullpage__right flex">
+      <div className="fullpage__right flex animate__animated animate__fadeInRight">
         <div
           className="preview"
           style={{

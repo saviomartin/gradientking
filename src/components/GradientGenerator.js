@@ -46,7 +46,7 @@ const GradientGenerator = () => {
                 background: `linear-gradient(to left, ${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`,
               }}
             >
-              <div className="palatte gradient">
+              <div className="palatte gradient animate__animated animate__fadeInDown">
                 <div className="cont flex">
                   {data.map((color, index) => (
                     <Tooltip title="Copy Color" aria-label="add">

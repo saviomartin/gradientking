@@ -47,7 +47,6 @@ body {
   color: #fff;
   border-radius: 5px;
   border: 1px solid #eee;
-  cursor: pointer;
 }
 .gradientPriview .MuiSvgIcon-root {
   font-size: 18px !important;
@@ -75,6 +74,7 @@ body {
   align-items: flex-end;
   justify-content: flex-start;
   padding: 10px;
+  cursor: pointer;
 }
 .bottom {
   width: 280px;

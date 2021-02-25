@@ -1,3 +1,7 @@
+html,
+body {
+  background: #333;
+}
 .dark .App {
   background: #333;
 }

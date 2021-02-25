@@ -1,5 +1,10 @@
 import { Button, Tooltip } from "@material-ui/core";
-import { Brightness4, FormatColorFill, RotateRight } from "@material-ui/icons";
+import {
+  AddToPhotos,
+  Brightness4,
+  FormatColorFill,
+  RotateRight,
+} from "@material-ui/icons";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import Search from "./Search";
@@ -14,6 +19,9 @@ const Header = ({ rotate, changeMode }) => {
   const gotoHome = () => {
     history.push("/");
   };
+  const gototGithub = () => {
+    window.open("https://github.com/saviomartin/gradientking");
+  };
 
   return (
     <div className="header flex">
@@ -27,6 +35,11 @@ const Header = ({ rotate, changeMode }) => {
         <Tooltip title="Rotate" aria-label="add">
           <Button onClick={rotate} className="navbtns">
             <RotateRight />
+          </Button>
+        </Tooltip>
+        <Tooltip title="Rotate" aria-label="add">
+          <Button onClick={gototGithub} className="navbtns">
+            <AddToPhotos />
           </Button>
         </Tooltip>
         <Tooltip title="Dark Mode" aria-label="add">

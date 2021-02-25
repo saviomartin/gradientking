@@ -16,16 +16,13 @@ const Gradient = ({ gradient, align, id }) => {
     toast("Copied CSS 🚀");
   };
   return (
-    <div
-      className="gradient"
-      data-aos="fade-left"
-      onClick={() => history.push("/gradient/" + id)}
-    >
+    <div className="gradient" data-aos="fade-left">
       <div
         className="gradientPriview flex"
         style={{
           background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
         }}
+        onClick={() => history.push("/gradient/" + id)}
       >
         <h4>
           From <GitHub />

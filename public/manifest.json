@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "assets/logo192.png",
+      "src": "assets/android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/logo512.png",
+      "src": "assets/android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable any"
