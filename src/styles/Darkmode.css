@@ -2,9 +2,19 @@
   background: #333;
 }
 .dark .footer {
-  margin-bottom: -20px;
-  padding-bottom: 20px;
-  color: #fff;
+  color: #fff !important;
+}
+.dark .contributor {
+  background: #222;
+  color: #fff !important;
+  box-shadow: 0 15px 47px 0 #4444;
+  border: 1px solid #444;
+}
+.dark .githubUser {
+  color: #fff !important;
+}
+.dark .footer .MuiSvgIcon-root {
+  color: #fff !important;
 }
 .dark .App {
   background: #333;

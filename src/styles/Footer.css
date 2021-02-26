@@ -1,7 +1,8 @@
 .footer {
-  text-align: center;
-  margin: 20px 0;
+  padding: 10px;
   font-weight: 500;
+  justify-content: space-between;
+  width: 100%;
 }
 .footer a {
   background: linear-gradient(0deg, #8557c6, #eb78f9);
@@ -12,4 +13,7 @@
   cursor: pointer;
   text-decoration: none;
   margin-left: 3px;
+}
+.footer_buttons {
+  margin-right: 40px;
 }
