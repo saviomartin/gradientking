@@ -803,8 +803,8 @@
     "id": 100,
     "githubUsername": "saviomartin",
     "colors": [
-      "#fffc00",
-      "#ffffff"
+      "#FD746C",
+      "#2C3E50"
     ]
   },
   {
@@ -829,22 +829,6 @@
     "colors": [
       "#f4c4f3",
       "#fc67fa"
-    ]
-  },
-  {
-    "id": 104,
-    "githubUsername": "saviomartin",
-    "colors": [
-      "#de6262",
-      "#ffb88c"
-    ]
-  },
-  {
-    "id": 104,
-    "githubUsername": "saviomartin",
-    "colors": [
-      "#de6262",
-      "#ffb88c"
     ]
   },
   {
