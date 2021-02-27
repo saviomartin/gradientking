@@ -838,5 +838,29 @@
       "#de6262",
       "#ffb88c"
     ]
+  },
+  {
+    "id": 105,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#ff0084",
+      "#ffae00"
+    ]
+  },
+  {
+    "id": 106,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#73d4c4",
+      "#00ff0d"
+    ]
+  },
+  {
+    "id": 107,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#fff",
+      "#ff006f"
+    ]
   }
 ]
