@@ -66,7 +66,7 @@ Provides you a huge collection of awesome, elegant gradients. You can use it abs
 - **Minimal UI, Lightning Fast**
 - **Fully Responsive**
 
-Gradient King is super productive enough to grad the best gradients for your next app. ✨️
+Gradient King is super productive enough to grab the best gradients for your next app. ✨️
 
 ## 🛠️ Installation Steps
 
