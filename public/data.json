@@ -838,5 +838,21 @@
       "#de6262",
       "#ffb88c"
     ]
+  },
+  {
+    "id": 105,
+    "githubUsername": "Dayton-IX",
+    "colors": [
+      "#77C045",
+      "#40A629"
+    ]
+  },
+  {
+    "id": 106,
+    "githubUsername": "Dayton-IX",
+    "colors": [
+      "#F12C10",
+      "#FF8B00"
+    ]
   }
 ]
