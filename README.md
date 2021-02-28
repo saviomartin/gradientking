@@ -147,7 +147,7 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 
 <a href="https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/saviomartin/gradientking"><img src="src/assets/delpoy-btn.svg"></a>
 
-## 🤝 Thanks to the Awesome Contributors
+## 👨‍💻 Thanks to the Awesome Contributors
 
 <a href="https://github.com/saviomartin/gradientking/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=saviomartin/gradientking" />
