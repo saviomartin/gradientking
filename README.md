@@ -149,6 +149,8 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 
 ## 👨‍💻 Thanks to the Awesome Contributors
 
+Gradient King will not occur without you. Thanking all the amazing contributors. Feel free to contribute in the project 🙌
+
 <a href="https://github.com/saviomartin/gradientking/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=saviomartin/gradientking" />
 </a>
