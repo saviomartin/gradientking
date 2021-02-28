@@ -841,6 +841,62 @@
   },
   {
     "id": 105,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#ff0084",
+      "#ffae00"
+    ]
+  },
+  {
+    "id": 106,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#73d4c4",
+      "#00ff0d"
+    ]
+  },
+  {
+    "id": 107,
+    "githubUsername": "Neat-Coder23",
+    "colors": [
+      "#fff",
+      "#ff006f"
+    ]
+  }
+  {
+    "id": 108,
+    "githubUsername": "andaviaco",
+    "colors": [
+      "#9257fe",
+      "#52fdbc"
+    ]
+  },
+  {
+    "id": 109,
+    "githubUsername": "andaviaco",
+    "colors": [
+      "#472772",
+      "#fe7bfe"
+    ]
+  },
+  {
+    "id": 110,
+    "githubUsername": "andaviaco",
+    "colors": [
+      "#cfada7",
+      "#4065a4"
+    ]
+  },
+  {
+    "id": 111,
+    "githubUsername": "andaviaco",
+    "colors": [
+      "#7c3766",
+      "#d46488"
+    ]
+  },
+  {
+    "id": 112,
     "githubUsername": "Dayton-IX",
     "colors": [
       "#77C045",
@@ -848,8 +904,8 @@
     ]
   },
   {
-    "id": 106,
-    "githubUsername": "Dayton-IX",
+    "id": 113,
+     "githubUsername": "Dayton-IX",
     "colors": [
       "#F12C10",
       "#FF8B00"
