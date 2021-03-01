@@ -910,5 +910,15 @@
       "#F12C10",
       "#FF8B00"
     ]
+  },
+  {
+    "id": 114,
+    "githubUsername": "LeviathanProgramming",
+    "colors": [
+      "#04050a",
+      "#11b7cf",
+      "#064fab", 
+      "#b1f5fa"
+    ]
   }
 ]
