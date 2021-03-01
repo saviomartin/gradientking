@@ -1,0 +1,38 @@
+.notFound {
+  box-sizing: border-box;
+  height: 100vh;
+  background: linear-gradient(135deg, #ccc, #ddd 50%, #f5effc 50%, #f5effc);
+  color: #222;
+}
+.box {
+  position: relative;
+  text-align: center;
+}
+.box h1 {
+  background: linear-gradient(to right, #8557c6, #eb78f9);
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 16em;
+  text-shadow: -25px 25px 40px rgba(0, 0, 0, 0.3);
+  line-height: 0.8em;
+}
+.goHomebtn {
+  background: linear-gradient(to right, #8557c6, #eb78f9);
+  color: #fff !important;
+  margin-top: 10px !important;
+  padding: 8px 15px !important;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.9);
+  text-transform: none !important;
+}
+.goHomebtn .MuiSvgIcon-root {
+  margin-left: 5px;
+}
+.goHomebtn:hover {
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.1);
+}
+.notFound *::selection {
+  background: transparent !important;
+  color: #000 !important;
+}

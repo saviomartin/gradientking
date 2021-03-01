@@ -64,3 +64,7 @@
 .dark .ghicon {
   color: #aaa;
 }
+.dark .notFound {
+  background: linear-gradient(135deg, #111, #111 50%, #333 50%, #333);
+  color: #eee;
+}

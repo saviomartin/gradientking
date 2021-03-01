@@ -11,6 +11,7 @@ import GradientGenerator from "../components/GradientGenerator";
 import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
 import Contributors from "../components/Contributors";
+import Notfound from "../components/Notfound";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -96,6 +97,7 @@ const App = () => {
               </div>
               <Footer />
             </Route>
+            <Route component={Notfound} />
           </Switch>
         </div>
       ) : (
@@ -138,6 +140,7 @@ const App = () => {
               </div>
               <Footer />
             </Route>
+            <Route component={Notfound} />
           </Switch>
         </div>
       )}
