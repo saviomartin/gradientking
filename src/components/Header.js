@@ -9,6 +9,8 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Search from "./Search";
 
+import Icon from '../assets/Icon.svg'
+
 const Header = ({ rotate, changeMode }) => {
   let history = useHistory();
 
@@ -26,6 +28,7 @@ const Header = ({ rotate, changeMode }) => {
   return (
     <div className="header flex">
       <div className="logo flex" onClick={gotoHome}>
+        <img height={40} width={40} src={Icon} alt="Icon" />
         <h1>Gradient King</h1>
       </div>
       <div className="rightBtns flex">

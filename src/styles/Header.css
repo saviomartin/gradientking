@@ -7,7 +7,8 @@
   background: linear-gradient(to left, #fff, #f5effc);
 }
 .header h1 {
-  background: linear-gradient(0deg, #8557c6, #eb78f9);
+  margin-left: 10px;
+  background: linear-gradient(-45deg, #4776E6, #8E54E9);
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
