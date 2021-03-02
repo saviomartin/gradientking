@@ -15,15 +15,12 @@
   padding: 0;
   font-family: "Fira Code", sans-serif;
 }
-:root {
-  background-color:  #8E54E9;
-}
 
 html {
-  background-color:  #8E54E9;
   scroll-behavior: smooth;
   min-height: calc(100% + env(safe-area-inset-top));
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 body {
