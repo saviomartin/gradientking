@@ -68,8 +68,12 @@
   background: linear-gradient(135deg, #111, #111 50%, #333 50%, #333);
   color: #eee;
 }
+.dark .profile img {
+  border: 1px solid #555;
+}
 .dark .profile {
   background: #333;
+  border: 1px solid #444;
 }
 .dark .profile .MuiButtonBase-root {
   color: #fff !important;
