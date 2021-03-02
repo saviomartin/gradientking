@@ -16,7 +16,11 @@
     font-size: 22px !important;
   }
   .header h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+  .header img {
+    width: 30px;
+    height: 30px;
   }
   .demoImage {
     width: 100% !important;
