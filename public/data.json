@@ -910,13 +910,12 @@
       "#F12C10",
       "#FF8B00"
     ]
+  },
+  {
+    "id": 114,
+    "githubUsername": "nikiljos",
+    "colors": [
+      "#7ed56f",
+      "#28b485"
+    ]
   }
-],
-{
-  "id": 114,
-  "githubUsername": "nikiljos",
-  "colors": [
-    "#7ed56f",
-    "#28b485"
-  ]
-}
