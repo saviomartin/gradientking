@@ -5,13 +5,59 @@ import {
   FormatColorFill,
   RotateRight,
 } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Search from "./Search";
+import { useGoogleLogin } from "react-google-login";
+import { useGoogleLogout } from "react-google-login";
+
+// refresh token
+import { refreshTokenSetup } from "../utils/refreshToken";
+
+const clientId =
+  "121772990060-n4vkt1p76epmjdmk4o0uptpq4jiekkld.apps.googleusercontent.com";
 
 import Icon from '../assets/Icon.svg'
 
 const Header = ({ rotate, changeMode }) => {
+  const [name, setName] = useState("");
+  const [profilePic, setProfilePic] = useState("");
+
+  // login
+  const onSuccess = (res) => {
+    setName(res.profileObj.name);
+    setProfilePic(res.profileObj.imageUrl);
+
+    console.log(res);
+    refreshTokenSetup(res);
+  };
+
+  const onFailure = (res) => {
+    console.log("Login failed: res:", res);
+  };
+
+  const { signIn } = useGoogleLogin({
+    onSuccess,
+    onFailure,
+    clientId,
+    isSignedIn: true,
+    accessType: "offline",
+  });
+
+  // logout
+  const onLogoutSuccess = (res) => {
+    setName("");
+    setProfilePic("");
+
+    console.log("Logged out Success");
+  };
+
+  const { signOut } = useGoogleLogout({
+    clientId,
+    onLogoutSuccess,
+    onFailure,
+  });
+
   let history = useHistory();
 
   const gotoGenerator = () => {
@@ -55,6 +101,19 @@ const Header = ({ rotate, changeMode }) => {
             <FormatColorFill />
           </Button>
         </Tooltip>
+        <div className="profile flex">
+          {name ? (
+            <>
+              <img src={profilePic} alt={name} />
+              <div className="profileComp">
+                <h4>{name}</h4>
+                <Button onClick={signOut}>Sign out</Button>
+              </div>
+            </>
+          ) : (
+            <Button onClick={signIn}>Sign in with Google</Button>
+          )}
+        </div>
       </div>
     </div>
   );

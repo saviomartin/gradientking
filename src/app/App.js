@@ -134,9 +134,12 @@ const App = () => {
             <Route path="/contributors" exact>
               <Header rotate={rotate} changeMode={changeMode} />
               <div className="contributors flex">
-                {data.map((contributor) => (
-                  <Contributors contributor={contributor} />
-                ))}
+                {data
+                  .slice(0)
+                  .reverse()
+                  .map((contributor) => (
+                    <Contributors contributor={contributor} />
+                  ))}
               </div>
               <Footer />
             </Route>
