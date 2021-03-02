@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.7.1",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "clsx": "^1.1.1",
     "color-thief-react": "^2.0.11",
     "grade-js": "^1.0.10",
     "jquery": "^3.5.1",

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "animate.css/animate.css";
-
 import Footer from "../components/Footer";
 import Gradient from "../components/Gradient";
 import Header from "../components/Header";
@@ -12,11 +11,19 @@ import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
 import Contributors from "../components/Contributors";
 import Notfound from "../components/Notfound";
+import { useMediaQuery } from '@material-ui/core';
 
 const App = () => {
   const [data, setData] = useState([]);
   const [align, setAlign] = useLocalStorage("align:", "left");
-  const [dark, setDark] = useLocalStorage("mode:", false);
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
+		noSsr: true,
+	});
+  const [dark, setDark] = useLocalStorage("mode:", prefersDarkMode);
+
+  useEffect(() => {
+		setDark(prefersDarkMode);
+	}, [prefersDarkMode, setDark]);
 
   const getData = () => {
     fetch("data.json", {
