@@ -39,6 +39,8 @@
 
 Gradient king can help you. We provide a huge collection of gradients and you could easily choose one. Besides that, we also provides a gradient generator where you could upload your image and grad the gradients from it. How cool is that 🙌
 
+[Read blog to understand better 📖](https://savio.xyz/introducing-gradient-king-never-again-run-out-of-gradients)
+
 ## 🚀 Demo
 
 <a href="https://dev.di7tazxmp7xob.amplifyapp.com/" target="blank">
