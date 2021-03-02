@@ -17,8 +17,6 @@ import { refreshTokenSetup } from "../utils/refreshToken";
 const clientId =
   "121772990060-n4vkt1p76epmjdmk4o0uptpq4jiekkld.apps.googleusercontent.com";
 
-import Icon from '../assets/Icon.svg'
-
 const Header = ({ rotate, changeMode }) => {
   const [name, setName] = useState("");
   const [profilePic, setProfilePic] = useState("");
@@ -74,7 +72,7 @@ const Header = ({ rotate, changeMode }) => {
   return (
     <div className="header flex">
       <div className="logo flex" onClick={gotoHome}>
-        <img height={40} width={40} src={Icon} alt="Icon" />
+        <img src="assets/Icon192.png" alt="" />
         <h1>Gradient King</h1>
       </div>
       <div className="rightBtns flex">

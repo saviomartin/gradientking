@@ -6,9 +6,13 @@
   padding: 5px 10px;
   background: linear-gradient(to left, #fff, #f5effc);
 }
+.header img {
+  height: 40px;
+  width: 40px;
+}
 .header h1 {
   margin-left: 10px;
-  background: linear-gradient(-45deg, #4776E6, #8E54E9);
+  background: linear-gradient(-45deg, #4776e6, #8e54e9);
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
