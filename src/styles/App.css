@@ -8,6 +8,7 @@
 @import url(./Responsive.css);
 @import url(./Contributor.css);
 @import url(./404.css);
+@import url(./Profile.css);
 
 * {
   margin: 0;
