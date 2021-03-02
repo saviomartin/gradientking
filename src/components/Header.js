@@ -13,6 +13,7 @@ import { useGoogleLogout } from "react-google-login";
 
 // refresh token
 import { refreshTokenSetup } from "../utils/refreshToken";
+import Icon from "./Icon";
 
 const clientId =
   "121772990060-n4vkt1p76epmjdmk4o0uptpq4jiekkld.apps.googleusercontent.com";
@@ -72,7 +73,7 @@ const Header = ({ rotate, changeMode }) => {
   return (
     <div className="header flex">
       <div className="logo flex" onClick={gotoHome}>
-        <img src="assets/Icon192.png" alt="" />
+        <Icon />
         <h1>Gradient King</h1>
       </div>
       <div className="rightBtns flex">
