@@ -14,13 +14,33 @@ import { useGoogleLogout } from "react-google-login";
 // refresh token
 import { refreshTokenSetup } from "../utils/refreshToken";
 import Icon from "./Icon";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const clientId =
   "121772990060-n4vkt1p76epmjdmk4o0uptpq4jiekkld.apps.googleusercontent.com";
 
 const Header = ({ rotate, changeMode }) => {
+  //guest avatars
+  const avatars = [
+    "https://avataaars.io/?avatarStyle=Circle&accessoriesType=Round&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Sunglasses&hatColor=Red&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Wayfarers&hatColor=Blue02&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Blue03&graphicType=Deer&eyeType=Close&eyebrowType=SadConcerned&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Prescription01&hairColor=Brown&facialHairType=BeardLight&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Gray01&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=BeardMedium&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelYellow&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light",
+    "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Wayfarers&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=UpDown&mouthType=Default&skinColor=Pale",
+    "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Kurt&hairColor=Brown&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Cry&eyebrowType=SadConcernedNatural&mouthType=Smile&skinColor=Light",
+  ];
+
+  const guestAvatar = avatars[Math.floor(Math.random() * avatars.length)];
+
   const [name, setName] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const [guestName, setGuestName] = useState("Guest User");
+  const [guestProfilePic, setGuestProfilePic] = useLocalStorage(
+    "avatar:",
+    guestAvatar
+  );
 
   // login
   const onSuccess = (res) => {
@@ -110,7 +130,13 @@ const Header = ({ rotate, changeMode }) => {
               </div>
             </>
           ) : (
-            <Button onClick={signIn}>Sign in with Google</Button>
+            <>
+              <img src={guestProfilePic} alt={guestName} />
+              <div className="profileComp">
+                <h4>{guestName}</h4>
+                <Button onClick={signIn}>Sign in with Google</Button>
+              </div>
+            </>
           )}
         </div>
       </div>
