@@ -80,3 +80,7 @@ textarea::selection {
 .fullpage__bottom a:hover {
   border-bottom: 1.5px solid #8557c6 !important;
 }
+textarea::selection {
+  background: #8557c6;
+  color: #fff;
+}

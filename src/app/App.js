@@ -80,6 +80,20 @@ const App = () => {
                     key={gradient.id}
                   />
                 ))}
+              <GradientGenerator />
+              <Footer />
+            </Route>
+            <Route path="/gradient/:id" exact>
+              <ToastContainer limit={2} />
+              <Header rotate={rotate} changeMode={changeMode} />
+              <Fullpage data={data} align={align} />
+            </Route>
+            <Route path="/contributors" exact>
+              <Header rotate={rotate} changeMode={changeMode} />
+              <div className="contributors flex">
+                {data.map((contributor) => (
+                    <Contributors contributor={contributor} />
+                  ))}
               </div>
               <Footer />
             </div>

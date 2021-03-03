@@ -8,15 +8,21 @@
 @import url(./Responsive.css);
 @import url(./Contributor.css);
 @import url(./404.css);
+@import url(./Profile.css);
 
 * {
   margin: 0;
   padding: 0;
   font-family: "Fira Code", sans-serif;
 }
-html{
+
+html {
   scroll-behavior: smooth;
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
+
 body {
   overflow-x: hidden;
   scroll-behavior: smooth !important;

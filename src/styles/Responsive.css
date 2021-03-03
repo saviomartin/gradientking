@@ -16,7 +16,11 @@
     font-size: 22px !important;
   }
   .header h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+  }
+  .header img {
+    width: 30px;
+    height: 30px;
   }
   .demoImage {
     width: 100% !important;
@@ -45,5 +49,22 @@
   .fullpage__right {
     width: 100%;
     height: 50%;
+  }
+  .profile {
+    padding: 1px 10px !important;
+    display: block !important;
+    margin-right: 15px;
+  }
+  .profile img {
+    display: none;
+  }
+  .profile h4 {
+    font-size: 15px;
+  }
+  .rotateBtn {
+    display: none !important;
+  }
+  .rightBtns {
+    width: 70%;
   }
 }
