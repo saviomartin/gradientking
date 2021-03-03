@@ -11,20 +11,20 @@ import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
 import Contributors from "../components/Contributors";
 import Notfound from "../components/Notfound";
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
 
 const App = () => {
   const [data, setData] = useState([]);
   const [align, setAlign] = useLocalStorage("align:", "left");
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)', {
-		noSsr: true,
-	});
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)", {
+    noSsr: true,
+  });
   const [dark, setDark] = useLocalStorage("mode:", prefersDarkMode);
 
   useEffect(() => {
-		setDark(prefersDarkMode);
-	}, [prefersDarkMode, setDark]);
+    setDark(prefersDarkMode);
+  }, [prefersDarkMode, setDark]);
 
   const getData = () => {
     fetch("data.json", {
@@ -65,7 +65,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={clsx(dark ? 'main dark' : 'main light')}>
+      <div className={clsx(dark ? "main dark" : "main light")}>
         <Switch>
           <Route path="/" exact>
             <div className="App">
@@ -80,23 +80,23 @@ const App = () => {
                     key={gradient.id}
                   />
                 ))}
-              <GradientGenerator />
-              <Footer />
-            </Route>
-            <Route path="/gradient/:id" exact>
-              <ToastContainer limit={2} />
-              <Header rotate={rotate} changeMode={changeMode} />
-              <Fullpage data={data} align={align} />
-            </Route>
-            <Route path="/contributors" exact>
-              <Header rotate={rotate} changeMode={changeMode} />
-              <div className="contributors flex">
-                {data.map((contributor) => (
-                    <Contributors contributor={contributor} />
-                  ))}
               </div>
               <Footer />
             </div>
+          </Route>
+          <Route path="/gradient/:id" exact>
+            <ToastContainer limit={2} />
+            <Header rotate={rotate} changeMode={changeMode} />
+            <Fullpage data={data} align={align} />
+          </Route>
+          <Route path="/contributors" exact>
+            <Header rotate={rotate} changeMode={changeMode} />
+            <div className="contributors flex">
+              {data.map((contributor) => (
+                <Contributors contributor={contributor} />
+              ))}
+            </div>
+            <Footer />
           </Route>
           <Route path="/gradient_generator" exact>
             <ToastContainer limit={2} />
