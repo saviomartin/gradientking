@@ -11,6 +11,7 @@ import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
 import Contributors from "../components/Contributors";
 import Notfound from "../components/Notfound";
+import SavedGradients from "../components/SavedGradients";
 import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
 
@@ -108,6 +109,11 @@ const App = () => {
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
             <Fullpage data={data} align={align} />
+          </Route>
+          <Route path="/saved" exact>
+            <ToastContainer limit={2} />
+            <Header rotate={rotate} changeMode={changeMode} />
+            <SavedGradients />
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
