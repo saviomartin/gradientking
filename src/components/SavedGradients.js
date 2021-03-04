@@ -1,7 +1,7 @@
 import React from "react";
 
 function SavedGradients() {
-  return <div>This is the saved gradients page</div>;
+  return <div className="savedGradients"></div>;
 }
 
 export default SavedGradients;
