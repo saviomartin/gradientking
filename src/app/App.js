@@ -22,6 +22,10 @@ const App = () => {
     noSsr: true,
   });
   const [dark, setDark] = useLocalStorage("mode:", prefersDarkMode);
+  const [savedGradients, setSavedGradients] = useLocalStorage(
+    "saved-gradients:",
+    []
+  );
 
   useEffect(() => {
     setDark(prefersDarkMode);
@@ -47,6 +51,10 @@ const App = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    console.log(savedGradients);
+  }, [savedGradients]);
 
   const rotate = () => {
     if (align == "left") {
@@ -79,6 +87,8 @@ const App = () => {
                     id={gradient.id}
                     align={align}
                     key={gradient.id}
+                    savedGradients={savedGradients}
+                    setSavedGradients={setSavedGradients}
                   />
                 ))}
               </div>
@@ -113,7 +123,12 @@ const App = () => {
           <Route path="/saved" exact>
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
-            <SavedGradients />
+            <SavedGradients
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
+            <Footer />
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />

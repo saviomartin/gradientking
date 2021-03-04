@@ -9,6 +9,7 @@
 @import url(./Contributor.css);
 @import url(./404.css);
 @import url(./Profile.css);
+@import url(./SavedGradients.css);
 
 * {
   margin: 0;
@@ -45,7 +46,6 @@ body {
   width: 100%;
   overflow-x: hidden;
   padding-bottom: 50px;
-  height: 100%;
   flex-wrap: wrap;
 }
 .gradient {
@@ -183,4 +183,8 @@ input[type="file"] {
 .copybtn:hover {
   border: 1px solid #aaa !important;
   box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.8) !important;
+}
+
+.title {
+  font-size: 32px;
 }

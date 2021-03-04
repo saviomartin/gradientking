@@ -1,5 +1,5 @@
 import { Button, Tooltip } from "@material-ui/core";
-import { Code, GitHub } from "@material-ui/icons";
+import { Code, GitHub, Star, StarOutline } from "@material-ui/icons";
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,13 +7,39 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useHistory } from "react-router-dom";
 
-const Gradient = ({ gradient, align, id }) => {
+const Gradient = ({
+  gradient,
+  align,
+  id,
+  savedGradients,
+  setSavedGradients,
+}) => {
   const history = useHistory();
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
   const notify = () => {
     toast("Copied CSS 🚀");
+  };
+  const search = (nameKey, myArray) => {
+    for (var i = 0; i < myArray.length; i++) {
+      if (myArray[i].id === nameKey) {
+        return i;
+      }
+    }
+    return false;
+  };
+  const saveGradient = () => {
+    console.log(search(id, savedGradients));
+    if (search(id, savedGradients) !== false) {
+      toast("Gradient Deleted 📕");
+      const tempGradients = savedGradients;
+      tempGradients.splice(search(id, savedGradients), 1);
+      setSavedGradients([...tempGradients]);
+    } else {
+      toast("Gradient Saved 📗");
+      setSavedGradients([...savedGradients, gradient]);
+    }
   };
   return (
     <div className="gradient" data-aos="fade-left">
@@ -54,6 +80,20 @@ const Gradient = ({ gradient, align, id }) => {
             </h5>
           </Tooltip>
         </div>
+        <Tooltip title="Save Gradient" aria-label="add">
+          <Button
+            variant="contained"
+            className="btn"
+            onClick={() => {
+              navigator.clipboard.writeText(
+                `background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});`
+              );
+              saveGradient();
+            }}
+          >
+            {search(id, savedGradients) !== false ? <Star /> : <StarOutline />}
+          </Button>
+        </Tooltip>
         <Tooltip title="Copy Gradient" aria-label="add">
           <Button
             variant="contained"

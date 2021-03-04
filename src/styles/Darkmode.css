@@ -78,3 +78,17 @@
 .dark .profile .MuiButtonBase-root {
   color: #fff !important;
 }
+
+.dark .title {
+  color: #fff;
+}
+
+.dark .no-gradients-saved {
+  color: #fff;
+}
+
+.dark .no-gradients-saved {
+  background: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
