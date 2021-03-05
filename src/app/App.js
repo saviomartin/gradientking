@@ -9,7 +9,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import GradientGenerator from "../components/GradientGenerator";
 import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
-import Contributors from "../components/Contributors";
+import ContributorsPage from "../components/ContributorsPage";
 import Notfound from "../components/Notfound";
 import SavedGradients from "../components/SavedGradients";
 import { useMediaQuery } from "@material-ui/core";
@@ -75,11 +75,7 @@ const App = () => {
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
-            <div className="contributors flex">
-              {/* {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))} */}
-            </div>
+            <ContributorsPage />
             <Footer />
           </Route>
           <Route path="/gradient_generator" exact>
@@ -100,11 +96,7 @@ const App = () => {
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
-            <div className="contributors flex">
-              {/* {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))} */}
-            </div>
+            <ContributorsPage />
             <Footer />
           </Route>
           <Route component={Notfound} />
