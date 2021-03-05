@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "animate.css/animate.css";
 import Footer from "../components/Footer";
-import Gradient from "../components/Gradient";
+import Home from "../components/Home";
 import Header from "../components/Header";
 import useLocalStorage from "../hooks/useLocalStorage";
 import GradientGenerator from "../components/GradientGenerator";
@@ -17,7 +17,6 @@ import clsx from "clsx";
 import { Collection } from "react-virtualized";
 
 const App = () => {
-  const [data, setData] = useState([]);
   const [align, setAlign] = useLocalStorage("align:", "left");
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)", {
     noSsr: true,
@@ -31,31 +30,6 @@ const App = () => {
   useEffect(() => {
     setDark(prefersDarkMode);
   }, [prefersDarkMode, setDark]);
-
-  const getData = () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        setData(data);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  useEffect(() => {
-    console.log(savedGradients);
-  }, [savedGradients]);
 
   const rotate = () => {
     if (align == "left") {
@@ -81,18 +55,11 @@ const App = () => {
             <div className="App">
               <ToastContainer limit={2} />
               <Header rotate={rotate} changeMode={changeMode} />
-              <div className="colorCont flex">
-                {data.map((gradient) => (
-                  <Gradient
-                    gradient={gradient}
-                    id={gradient.id}
-                    align={align}
-                    key={gradient.id}
-                    savedGradients={savedGradients}
-                    setSavedGradients={setSavedGradients}
-                  />
-                ))}
-              </div>
+              <Home
+                align={align}
+                savedGradients={savedGradients}
+                setSavedGradients={setSavedGradients}
+              />
               <Footer />
             </div>
           </Route>
@@ -100,7 +67,6 @@ const App = () => {
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
             <Fullpage
-              data={data}
               align={align}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
@@ -110,9 +76,9 @@ const App = () => {
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
             <div className="contributors flex">
-              {data.map((contributor) => (
+              {/* {data.map((contributor) => (
                 <Contributors contributor={contributor} />
-              ))}
+              ))} */}
             </div>
             <Footer />
           </Route>
@@ -135,9 +101,9 @@ const App = () => {
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
             <div className="contributors flex">
-              {data.map((contributor) => (
+              {/* {data.map((contributor) => (
                 <Contributors contributor={contributor} />
-              ))}
+              ))} */}
             </div>
             <Footer />
           </Route>
