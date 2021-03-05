@@ -3,49 +3,33 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "animate.css/animate.css";
 import Footer from "../components/Footer";
-import Gradient from "../components/Gradient";
+import Home from "../components/Home";
 import Header from "../components/Header";
 import useLocalStorage from "../hooks/useLocalStorage";
 import GradientGenerator from "../components/GradientGenerator";
 import "../styles/App.css";
 import Fullpage from "../components/Fullpage";
-import Contributors from "../components/Contributors";
+import ContributorsPage from "../components/ContributorsPage";
 import Notfound from "../components/Notfound";
+import SavedGradients from "../components/SavedGradients";
 import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
+import { Collection } from "react-virtualized";
 
 const App = () => {
-  const [data, setData] = useState([]);
   const [align, setAlign] = useLocalStorage("align:", "left");
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)", {
     noSsr: true,
   });
   const [dark, setDark] = useLocalStorage("mode:", prefersDarkMode);
+  const [savedGradients, setSavedGradients] = useLocalStorage(
+    "saved-gradients:",
+    []
+  );
 
   useEffect(() => {
     setDark(prefersDarkMode);
   }, [prefersDarkMode, setDark]);
-
-  const getData = () => {
-    fetch("data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-        setData(data);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const rotate = () => {
     if (align == "left") {
@@ -71,31 +55,27 @@ const App = () => {
             <div className="App">
               <ToastContainer limit={2} />
               <Header rotate={rotate} changeMode={changeMode} />
-              <div className="colorCont flex">
-                {data.map((gradient) => (
-                  <Gradient
-                    gradient={gradient}
-                    id={gradient.id}
-                    align={align}
-                    key={gradient.id}
-                  />
-                ))}
-              </div>
+              <Home
+                align={align}
+                savedGradients={savedGradients}
+                setSavedGradients={setSavedGradients}
+              />
               <Footer />
             </div>
           </Route>
           <Route path="/gradient/:id" exact>
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
-            <Fullpage data={data} align={align} />
+            <Fullpage
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
+            <Footer />
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
-            <div className="contributors flex">
-              {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))}
-            </div>
+            <ContributorsPage />
             <Footer />
           </Route>
           <Route path="/gradient_generator" exact>
@@ -104,18 +84,19 @@ const App = () => {
             <GradientGenerator />
             <Footer />
           </Route>
-          <Route path="/gradient/:id" exact>
+          <Route path="/saved" exact>
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
-            <Fullpage data={data} align={align} />
+            <SavedGradients
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
+            <Footer />
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
-            <div className="contributors flex">
-              {data.map((contributor) => (
-                <Contributors contributor={contributor} />
-              ))}
-            </div>
+            <ContributorsPage />
             <Footer />
           </Route>
           <Route component={Notfound} />

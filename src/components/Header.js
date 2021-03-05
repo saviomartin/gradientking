@@ -4,6 +4,7 @@ import {
   Brightness4,
   FormatColorFill,
   RotateRight,
+  Star,
 } from "@material-ui/icons";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -90,6 +91,10 @@ const Header = ({ rotate, changeMode }) => {
     window.open("https://github.com/saviomartin/gradientking#-contributing");
   };
 
+  const goToSaved = () => {
+    history.push("/saved");
+  };
+
   return (
     <div className="header flex">
       <div className="logo flex" onClick={gotoHome}>
@@ -120,7 +125,12 @@ const Header = ({ rotate, changeMode }) => {
             <FormatColorFill />
           </Button>
         </Tooltip>
-        <div className="profile flex">
+        <Tooltip title="Saved Gradients" aria-label="add">
+          <Button onClick={goToSaved} className="navbtns">
+            <Star />
+          </Button>
+        </Tooltip>
+        {/* <div className="profile flex">
           {name ? (
             <>
               <img src={profilePic} alt={name} />
@@ -138,7 +148,7 @@ const Header = ({ rotate, changeMode }) => {
               </div>
             </>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
