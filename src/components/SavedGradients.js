@@ -9,7 +9,7 @@ function SavedGradients({ align, savedGradients, setSavedGradients }) {
   const savedGradientsRef = useRef();
 
   useEffect(() => {
-    savedGradientsRef.current.style.height = window.innerHeight - 141 + "px";
+    savedGradientsRef.current.style.minHeight = window.innerHeight - 141 + "px";
   }, []);
 
   return (

@@ -1,10 +1,10 @@
 import { Button, Tooltip } from "@material-ui/core";
-import { Code, GitHub } from "@material-ui/icons";
+import { Code, GitHub, Star, StarOutline } from "@material-ui/icons";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Fullpage = ({ data, align }) => {
+const Fullpage = ({ data, align, savedGradients, setSavedGradients }) => {
   let params = useParams();
   const id = params.id;
   const username = data[id].githubUsername;
@@ -16,6 +16,27 @@ const Fullpage = ({ data, align }) => {
   `;
   const notify = () => {
     toast("Copied CSS 🚀");
+  };
+
+  const search = (nameKey, myArray) => {
+    for (var i = 0; i < myArray.length; i++) {
+      if (myArray[i].id == nameKey) {
+        return i;
+      }
+    }
+    return false;
+  };
+  const saveGradient = () => {
+    if (search(id, savedGradients) !== false) {
+      toast("Gradient Deleted 📕");
+      const tempGradients = savedGradients;
+      tempGradients.splice(search(id, savedGradients), 1);
+      setSavedGradients([...tempGradients]);
+    } else {
+      toast("Gradient Saved 📗");
+
+      setSavedGradients([...savedGradients, data[id]]);
+    }
   };
 
   return (
@@ -55,6 +76,30 @@ const Fullpage = ({ data, align }) => {
                 style={{ border: `1px solid ${data[id].colors[0]}` }}
               >
                 Copy CSS <Code />
+              </Button>
+            </Tooltip>
+            <Tooltip
+              title={search(id, savedGradients) !== false ? "Saved" : "Save"}
+              aria-label="add"
+            >
+              <Button
+                onClick={() => {
+                  saveGradient();
+                }}
+                style={{
+                  border: `1px solid ${data[id].colors[0]}`,
+                  marginLeft: 8,
+                }}
+              >
+                {search(id, savedGradients) !== false ? (
+                  <>
+                    Saved <Star />
+                  </>
+                ) : (
+                  <>
+                    Save <StarOutline />
+                  </>
+                )}
               </Button>
             </Tooltip>
           </div>

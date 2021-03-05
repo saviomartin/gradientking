@@ -14,6 +14,7 @@ import Notfound from "../components/Notfound";
 import SavedGradients from "../components/SavedGradients";
 import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
+import { Collection } from "react-virtualized";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -98,7 +99,13 @@ const App = () => {
           <Route path="/gradient/:id" exact>
             <ToastContainer limit={2} />
             <Header rotate={rotate} changeMode={changeMode} />
-            <Fullpage data={data} align={align} />
+            <Fullpage
+              data={data}
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
+            <Footer />
           </Route>
           <Route path="/contributors" exact>
             <Header rotate={rotate} changeMode={changeMode} />
@@ -114,11 +121,6 @@ const App = () => {
             <Header rotate={rotate} changeMode={changeMode} />
             <GradientGenerator />
             <Footer />
-          </Route>
-          <Route path="/gradient/:id" exact>
-            <ToastContainer limit={2} />
-            <Header rotate={rotate} changeMode={changeMode} />
-            <Fullpage data={data} align={align} />
           </Route>
           <Route path="/saved" exact>
             <ToastContainer limit={2} />

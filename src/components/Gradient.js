@@ -80,7 +80,14 @@ const Gradient = ({
             </h5>
           </Tooltip>
         </div>
-        <Tooltip title="Save Gradient" aria-label="add">
+        <Tooltip
+          title={
+            search(id, savedGradients) !== false
+              ? "Delete Gradient"
+              : "Save Gradient"
+          }
+          aria-label="add"
+        >
           <Button
             variant="contained"
             className="btn"
