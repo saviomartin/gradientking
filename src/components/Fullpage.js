@@ -1,13 +1,13 @@
 import { Button, Tooltip } from "@material-ui/core";
 import { Code, GitHub, Star, StarOutline } from "@material-ui/icons";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Fullpage = ({ align, savedGradients, setSavedGradients }) => {
   let params = useParams();
   const [data, setData] = useState([]);
-  const [id, setId] = useState(params.id);
+  const id = params.id;
   const [username, setUserName] = useState("");
   const [code, setCode] = useState("");
 
@@ -17,7 +17,7 @@ const Fullpage = ({ align, savedGradients, setSavedGradients }) => {
 
   const search = (nameKey, myArray) => {
     for (var i = 0; i < myArray.length; i++) {
-      if (myArray[i].id == nameKey) {
+      if (myArray[i].id === nameKey) {
         return i;
       }
     }
@@ -37,7 +37,7 @@ const Fullpage = ({ align, savedGradients, setSavedGradients }) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch("../data.json", {
       headers: {
         "Content-Type": "application/json",
@@ -49,12 +49,11 @@ const Fullpage = ({ align, savedGradients, setSavedGradients }) => {
         return response.json();
       })
       .then(function (resp) {
-        console.log(resp[id]);
         setData(resp);
         setCode(`
-  background: ${resp[id].colors[0]};  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to ${align}, ${resp[id].colors[0]}, ${resp[id].colors[1]});
-  background: linear-gradient(to ${align}, ${resp[id].colors[0]}, ${resp[id].colors[1]});`);
+        background: ${resp[id].colors[0]};  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to ${align}, ${resp[id].colors[0]}, ${resp[id].colors[1]});
+        background: linear-gradient(to ${align}, ${resp[id].colors[0]}, ${resp[id].colors[1]});`);
         setUserName(resp[id].githubUsername);
       });
   }, []);

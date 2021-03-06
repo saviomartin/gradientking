@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-
-import Aos from "aos";
+import React, { useEffect, useRef } from "react";
 import "aos/dist/aos.css";
 
 import Gradient from "../components/Gradient";

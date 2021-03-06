@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Color, { Palette } from "color-thief-react";
+import { Palette } from "color-thief-react";
 import { Button, Tooltip } from "@material-ui/core";
 import { Code } from "@material-ui/icons";
 import { toast } from "react-toastify";

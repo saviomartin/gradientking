@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "animate.css/animate.css";
@@ -14,7 +14,6 @@ import Notfound from "../components/Notfound";
 import SavedGradients from "../components/SavedGradients";
 import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
-import { Collection } from "react-virtualized";
 
 const App = () => {
   const [align, setAlign] = useLocalStorage("align:", "left");
@@ -32,11 +31,11 @@ const App = () => {
   }, [prefersDarkMode, setDark]);
 
   const rotate = () => {
-    if (align == "left") {
+    if (align === "left") {
       setAlign("right");
-    } else if (align == "right") {
+    } else if (align === "right") {
       setAlign("top");
-    } else if (align == "top") {
+    } else if (align === "top") {
       setAlign("bottom");
     } else {
       setAlign("left");

@@ -10,11 +10,7 @@ const Notfound = () => {
       <div className="box">
         <h1>404</h1>
         <h2>Looks like you're lost. Go back home</h2>
-        <Button
-          className="flex"
-          className="goHomebtn"
-          onClick={() => history.push("/")}
-        >
+        <Button className="flex goHomebtn" onClick={() => history.push("/")}>
           Go Back Home <Home />
         </Button>
       </div>
