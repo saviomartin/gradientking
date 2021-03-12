@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.d7be1d39.chunk.css",
-    "main.js": "/static/js/main.ebd1dc91.chunk.js",
-    "main.js.map": "/static/js/main.ebd1dc91.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5bdc35d7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5bdc35d7.js.map",
-    "static/css/2.85932783.chunk.css": "/static/css/2.85932783.chunk.css",
-    "static/js/2.42d5862d.chunk.js": "/static/js/2.42d5862d.chunk.js",
-    "static/js/2.42d5862d.chunk.js.map": "/static/js/2.42d5862d.chunk.js.map",
-    "static/js/3.b753f963.chunk.js": "/static/js/3.b753f963.chunk.js",
-    "static/js/3.b753f963.chunk.js.map": "/static/js/3.b753f963.chunk.js.map",
-    "index.html": "/index.html",
-    "service-worker.js": "/service-worker.js",
-    "service-worker.js.map": "/service-worker.js.map",
-    "static/css/2.85932783.chunk.css.map": "/static/css/2.85932783.chunk.css.map",
-    "static/css/main.d7be1d39.chunk.css.map": "/static/css/main.d7be1d39.chunk.css.map",
-    "static/js/2.42d5862d.chunk.js.LICENSE.txt": "/static/js/2.42d5862d.chunk.js.LICENSE.txt"
+    "main.css": "/gradientking/static/css/main.d7be1d39.chunk.css",
+    "main.js": "/gradientking/static/js/main.a988fc4a.chunk.js",
+    "main.js.map": "/gradientking/static/js/main.a988fc4a.chunk.js.map",
+    "runtime-main.js": "/gradientking/static/js/runtime-main.24088790.js",
+    "runtime-main.js.map": "/gradientking/static/js/runtime-main.24088790.js.map",
+    "static/css/2.85932783.chunk.css": "/gradientking/static/css/2.85932783.chunk.css",
+    "static/js/2.42d5862d.chunk.js": "/gradientking/static/js/2.42d5862d.chunk.js",
+    "static/js/2.42d5862d.chunk.js.map": "/gradientking/static/js/2.42d5862d.chunk.js.map",
+    "static/js/3.b753f963.chunk.js": "/gradientking/static/js/3.b753f963.chunk.js",
+    "static/js/3.b753f963.chunk.js.map": "/gradientking/static/js/3.b753f963.chunk.js.map",
+    "index.html": "/gradientking/index.html",
+    "service-worker.js": "/gradientking/service-worker.js",
+    "service-worker.js.map": "/gradientking/service-worker.js.map",
+    "static/css/2.85932783.chunk.css.map": "/gradientking/static/css/2.85932783.chunk.css.map",
+    "static/css/main.d7be1d39.chunk.css.map": "/gradientking/static/css/main.d7be1d39.chunk.css.map",
+    "static/js/2.42d5862d.chunk.js.LICENSE.txt": "/gradientking/static/js/2.42d5862d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5bdc35d7.js",
+    "static/js/runtime-main.24088790.js",
     "static/css/2.85932783.chunk.css",
     "static/js/2.42d5862d.chunk.js",
     "static/css/main.d7be1d39.chunk.css",
-    "static/js/main.ebd1dc91.chunk.js"
+    "static/js/main.a988fc4a.chunk.js"
   ]
 }
