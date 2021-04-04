@@ -958,5 +958,61 @@
       "#ffecd2",
       "#fcb69f"
     ]
-  }
+  },
+  {
+    "id": 120,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#352208",
+      "#E1BB80"
+    ]
+  },
+  {
+    "id": 121,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#373F51",
+      "#008DD5"
+    ]
+  },
+  {
+    "id": 122,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#7BE0AD",
+      "#AEE5D8"
+    ]
+  },
+  {
+    "id": 123,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#222222",
+      "#FFFFFF"
+    ]
+  },
+  {
+    "id": 124,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#531CB3",
+      "#944BBB"
+    ]
+  },
+  {
+    "id": 125,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#EE6C4D",
+      "#F38D68"
+    ]
+  },
+  {
+    "id": 126,
+    "githubUsername": "KhaledCP",
+    "colors": [
+      "#6CD4FF",
+      "#8B80F9"
+    ]
+  },
 ]
