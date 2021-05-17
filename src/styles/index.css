@@ -636,11 +636,17 @@ video {
 .items-center {
 	align-items: center;
 }
+.items-start {
+	align-items: flex-start;
+}
 .justify-between {
 	justify-content: space-between;
 }
 .justify-center {
 	justify-content: center;
+}
+.justify-end {
+	justify-content: flex-end;
 }
 .overflow-hidden {
 	overflow: hidden;
@@ -724,6 +730,15 @@ video {
 .p-5 {
 	padding: 1.25rem;
 }
+.p-1 {
+	padding: 0.25rem;
+}
+.p-3 {
+	padding: 0.75rem;
+}
+.p-2 {
+	padding: 0.5rem;
+}
 .py-1 {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
@@ -776,6 +791,9 @@ video {
 }
 .text-\[1\.5rem\] {
 	font-size: 1.5rem;
+}
+.text-\[1\.3rem\] {
+	font-size: 1.3rem;
 }
 .font-extrabold {
 	font-weight: 800;

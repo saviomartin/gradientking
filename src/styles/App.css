@@ -47,3 +47,8 @@ html {
   backdrop-filter: blur(10px);
   box-shadow: 2px 0 15px rgb(35 38 38 / 13%);
 }
+.frosted {
+  background-color: rgba(245, 247, 250, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
