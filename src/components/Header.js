@@ -53,37 +53,33 @@ const Header = ({ dark = false }) => {
         </h1>
       </div>
       <div className="flex items-center justify-center h-full">
+        <Tooltip title="Generator">
+          <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                {dark ? (
+                  <BsBrightnessHigh className="text-[1.7rem] text-[#222]" />
+                ) : (
+                  <IoMoonOutline
+                    className="text-[1.8rem] text-[#222]"
+                    style={{ transform: "rotate(15deg)" }}
+                  />
+                )}
+              </div>
+            </Button>
+          </div>
+        </Tooltip>
+        <Tooltip title="Rotate Gradient">
+          <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                <GrRotateRight className="text-[1.7rem] text-[#222]" />
+              </div>
+            </Button>
+          </div>
+        </Tooltip>
         <Link to="/generate" className="flex items-center">
-          <Tooltip title="Generator" arrow>
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
-              <Button className="btn">
-                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  {dark ? (
-                    <BsBrightnessHigh className="text-[1.7rem] text-[#222]" />
-                  ) : (
-                    <IoMoonOutline
-                      className="text-[1.8rem] text-[#222]"
-                      style={{ transform: "rotate(15deg)" }}
-                    />
-                  )}
-                </div>
-              </Button>
-            </div>
-          </Tooltip>
-        </Link>
-        <Link to="/generate" className="flex items-center">
-          <Tooltip title="Generator" arrow>
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
-              <Button className="btn">
-                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <GrRotateRight className="text-[1.7rem] text-[#222]" />
-                </div>
-              </Button>
-            </div>
-          </Tooltip>
-        </Link>
-        <Link to="/generate" className="flex items-center">
-          <Tooltip title="Generator" arrow>
+          <Tooltip title="Gradient Generator">
             <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
@@ -93,8 +89,8 @@ const Header = ({ dark = false }) => {
             </div>
           </Tooltip>
         </Link>
-        <Link to="/generate" className="flex items-center">
-          <Tooltip title="Generator" arrow>
+        <Link to="/saved" className="flex items-center">
+          <Tooltip title="Saved Gradients">
             <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
@@ -104,28 +100,26 @@ const Header = ({ dark = false }) => {
             </div>
           </Tooltip>
         </Link>
-        <Link to="/generate" className="flex items-center">
-          <Tooltip title="Generator" arrow>
-            <div
-              className="w-12 overflow-hidden flex items-center justify-center rounded-md"
-              onClick={() => {
-                setIsFullScreen(!isFullScreen);
-                screenfull.toggle();
-              }}
-            >
-              <Button className="btn">
-                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  {isFullScreen ? (
-                    <BsFullscreenExit className=" text-2xl text-[#111]" />
-                  ) : (
-                    <BsArrowsFullscreen className=" text-2xl text-[#111]" />
-                  )}
-                </div>
-              </Button>
-            </div>
-          </Tooltip>
-        </Link>
-        <Tooltip title="Share to Twitter" arrow>
+        <Tooltip title="Toogle FullScreen">
+          <div
+            className="w-12 overflow-hidden flex items-center justify-center rounded-md"
+            onClick={() => {
+              setIsFullScreen(!isFullScreen);
+              screenfull.toggle();
+            }}
+          >
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                {isFullScreen ? (
+                  <BsFullscreenExit className=" text-2xl text-[#111]" />
+                ) : (
+                  <BsArrowsFullscreen className=" text-2xl text-[#111]" />
+                )}
+              </div>
+            </Button>
+          </div>
+        </Tooltip>
+        <Tooltip title="Star On Github">
           <a
             href="https://github.com/saviomartin/gradientking"
             target="_blank"
@@ -140,7 +134,7 @@ const Header = ({ dark = false }) => {
             </Button>
           </a>
         </Tooltip>
-        <Tooltip title="Buy Me A Coffee" arrow>
+        <Tooltip title="Buy Me A Coffee">
           <a
             href="https://buymeacoffee.com/saviomartin"
             target="_blank"
