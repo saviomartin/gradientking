@@ -48,7 +48,7 @@ const Header = ({ dark = false }) => {
   }, []);
 
   return (
-    <div className="p-4 flex items-center justify-between">
+    <div className="px-4 py-2 flex items-center justify-between fixed top-0 left-0 w-full frosted-nav z-10">
       <Link to="/">
         <div className="flex items-center justify-center">
           <Icon />

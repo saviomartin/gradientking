@@ -33,3 +33,17 @@ html {
 .header-btn {
   width: 2rem !important;
 }
+
+.gradient-shadow {
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.1);
+  transition: 0.5s;
+}
+.gradient-shadow:hover {
+  box-shadow: 0 21px 36px 0 rgba(0, 64, 128, 0.3);
+}
+.frosted-nav {
+  background-color: rgba(245, 247, 250, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 2px 0 15px rgb(35 38 38 / 13%);
+}

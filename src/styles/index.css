@@ -548,11 +548,29 @@ video {
 .relative {
 	position: relative;
 }
+.fixed {
+	position: fixed;
+}
+.top-0 {
+	top: 0px;
+}
+.left-0 {
+	left: 0px;
+}
+.z-10 {
+	z-index: 10;
+}
+.m-3 {
+	margin: 0.75rem;
+}
 .ml-2 {
 	margin-left: 0.5rem;
 }
 .ml-1 {
 	margin-left: 0.25rem;
+}
+.mt-2 {
+	margin-top: 0.5rem;
 }
 .flex {
 	display: flex;
@@ -569,6 +587,21 @@ video {
 .h-\[42px\] {
 	height: 42px;
 }
+.h-\[200px\] {
+	height: 200px;
+}
+.h-6 {
+	height: 1.5rem;
+}
+.h-10 {
+	height: 2.5rem;
+}
+.h-8 {
+	height: 2rem;
+}
+.h-9 {
+	height: 2.25rem;
+}
 .min-h-screen {
 	min-height: 100vh;
 }
@@ -577,6 +610,12 @@ video {
 }
 .w-full {
 	width: 100%;
+}
+.w-\[280px\] {
+	width: 280px;
+}
+.w-10 {
+	width: 2.5rem;
 }
 .transform {
 	--tw-translate-x: 0;
@@ -590,6 +629,9 @@ video {
 }
 .cursor-pointer {
 	cursor: pointer;
+}
+.flex-wrap {
+	flex-wrap: wrap;
 }
 .items-center {
 	align-items: center;
@@ -606,6 +648,9 @@ video {
 .rounded-md {
 	border-radius: 0.375rem;
 }
+.rounded-xl {
+	border-radius: 0.75rem;
+}
 .border {
 	border-width: 1px;
 }
@@ -621,6 +666,18 @@ video {
 	--tw-border-opacity: 1;
 	border-color: rgba(255, 213, 0, var(--tw-border-opacity));
 }
+.border-\[\#ccc\] {
+	--tw-border-opacity: 1;
+	border-color: rgba(204, 204, 204, var(--tw-border-opacity));
+}
+.border-\[\#aaa\] {
+	--tw-border-opacity: 1;
+	border-color: rgba(170, 170, 170, var(--tw-border-opacity));
+}
+.border-\[\#eee\] {
+	--tw-border-opacity: 1;
+	border-color: rgba(238, 238, 238, var(--tw-border-opacity));
+}
 .bg-\[\#f5effc\] {
 	--tw-bg-opacity: 1;
 	background-color: rgba(245, 239, 252, var(--tw-bg-opacity));
@@ -633,12 +690,60 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(26, 145, 218, var(--tw-bg-opacity));
 }
+.bg-black {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
+.bg-white {
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.bg-\[\#F5EFFC\] {
+	--tw-bg-opacity: 1;
+	background-color: rgba(245, 239, 252, var(--tw-bg-opacity));
+}
+.bg-\[\#eee\] {
+	--tw-bg-opacity: 1;
+	background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
+}
+.bg-\[\#fefefe\] {
+	--tw-bg-opacity: 1;
+	background-color: rgba(254, 254, 254, var(--tw-bg-opacity));
+}
+.bg-\[\#F4F4F4\] {
+	--tw-bg-opacity: 1;
+	background-color: rgba(244, 244, 244, var(--tw-bg-opacity));
+}
+.bg-\[\#F5F5F5\] {
+	--tw-bg-opacity: 1;
+	background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+}
 .p-4 {
 	padding: 1rem;
+}
+.p-5 {
+	padding: 1.25rem;
 }
 .py-1 {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
+}
+.px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.py-2 {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.pt-4 {
+	padding-top: 1rem;
+}
+.pt-8 {
+	padding-top: 2rem;
+}
+.pt-20 {
+	padding-top: 5rem;
 }
 .text-3xl {
 	font-size: 1.875rem;
@@ -658,11 +763,37 @@ video {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
+.text-lg {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+.text-\[1rem\] {
+	font-size: 1rem;
+}
+.text-xl {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+.text-\[1\.5rem\] {
+	font-size: 1.5rem;
+}
 .font-extrabold {
 	font-weight: 800;
 }
+.font-medium {
+	font-weight: 500;
+}
+.font-thin {
+	font-weight: 100;
+}
+.font-normal {
+	font-weight: 400;
+}
 .capitalize {
 	text-transform: capitalize;
+}
+.uppercase {
+	text-transform: uppercase;
 }
 .text-\[\#222\] {
 	--tw-text-opacity: 1;
@@ -676,8 +807,21 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(240, 233, 226, var(--tw-text-opacity));
 }
+.transition {
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
 .duration-300 {
 	transition-duration: 300ms;
+}
+.duration-500 {
+	transition-duration: 500ms;
+}
+.duration-200 {
+	transition-duration: 200ms;
 }
 .hover\:bg-\[\#222\]:hover {
 	--tw-bg-opacity: 1;
