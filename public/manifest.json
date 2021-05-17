@@ -1,6 +1,6 @@
 {
-  "short_name": "Gradient King",
-  "name": "Gradient King 👑",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,16 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "assets/Icon192.png",
+      "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "maskable any"
+      "sizes": "192x192"
     },
     {
-      "src": "assets/Icon512.png",
+      "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable any"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
