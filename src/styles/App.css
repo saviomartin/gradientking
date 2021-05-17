@@ -1,0 +1,35 @@
+@import url(./index.css);
+@import url(https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+  font-family: "Fira Code", sans-serif;
+}
+*:focus {
+  outline: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.Raleway {
+  font-family: "Raleway", sans-serif;
+}
+.logo {
+  background: linear-gradient(-45deg, #4776e6, #8e54e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  padding: 0 !important;
+  width: min-content;
+}
+
+.header-btn {
+  width: 2rem !important;
+}
