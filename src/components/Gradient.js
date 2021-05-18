@@ -1,5 +1,5 @@
 import { Button, Tooltip } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 import {
@@ -23,6 +23,7 @@ const Gradient = ({
 }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
+  const [isBookMarked, setIsBookMarked] = useState(false);
 
   let history = useHistory();
 
@@ -53,17 +54,26 @@ const Gradient = ({
     }, [1000]);
   };
 
-  //TODO: Save Gradient
   const saveGradient = () => {
-    setSavedGradients([
-      ...savedGradients,
-      {
-        id: gradient.id,
-        colors: gradient.colors,
-      },
-    ]);
-    // toast
-    toast.success("Saved Gradient!");
+    if (isBookMarked) {
+      setSavedGradients(
+        savedGradients.filter(
+          (savedGradient) => savedGradient.id !== gradient.id
+        )
+      );
+      // toast
+      toast.success("Removed Gradient from Saved!");
+    } else {
+      setSavedGradients([
+        ...savedGradients,
+        {
+          id: gradient.id,
+          colors: gradient.colors,
+        },
+      ]);
+      // toast
+      toast.success("Saved Gradient!");
+    }
 
     setShowSaveBg(true); //ui change
     setTimeout(() => {
@@ -96,6 +106,20 @@ const Gradient = ({
       console.log("Please Login");
     }
   };
+
+  const fetchSavedGradients = () => {
+    if (
+      savedGradients.some((savedGradient) => savedGradient.id === gradient.id)
+    ) {
+      setIsBookMarked(true);
+    } else {
+      setIsBookMarked(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchSavedGradients();
+  });
 
   return (
     <div className="p-4 gradient-shadow bg-white m-3 rounded-md transition duration-400 cursor-pointer text-[#222]">
@@ -143,7 +167,11 @@ const Gradient = ({
           <Tooltip title="Save Gradient">
             <Button className="btn">
               <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                <BsBookmarkPlus className="text-[1.3rem]" />
+                {isBookMarked ? (
+                  <BsBookmarkCheck className="text-[1.3rem]" />
+                ) : (
+                  <BsBookmarkPlus className="text-[1.3rem]" />
+                )}
               </div>
             </Button>
           </Tooltip>
@@ -183,29 +211,31 @@ const Gradient = ({
               </Button>
             </div>
           </Tooltip>
-          <Tooltip title={`Likes ${gradient.hearts.length}`}>
-            <div
-              className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200"
-              onClick={() => likeGradient(gradient.id)}
-            >
-              <Button className="btn">
-                <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                  {isLiked ? (
-                    <BsHeartFill className="text-[1rem] text-[#e53935]" />
-                  ) : (
-                    <BsHeart className="text-[1rem]" />
-                  )}
-                  <h3
-                    className={`ml-1 text-lg font-normal ${
-                      isLiked && "text-[#e53935]"
-                    }`}
-                  >
-                    {gradient.hearts.length}
-                  </h3>
-                </div>
-              </Button>
-            </div>
-          </Tooltip>
+          {gradient.hearts && (
+            <Tooltip title={`Likes ${gradient.hearts.length}`}>
+              <div
+                className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200"
+                onClick={() => likeGradient(gradient.id)}
+              >
+                <Button className="btn">
+                  <div className="w-full h-9 flex items-center justify-center overflow-hidden">
+                    {isLiked ? (
+                      <BsHeartFill className="text-[1rem] text-[#e53935]" />
+                    ) : (
+                      <BsHeart className="text-[1rem]" />
+                    )}
+                    <h3
+                      className={`ml-1 text-lg font-normal ${
+                        isLiked && "text-[#e53935]"
+                      }`}
+                    >
+                      {gradient.hearts.length}
+                    </h3>
+                  </div>
+                </Button>
+              </div>
+            </Tooltip>
+          )}
         </div>
       </div>
     </div>

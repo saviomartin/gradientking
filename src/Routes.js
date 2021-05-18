@@ -8,14 +8,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Header } from "./components";
 
 // core
-import { Home } from "./core";
+import { Home, SavedGradients } from "./core";
 
 import firebase from "firebase"; //firebase
 import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
 import { auth } from "./backend"; // backend
 import useLocalStorage from "./hooks/useLocalStorage";
 
-const App = () => {
+const Routes = () => {
   const [align, setAlign] = useState("left");
   const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
 
@@ -81,6 +81,13 @@ const App = () => {
                 setSavedGradients={setSavedGradients}
               />
             </Route>
+            <Route path="/saved" exact>
+              <SavedGradients
+                align={align}
+                savedGradients={savedGradients}
+                setSavedGradients={setSavedGradients}
+              />
+            </Route>
           </Switch>
         </div>
       </Router>
@@ -88,4 +95,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Routes;

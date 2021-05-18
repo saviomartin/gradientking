@@ -566,6 +566,10 @@ video {
 .m-3 {
 	margin: 0.75rem;
 }
+.my-3 {
+	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
+}
 .mt-2 {
 	margin-top: 0.5rem;
 }
@@ -741,6 +745,14 @@ video {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 }
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
+}
+.text-4xl {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -749,6 +761,12 @@ video {
 }
 .font-extrabold {
 	font-weight: 800;
+}
+.font-bold {
+	font-weight: 700;
+}
+.font-semibold {
+	font-weight: 600;
 }
 .uppercase {
 	text-transform: uppercase;
