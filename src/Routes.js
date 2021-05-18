@@ -11,14 +11,12 @@ import { Header } from "./components";
 import { Home } from "./core";
 
 import firebase from "firebase"; //firebase
-
-// toaster for notifications
-import toast, { Toaster } from "react-hot-toast";
-
-// backend
-import { auth } from "./backend";
+import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
+import { auth } from "./backend"; // backend
 
 const App = () => {
+  const [align, setAlign] = useState("left");
+
   // storing user
   const [user, setUser] = useState(() => auth.currentUser);
 
@@ -67,12 +65,14 @@ const App = () => {
           signInWithGoogle={signInWithGoogle}
           signout={signout}
           user={user}
+          align={align}
+          setAlign={setAlign}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
         <div className="pt-20">
           <Switch>
             <Route path="/" exact>
-              <Home user={user} />
+              <Home user={user} align={align} />
             </Route>
           </Switch>
         </div>

@@ -25,7 +25,14 @@ import screenfull from "screenfull";
 
 import axios from "axios"; // axios
 
-const Header = ({ dark = false, signInWithGoogle, signout, user }) => {
+const Header = ({
+  dark = false,
+  signInWithGoogle,
+  signout,
+  user,
+  align,
+  setAlign,
+}) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [starCount, setStarCount] = useState(1);
 
@@ -40,6 +47,19 @@ const Header = ({ dark = false, signInWithGoogle, signout, user }) => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  // rotate
+  const rotate = () => {
+    if (align === "left") {
+      setAlign("right");
+    } else if (align === "right") {
+      setAlign("top");
+    } else if (align === "top") {
+      setAlign("bottom");
+    } else {
+      setAlign("left");
+    }
   };
 
   // fetch on load once
@@ -75,7 +95,10 @@ const Header = ({ dark = false, signInWithGoogle, signout, user }) => {
           </div>
         </Tooltip>
         <Tooltip title="Rotate Gradient">
-          <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+          <div
+            className="w-12 overflow-hidden flex items-center justify-center rounded-md"
+            onClick={rotate}
+          >
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 <GrRotateRight className="text-[1.7rem] text-[#222]" />

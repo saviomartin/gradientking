@@ -10,11 +10,15 @@ import {
   BsHeart,
   BsHeartFill,
 } from "react-icons/bs";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import { Link, useHistory } from "react-router-dom";
 import { db } from "../backend";
 
 const Gradient = ({ gradient, user }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
+
+  let history = useHistory();
 
   // css code
   const CSS = `background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]});`;
@@ -53,6 +57,7 @@ const Gradient = ({ gradient, user }) => {
       setShowSaveBg(false);
     }, [1000]);
   };
+
   let isLiked = false;
   if (user) {
     isLiked = gradient.hearts.includes(user.email);
@@ -104,7 +109,20 @@ const Gradient = ({ gradient, user }) => {
             </div>
           </div>
         )}
-
+        <Link to={`/gradient/${gradient.id}`}>
+          <div
+            className="w-10 overflow-hidden flex items-start justify-center rounded-md ml-1 text-white"
+            onClick={() => saveGradient(gradient.id)}
+          >
+            <Tooltip title="Save Gradient">
+              <Button className="btn">
+                <div className="w-full h-9 flex items-center justify-center overflow-hidden">
+                  <HiOutlineExternalLink className="text-[1.3rem] text-white" />
+                </div>
+              </Button>
+            </Tooltip>
+          </div>
+        </Link>
         <div
           className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 frosted-nav"
           onClick={() => saveGradient(gradient.id)}
