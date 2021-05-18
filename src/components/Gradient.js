@@ -14,7 +14,13 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { Link, useHistory } from "react-router-dom";
 import { db } from "../backend";
 
-const Gradient = ({ gradient, user, align }) => {
+const Gradient = ({
+  gradient,
+  user,
+  align,
+  savedGradients,
+  setSavedGradients,
+}) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
 
@@ -49,6 +55,13 @@ const Gradient = ({ gradient, user, align }) => {
 
   //TODO: Save Gradient
   const saveGradient = () => {
+    setSavedGradients([
+      ...savedGradients,
+      {
+        id: gradient.id,
+        colors: gradient.colors,
+      },
+    ]);
     // toast
     toast.success("Saved Gradient!");
 

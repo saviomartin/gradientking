@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../backend";
 import { Gradient } from "../components";
 
-const Home = ({ user, align }) => {
+const Home = ({ user, align, savedGradients, setSavedGradients }) => {
   const [gradients, setGradients] = useState([]);
 
   useEffect(() => {
@@ -45,6 +45,8 @@ const Home = ({ user, align }) => {
           key={gradient.id}
           user={user}
           align={align}
+          savedGradients={savedGradients}
+          setSavedGradients={setSavedGradients}
         />
       ))}
     </div>

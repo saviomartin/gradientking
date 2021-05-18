@@ -74,7 +74,12 @@ const App = () => {
         <div className="pt-20">
           <Switch>
             <Route path="/" exact>
-              <Home user={user} align={align} />
+              <Home
+                user={user}
+                align={align}
+                savedGradients={savedGradients}
+                setSavedGradients={setSavedGradients}
+              />
             </Route>
           </Switch>
         </div>
