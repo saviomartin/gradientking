@@ -13,9 +13,11 @@ import { Home } from "./core";
 import firebase from "firebase"; //firebase
 import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
 import { auth } from "./backend"; // backend
+import useLocalStorage from "./hooks/useLocalStorage";
 
 const App = () => {
   const [align, setAlign] = useState("left");
+  const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
 
   // storing user
   const [user, setUser] = useState(() => auth.currentUser);
