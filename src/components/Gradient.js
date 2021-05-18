@@ -30,8 +30,17 @@ const Gradient = ({ gradient }) => {
     }, [1000]);
   };
 
+  //copy single color to clipboard
+  const copySingleColor = (color) => {
+    navigator.clipboard.writeText(color);
+    toast.success("Copied to clipboard!"); // toaster
+  };
+
   //TODO: Save Gradient
   const saveGradient = () => {
+    // toast
+    toast.success("Saved Gradient!");
+
     setShowSaveBg(true); //ui change
     setTimeout(() => {
       setShowSaveBg(false);
@@ -81,12 +90,14 @@ const Gradient = ({ gradient }) => {
         <div className="flex items-center uppercase">
           <h3
             className="text-md font-medium"
+            onClick={() => copySingleColor(gradient.colors[0])}
             style={{ color: `${gradient.colors[0]}` }}
           >
             {gradient.colors[0]}
           </h3>
           <h3
             className="text-md font-medium ml-1 uppercase"
+            onClick={() => copySingleColor(gradient.colors[1])}
             style={{ color: `${gradient.colors[1]}` }}
           >
             {gradient.colors[1]}

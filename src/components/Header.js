@@ -18,14 +18,14 @@ import {
 } from "react-icons/bs";
 import { GrRotateRight } from "react-icons/gr";
 import { IoMoonOutline } from "react-icons/io5";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiLogOut } from "react-icons/fi";
 
 // full screen
 import screenfull from "screenfull";
 
 import axios from "axios"; // axios
 
-const Header = ({ dark = false }) => {
+const Header = ({ dark = false, signInWithGoogle, signout, user }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [starCount, setStarCount] = useState(1);
 
@@ -153,6 +153,46 @@ const Header = ({ dark = false }) => {
             />
           </a>
         </Tooltip>
+        {user ? (
+          <Tooltip title="Sign In With Google">
+            <div
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1"
+              onClick={signout}
+            >
+              <Button className="track flex twitterBtn">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300">
+                  {user.displayName}
+                  <img
+                    width="26px"
+                    className="ml-2 rounded-md"
+                    alt="Google sign-in"
+                    src={user.photoURL}
+                  />
+                  <FiLogOut className="text-xl ml-1" />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        ) : (
+          <Tooltip title="Sign In With Google">
+            <div
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1"
+              onClick={signInWithGoogle}
+            >
+              <Button className="track flex twitterBtn">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300">
+                  Sign In
+                  <img
+                    width="20px"
+                    className="ml-2"
+                    alt="Google sign-in"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+                  />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        )}
       </div>
     </div>
   );

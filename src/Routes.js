@@ -1,21 +1,78 @@
+import { useState, useEffect } from "react";
 import "./styles/App.css";
 
 // react router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// components
 import { Header } from "./components";
+
+// core
 import { Home } from "./core";
-import { Toaster } from "react-hot-toast";
+
+import firebase from "firebase"; //firebase
+
+// toaster for notifications
+import toast, { Toaster } from "react-hot-toast";
+
+// backend
+import { auth } from "./backend";
 
 const App = () => {
+  // storing user
+  const [user, setUser] = useState(() => auth.currentUser);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+        toast.success(`${user.displayName} logged in!`);
+      } else {
+        setUser(null);
+        toast.success("logout success!");
+      }
+    });
+
+    // cleanup
+    return unsubscribe;
+    // eslint-disable-next-line
+  }, []);
+
+  // signIn with Google
+  const signInWithGoogle = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.useDeviceLanguage();
+
+    try {
+      await auth.signInWithPopup(provider);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // sign out from all providers
+  const signout = async () => {
+    try {
+      await firebase.auth().signOut();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="bg-[#f5effc] min-h-screen">
       <Router>
-        <Header />
+        <Header
+          signInWithGoogle={signInWithGoogle}
+          signout={signout}
+          user={user}
+        />
         <Toaster position="bottom-right" reverseOrder={true} />
         <div className="pt-20">
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Home user={user} />
             </Route>
           </Switch>
         </div>
