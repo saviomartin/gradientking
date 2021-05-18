@@ -71,7 +71,7 @@ const Routes = () => {
           setAlign={setAlign}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
-        <div className="pt-20">
+        <div className="pt-20 h-full w-full min-h-[85vh]">
           <Switch>
             <Route path="/" exact>
               <Home

@@ -600,8 +600,47 @@ video {
 .h-\[42px\] {
 	height: 42px;
 }
+.h-\[85vh\] {
+	height: 85vh;
+}
+.h-10 {
+	height: 2.5rem;
+}
+.h-\[90\%\] {
+	height: 90%;
+}
+.h-\[80\%\] {
+	height: 80%;
+}
+.h-\[85\%\] {
+	height: 85%;
+}
+.h-\[80vh\] {
+	height: 80vh;
+}
+.h-\[100vh\] {
+	height: 100vh;
+}
+.h-\[90vh\] {
+	height: 90vh;
+}
+.h-\[88vh\] {
+	height: 88vh;
+}
+.h-\[87vh\] {
+	height: 87vh;
+}
+.h-\[87\.5vh\] {
+	height: 87.5vh;
+}
 .min-h-screen {
 	min-height: 100vh;
+}
+.min-h-\[90vh\] {
+	min-height: 90vh;
+}
+.min-h-\[85vh\] {
+	min-height: 85vh;
 }
 .w-\[280px\] {
 	width: 280px;
@@ -617,6 +656,24 @@ video {
 }
 .w-12 {
 	width: 3rem;
+}
+.w-6\/12 {
+	width: 50%;
+}
+.w-10\/12 {
+	width: 83.333333%;
+}
+.w-\[90\%\] {
+	width: 90%;
+}
+.w-\[80\%\] {
+	width: 80%;
+}
+.w-\[85\%\] {
+	width: 85%;
+}
+.w-8\/12 {
+	width: 66.666667%;
 }
 .transform {
 	--tw-translate-x: 0;
@@ -689,6 +746,14 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
+.bg-green-300 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(110, 231, 183, var(--tw-bg-opacity));
+}
+.bg-black {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
 .p-4 {
 	padding: 1rem;
 }
@@ -707,8 +772,27 @@ video {
 	padding-top: 0.25rem;
 	padding-bottom: 0.25rem;
 }
+.py-3 {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}
+.py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.px-10 {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+.px-6 {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
 .pt-20 {
 	padding-top: 5rem;
+}
+.pl-10 {
+	padding-left: 2.5rem;
 }
 .text-3xl {
 	font-size: 1.875rem;
@@ -793,6 +877,10 @@ video {
 .text-\[\#F0E9E2\] {
 	--tw-text-opacity: 1;
 	color: rgba(240, 233, 226, var(--tw-text-opacity));
+}
+.shadow {
+	--tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .transition {
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
