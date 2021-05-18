@@ -24,6 +24,19 @@ const Home = () => {
       return unsubscribe;
     }
   }, []);
+
+  // const addData = () => {
+  //   axios.get("/data.json").then((data) => {
+  //     data.data.forEach((gradient) => {
+  //       db.collection("gradients").add({
+  //         colors: [gradient.colors[0], gradient.colors[1]],
+  //         hearts: ["saviomartin2007@gmail.com"],
+  //         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+  //       });
+  //     });
+  //   });
+  // };
+
   return (
     <div className="w-full h-full flex justify-center flex-wrap">
       {gradients.map((gradient) => (

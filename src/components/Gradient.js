@@ -1,7 +1,7 @@
 import { Button, Tooltip } from "@material-ui/core";
 import React from "react";
 
-import { BsBookmarkPlus, BsCode, BsTriangle } from "react-icons/bs";
+import { BsBookmarkPlus, BsCode, BsHeart, BsTriangle } from "react-icons/bs";
 
 const Gradient = ({ gradient }) => {
   return (
@@ -39,7 +39,7 @@ const Gradient = ({ gradient }) => {
         </div>
         <div className="flex items-center mt-2">
           <Tooltip title="Rotate Gradient">
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] frosted">
+            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200">
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
                   <BsCode className="text-[1.5rem]" />
@@ -48,12 +48,12 @@ const Gradient = ({ gradient }) => {
             </div>
           </Tooltip>
           <Tooltip title="Rotate Gradient">
-            <div className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 frosted">
+            <div className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200">
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                  <BsTriangle className="text-[1rem]" />
+                  <BsHeart className="text-[1rem]" />
                   <h3 className="ml-1 text-lg font-normal">
-                    {gradient.upvotes}
+                    {gradient.hearts.length}
                   </h3>
                 </div>
               </Button>
