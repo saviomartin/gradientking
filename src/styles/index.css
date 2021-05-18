@@ -551,6 +551,9 @@ video {
 .relative {
 	position: relative;
 }
+.absolute {
+	position: absolute;
+}
 .top-0 {
 	top: 0px;
 }
@@ -572,6 +575,9 @@ video {
 .ml-2 {
 	margin-left: 0.5rem;
 }
+.mt-1 {
+	margin-top: 0.25rem;
+}
 .flex {
 	display: flex;
 }
@@ -590,6 +596,18 @@ video {
 .h-\[42px\] {
 	height: 42px;
 }
+.h-\[90\%\] {
+	height: 90%;
+}
+.h-\[85\%\] {
+	height: 85%;
+}
+.h-\[87\.5\%\] {
+	height: 87.5%;
+}
+.h-\[92\.5\%\] {
+	height: 92.5%;
+}
 .min-h-screen {
 	min-height: 100vh;
 }
@@ -605,6 +623,21 @@ video {
 .w-12 {
 	width: 3rem;
 }
+.w-11\/12 {
+	width: 91.666667%;
+}
+.w-\[97\.5\%\] {
+	width: 97.5%;
+}
+.w-\[87\.5\%\] {
+	width: 87.5%;
+}
+.w-\[90\%\] {
+	width: 90%;
+}
+.w-\[92\.5\%\] {
+	width: 92.5%;
+}
 .transform {
 	--tw-translate-x: 0;
 	--tw-translate-y: 0;
@@ -617,6 +650,9 @@ video {
 }
 .cursor-pointer {
 	cursor: pointer;
+}
+.flex-col {
+	flex-direction: column;
 }
 .flex-wrap {
 	flex-wrap: wrap;
@@ -729,6 +765,10 @@ video {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
+.text-4xl {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -737,6 +777,9 @@ video {
 }
 .font-extrabold {
 	font-weight: 800;
+}
+.font-semibold {
+	font-weight: 600;
 }
 .uppercase {
 	text-transform: uppercase;
