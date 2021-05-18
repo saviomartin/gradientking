@@ -8,9 +8,11 @@ import {
   BsClipboard,
   BsCode,
   BsHeart,
+  BsHeartFill,
 } from "react-icons/bs";
+import { db } from "../backend";
 
-const Gradient = ({ gradient }) => {
+const Gradient = ({ gradient, user }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
 
@@ -34,6 +36,11 @@ const Gradient = ({ gradient }) => {
   const copySingleColor = (color) => {
     navigator.clipboard.writeText(color);
     toast.success("Copied to clipboard!"); // toaster
+
+    setShowCopyBg(true); //ui change
+    setTimeout(() => {
+      setShowCopyBg(false);
+    }, [1000]);
   };
 
   //TODO: Save Gradient
@@ -45,6 +52,31 @@ const Gradient = ({ gradient }) => {
     setTimeout(() => {
       setShowSaveBg(false);
     }, [1000]);
+  };
+  let isLiked = false;
+  if (user) {
+    isLiked = gradient.hearts.includes(user.email);
+  }
+
+  const likeGradient = (id) => {
+    if (user) {
+      if (isLiked) {
+        const index = gradient.hearts.indexOf(user.email);
+        gradient.hearts.splice(index, 1);
+
+        db.collection("gradients").doc(id).update({
+          hearts: gradient.hearts,
+        });
+      } else {
+        db.collection("gradients")
+          .doc(id)
+          .update({
+            hearts: [...gradient.hearts, user.email],
+          });
+      }
+    } else {
+      console.log("Please Login");
+    }
   };
 
   return (
@@ -59,7 +91,7 @@ const Gradient = ({ gradient }) => {
           <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
             <div className="w-[92.5%] h-[92.5%] frosted-nav rounded-md flex items-center justify-center flex-col">
               <BsClipboard className="text-3xl text-[#111]" />
-              <h3 className="text-[#111] mt-2">Copied CSS</h3>
+              <h3 className="text-[#111] mt-2">Copied to Clipboard</h3>
             </div>
           </div>
         )}
@@ -88,20 +120,24 @@ const Gradient = ({ gradient }) => {
       </div>
       <div className="w-full flex items-center justify-between">
         <div className="flex items-center uppercase">
-          <h3
-            className="text-md font-medium"
-            onClick={() => copySingleColor(gradient.colors[0])}
-            style={{ color: `${gradient.colors[0]}` }}
-          >
-            {gradient.colors[0]}
-          </h3>
-          <h3
-            className="text-md font-medium ml-1 uppercase"
-            onClick={() => copySingleColor(gradient.colors[1])}
-            style={{ color: `${gradient.colors[1]}` }}
-          >
-            {gradient.colors[1]}
-          </h3>
+          <Tooltip title={`Copy ${gradient.colors[0]}`}>
+            <h3
+              className="text-md font-medium"
+              onClick={() => copySingleColor(gradient.colors[0])}
+              style={{ color: `${gradient.colors[0]}` }}
+            >
+              {gradient.colors[0]}
+            </h3>
+          </Tooltip>
+          <Tooltip title={`Copy ${gradient.colors[1]}`}>
+            <h3
+              className="text-md font-medium ml-1 uppercase"
+              onClick={() => copySingleColor(gradient.colors[1])}
+              style={{ color: `${gradient.colors[1]}` }}
+            >
+              {gradient.colors[1]}
+            </h3>
+          </Tooltip>
         </div>
         <div className="flex items-center mt-2">
           <Tooltip title="Copy to Clipboard">
@@ -117,11 +153,22 @@ const Gradient = ({ gradient }) => {
             </div>
           </Tooltip>
           <Tooltip title={`Likes ${gradient.hearts.length}`}>
-            <div className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200">
+            <div
+              className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200"
+              onClick={() => likeGradient(gradient.id)}
+            >
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                  <BsHeart className="text-[1rem]" />
-                  <h3 className="ml-1 text-lg font-normal">
+                  {isLiked ? (
+                    <BsHeartFill className="text-[1rem] text-[#e53935]" />
+                  ) : (
+                    <BsHeart className="text-[1rem]" />
+                  )}
+                  <h3
+                    className={`ml-1 text-lg font-normal ${
+                      isLiked && "text-[#e53935]"
+                    }`}
+                  >
                     {gradient.hearts.length}
                   </h3>
                 </div>

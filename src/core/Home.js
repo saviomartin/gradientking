@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../backend";
 import { Gradient } from "../components";
 
-const Home = () => {
+const Home = ({ user }) => {
   const [gradients, setGradients] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div className="w-full h-full flex justify-center flex-wrap">
       {gradients.map((gradient) => (
-        <Gradient gradient={gradient} key={gradient.id} />
+        <Gradient gradient={gradient} key={gradient.id} user={user} />
       ))}
     </div>
   );
