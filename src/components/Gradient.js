@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 import {
+  BsBookmarkCheck,
   BsBookmarkPlus,
   BsClipboard,
   BsCode,
   BsHeart,
-  BsTriangle,
 } from "react-icons/bs";
 
 const Gradient = ({ gradient }) => {
@@ -27,6 +27,14 @@ const Gradient = ({ gradient }) => {
     setShowCopyBg(true); //ui change
     setTimeout(() => {
       setShowCopyBg(false);
+    }, [1000]);
+  };
+
+  //TODO: Save Gradient
+  const saveGradient = () => {
+    setShowSaveBg(true); //ui change
+    setTimeout(() => {
+      setShowSaveBg(false);
     }, [1000]);
   };
 
@@ -50,13 +58,16 @@ const Gradient = ({ gradient }) => {
         {showSaveBg && (
           <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
             <div className="w-[92.5%] h-[92.5%] frosted-nav rounded-md flex items-center justify-center flex-col">
-              <BsClipboard className="text-3xl text-[#111]" />
-              <h3 className="text-[#111] mt-2">Copied CSS</h3>
+              <BsBookmarkCheck className="text-3xl text-[#111]" />
+              <h3 className="text-[#111] mt-2">Saved Gradient</h3>
             </div>
           </div>
         )}
 
-        <div className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 frosted-nav">
+        <div
+          className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 frosted-nav"
+          onClick={() => saveGradient(gradient.id)}
+        >
           <Tooltip title="Save Gradient">
             <Button className="btn">
               <div className="w-full h-9 flex items-center justify-center overflow-hidden">
