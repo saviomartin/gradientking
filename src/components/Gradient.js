@@ -14,14 +14,14 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { Link, useHistory } from "react-router-dom";
 import { db } from "../backend";
 
-const Gradient = ({ gradient, user }) => {
+const Gradient = ({ gradient, user, align }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
 
   let history = useHistory();
 
   // css code
-  const CSS = `background: linear-gradient(to left, ${gradient.colors[0]}, ${gradient.colors[1]});`;
+  const CSS = `background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});`;
 
   // copy css func
   const copyCSS = () => {
@@ -89,7 +89,7 @@ const Gradient = ({ gradient, user }) => {
       <div
         className="h-[200px] w-[280px] rounded-md flex items-start justify-end p-2 relative overflow-hidden"
         style={{
-          background: `linear-gradient(to right, ${gradient.colors[0]}, ${gradient.colors[1]})`,
+          background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
         }}
       >
         {showCopyBg && (
