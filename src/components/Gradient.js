@@ -71,12 +71,12 @@ const Gradient = ({
       ]);
       // toast
       toast.success("Saved Gradient!");
-    }
 
-    setShowSaveBg(true); //ui change
-    setTimeout(() => {
-      setShowSaveBg(false);
-    }, [1000]);
+      setShowSaveBg(true); //ui change
+      setTimeout(() => {
+        setShowSaveBg(false);
+      }, [1000]);
+    }
   };
 
   let isLiked = false;

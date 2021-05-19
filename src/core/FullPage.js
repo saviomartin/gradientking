@@ -176,11 +176,12 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
                         <BsHeart className="text-[1rem]" />
                       )}
                       <h3
-                        className={`ml-1 text-lg font-normal capitalize ${
+                        className={`ml-1 text-lg font-semibold capitalize ${
                           isLiked && "text-[#e53935]"
                         }`}
                       >
-                        {gradient.hearts.length} Likes
+                        {gradient.hearts.length}
+                        <span className="Raleway ml-1">Likes</span>
                       </h3>
                     </div>
                   </Button>
@@ -195,7 +196,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
                 <Button className="btn">
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
                     <BsCode className="text-[1.5rem]" />
-                    <h3 className="ml-1 text-lg font-normal capitalize">
+                    <h3 className="ml-1 text-lg font-semibold capitalize Raleway">
                       Copy Code
                     </h3>
                   </div>
@@ -210,16 +211,16 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
                 <Button className="btn">
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
                     {isBookMarked ? (
-                      <BsBookmarkCheck className="text-[1.3rem] text-[#FFDD00]" />
+                      <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]" />
                     ) : (
                       <BsBookmarkPlus className="text-[1.3rem]" />
                     )}
                     {isBookMarked ? (
-                      <h3 className="ml-1 text-lg font-normal capitalize text-[#FFDD00]">
+                      <h3 className="ml-1 text-lg font-semibold capitalize text-[#fec821] Raleway">
                         Bookmarked
                       </h3>
                     ) : (
-                      <h3 className="ml-1 text-lg font-normal capitalize">
+                      <h3 className="ml-1 text-lg font-semibold capitalize Raleway">
                         Bookmark
                       </h3>
                     )}

@@ -15,6 +15,7 @@ import {
   BsBrightnessHigh,
   BsFullscreenExit,
   BsLightning,
+  BsPlusSquare,
 } from "react-icons/bs";
 import { GrRotateRight } from "react-icons/gr";
 import { IoMoonOutline } from "react-icons/io5";
@@ -128,6 +129,21 @@ const Header = ({
             </div>
           </Tooltip>
         </Link>
+        <Tooltip title="Add New Gradient">
+          <a
+            href="https://github.com/saviomartin/gradientking"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+              <Button className="btn">
+                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                  <BsPlusSquare className="text-[1.55rem] text-[#222]" />
+                </div>
+              </Button>
+            </div>
+          </a>
+        </Tooltip>
         <Tooltip title="Toogle FullScreen">
           <div
             className="w-12 overflow-hidden flex items-center justify-center rounded-md"
