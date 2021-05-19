@@ -93,6 +93,7 @@ const Routes = () => {
                 align={align}
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
+                user={user}
               />
             </Route>
           </Switch>

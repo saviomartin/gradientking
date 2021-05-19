@@ -11,7 +11,7 @@ import {
   BsHeartFill,
 } from "react-icons/bs";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { db } from "../backend";
 
 const Gradient = ({
@@ -25,10 +25,8 @@ const Gradient = ({
   const [showSaveBg, setShowSaveBg] = useState(false);
   const [isBookMarked, setIsBookMarked] = useState(false);
 
-  let history = useHistory();
-
   // css code
-  const CSS = `background: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});`;
+  const CSS = `background: ${gradient.colors[0]};  /* fallback for old browsers */\nbackground: -webkit-linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]});  /* Chrome 10-25, Safari 5.1-6 */\nbackground: linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
 
   // copy css func
   const copyCSS = () => {
@@ -147,11 +145,8 @@ const Gradient = ({
           </div>
         )}
         <Link to={`/gradient/${gradient.id}`}>
-          <div
-            className="w-10 overflow-hidden flex items-start justify-center rounded-md ml-1 text-white"
-            onClick={() => saveGradient(gradient.id)}
-          >
-            <Tooltip title="Save Gradient">
+          <div className="w-10 overflow-hidden flex items-start justify-center rounded-md ml-1 text-white">
+            <Tooltip title="View In Full">
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
                   <HiOutlineExternalLink className="text-[1.3rem] text-white" />
@@ -161,14 +156,14 @@ const Gradient = ({
           </div>
         </Link>
         <div
-          className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 frosted-nav"
+          className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1"
           onClick={() => saveGradient(gradient.id)}
         >
           <Tooltip title="Save Gradient">
             <Button className="btn">
               <div className="w-full h-9 flex items-center justify-center overflow-hidden">
                 {isBookMarked ? (
-                  <BsBookmarkCheck className="text-[1.3rem]" />
+                  <BsBookmarkCheck className="text-[1.3rem] text-[#FFDD00]" />
                 ) : (
                   <BsBookmarkPlus className="text-[1.3rem]" />
                 )}
