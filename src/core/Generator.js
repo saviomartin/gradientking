@@ -65,7 +65,7 @@ const Generator = ({ align }) => {
           return (
             <div className="h-full w-full flex items-center justify-center">
               <div className="w-6/12 h-full flex items-center justify-center">
-                <div className="bg-white gradient-shadow rounded-md p-5">
+                <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden">
                   <div className="w-full flex items-center">
                     <Tooltip title={`Copy ${data[0]}`}>
                       <h3
@@ -98,10 +98,10 @@ const Generator = ({ align }) => {
                   <img
                     src={imgSrc}
                     alt="Gradient"
-                    className="max-w-[450px] max-h-[300px] rounded-md"
+                    className="w-[450px] max-w-[450px] overflow-hidden max-h-[300px] rounded-md"
                   />
                   <div className="w-full flex items-center justify-between mt-4">
-                    <div className="flex items-center justify-start ">
+                    <div className="flex items-center justify-start">
                       <div class="file-input">
                         <input
                           type="file"

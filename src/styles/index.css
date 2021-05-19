@@ -666,8 +666,14 @@ video {
 .w-\[450px\] {
 	width: 450px;
 }
+.w-\[60\%\] {
+	width: 60%;
+}
 .max-w-\[450px\] {
 	max-width: 450px;
+}
+.max-w-\[90\%\] {
+	max-width: 90%;
 }
 .transform {
 	--tw-translate-x: 0;
