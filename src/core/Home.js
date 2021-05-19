@@ -23,7 +23,7 @@ const Home = ({
           }));
 
           // update messages
-          setGradients(data);
+          const filteredData = [...new Set(data)];
         });
 
       // despatch
