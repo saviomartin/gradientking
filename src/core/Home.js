@@ -24,6 +24,7 @@ const Home = ({
 
           // update messages
           const filteredData = [...new Set(data)];
+          setGradients(filteredData);
         });
 
       // despatch
