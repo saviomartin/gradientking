@@ -17,6 +17,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 const Routes = () => {
   const [align, setAlign] = useState("left");
+  const [searchText, setSearchText] = useState("");
   const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
 
   // storing user
@@ -69,6 +70,8 @@ const Routes = () => {
           user={user}
           align={align}
           setAlign={setAlign}
+          searchText={searchText}
+          setSearchText={setSearchText}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
         <div className="pt-20 h-full w-full min-h-[85vh]">
@@ -79,6 +82,7 @@ const Routes = () => {
                 align={align}
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
+                searchText={searchText}
               />
             </Route>
             <Route path="/saved" exact>

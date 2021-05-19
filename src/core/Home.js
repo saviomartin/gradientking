@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import { db } from "../backend";
 import { Gradient } from "../components";
 
-const Home = ({ user, align, savedGradients, setSavedGradients }) => {
+const Home = ({
+  user,
+  align,
+  savedGradients,
+  setSavedGradients,
+  searchText,
+}) => {
   const [gradients, setGradients] = useState([]);
 
   useEffect(() => {
@@ -39,16 +45,32 @@ const Home = ({ user, align, savedGradients, setSavedGradients }) => {
 
   return (
     <div className="w-full h-full flex justify-center flex-wrap">
-      {gradients.map((gradient) => (
-        <Gradient
-          gradient={gradient}
-          key={gradient.id}
-          user={user}
-          align={align}
-          savedGradients={savedGradients}
-          setSavedGradients={setSavedGradients}
-        />
-      ))}
+      {gradients
+        .filter((gradient) => {
+          if (searchText === "") {
+            return gradient;
+          } else if (
+            gradient.colors[0].toLowerCase().includes(searchText.toLowerCase())
+          ) {
+            return gradient;
+          } else if (
+            gradient.colors[1].toLowerCase().includes(searchText.toLowerCase())
+          ) {
+            return gradient;
+          }
+        })
+        .map((gradient, key) => {
+          return (
+            <Gradient
+              gradient={gradient}
+              key={gradient.id}
+              user={user}
+              align={align}
+              savedGradients={savedGradients}
+              setSavedGradients={setSavedGradients}
+            />
+          );
+        })}
     </div>
   );
 };

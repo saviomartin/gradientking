@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // material design
-import { Button, Tooltip } from "@material-ui/core";
+import { Button, TextField, Tooltip } from "@material-ui/core";
 
 import Icon from "./Icon"; // logo icon
 
@@ -27,12 +27,14 @@ import screenfull from "screenfull";
 import axios from "axios"; // axios
 
 const Header = ({
-  dark = false,
+  dark = true,
   signInWithGoogle,
   signout,
   user,
   align,
   setAlign,
+  searchText,
+  setSearchText,
 }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [starCount, setStarCount] = useState(1);
@@ -68,27 +70,25 @@ const Header = ({
     fetchStarCount();
   }, []);
 
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
 
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    if (offset > 40) {
-      console.log("scrolled");
-      setScrolled(true);
-    } else {
-      console.log("top");
-      setScrolled(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
+  // const handleScroll = () => {
+  //   const offset = window.scrollY;
+  //   if (offset > 40) {
+  //     console.log("scrolled");
+  //     setScrolled(true);
+  //   } else {
+  //     console.log("top");
+  //     setScrolled(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  // });
 
   return (
     <header
-      className={`px-4 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  ${
-        scrolled && "frosted-nav"
-      }`}
+      className={`pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav`}
     >
       <Link to="/">
         <div className="flex items-center justify-center">
@@ -99,15 +99,21 @@ const Header = ({
         </div>
       </Link>
       <div className="flex items-center justify-center h-full">
+        <TextField
+          label="Search Colors"
+          variant="filled"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
         <Tooltip title="Generator">
-          <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+          <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 {dark ? (
-                  <BsBrightnessHigh className="text-[1.7rem] text-[#222]" />
+                  <BsBrightnessHigh className="text-[1.57rem] text-[#222]" />
                 ) : (
                   <IoMoonOutline
-                    className="text-[1.8rem] text-[#222]"
+                    className="text-[1.6rem] text-[#222]"
                     style={{ transform: "rotate(15deg)" }}
                   />
                 )}
@@ -117,22 +123,22 @@ const Header = ({
         </Tooltip>
         <Tooltip title="Rotate Gradient">
           <div
-            className="w-12 overflow-hidden flex items-center justify-center rounded-md"
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md"
             onClick={rotate}
           >
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                <GrRotateRight className="text-[1.7rem] text-[#222]" />
+                <GrRotateRight className="text-[1.57rem] text-[#222]" />
               </div>
             </Button>
           </div>
         </Tooltip>
         <Link to="/generate" className="flex items-center">
           <Tooltip title="Gradient Generator">
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsLightning className="text-[1.7rem] text-[#222]" />
+                  <BsLightning className="text-[1.57rem] text-[#222]" />
                 </div>
               </Button>
             </div>
@@ -140,10 +146,10 @@ const Header = ({
         </Link>
         <Link to="/saved" className="flex items-center">
           <Tooltip title="Saved Gradients">
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsBookmarkCheck className="text-[1.7rem] text-[#222]" />
+                  <BsBookmarkCheck className="text-[1.57rem] text-[#222]" />
                 </div>
               </Button>
             </div>
@@ -155,10 +161,10 @@ const Header = ({
             target="_blank"
             rel="noreferrer"
           >
-            <div className="w-12 overflow-hidden flex items-center justify-center rounded-md">
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsPlusSquare className="text-[1.55rem] text-[#222]" />
+                  <BsPlusSquare className="text-[1.45rem] text-[#222]" />
                 </div>
               </Button>
             </div>
@@ -166,7 +172,7 @@ const Header = ({
         </Tooltip>
         <Tooltip title="Toogle FullScreen">
           <div
-            className="w-12 overflow-hidden flex items-center justify-center rounded-md"
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md"
             onClick={() => {
               setIsFullScreen(!isFullScreen);
               screenfull.toggle();
@@ -175,9 +181,9 @@ const Header = ({
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 {isFullScreen ? (
-                  <BsFullscreenExit className=" text-2xl text-[#111]" />
+                  <BsFullscreenExit className=" text-[1.5rem] text-[#111]" />
                 ) : (
-                  <BsArrowsFullscreen className=" text-2xl text-[#111]" />
+                  <BsArrowsFullscreen className=" text-[1.5rem] text-[#111]" />
                 )}
               </div>
             </Button>

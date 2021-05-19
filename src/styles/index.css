@@ -618,6 +618,12 @@ video {
 .h-60 {
 	height: 15rem;
 }
+.h-20 {
+	height: 5rem;
+}
+.h-10 {
+	height: 2.5rem;
+}
 .max-h-\[300px\] {
 	max-height: 300px;
 }
@@ -668,6 +674,9 @@ video {
 }
 .w-\[60\%\] {
 	width: 60%;
+}
+.w-9 {
+	width: 2.25rem;
 }
 .max-w-\[450px\] {
 	max-width: 450px;
@@ -793,6 +802,12 @@ video {
 .pr-6 {
 	padding-right: 1.5rem;
 }
+.pl-4 {
+	padding-left: 1rem;
+}
+.pr-2 {
+	padding-right: 0.5rem;
+}
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
@@ -834,6 +849,21 @@ video {
 .text-4xl {
 	font-size: 2.25rem;
 	line-height: 2.5rem;
+}
+.text-\[1\.6rem\] {
+	font-size: 1.6rem;
+}
+.text-\[1\.57rem\] {
+	font-size: 1.57rem;
+}
+.text-\[1\.5em\] {
+	font-size: 1.5em;
+}
+.text-\[1\.6em\] {
+	font-size: 1.6em;
+}
+.text-\[1\.45rem\] {
+	font-size: 1.45rem;
 }
 .font-medium {
 	font-weight: 500;

@@ -17,7 +17,7 @@ html {
 }
 
 .Raleway {
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", sans-serif !important;
 }
 .logo {
   background: linear-gradient(-45deg, #4776e6, #8e54e9);
