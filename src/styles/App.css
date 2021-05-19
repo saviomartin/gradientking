@@ -52,3 +52,26 @@ html {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+.file-name {
+  position: absolute;
+  bottom: -35px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #555;
+}
+.label {
+  background: rgba(243, 244, 246);
+  box-shadow: none;
+  transition: 0.5s;
+}
+.label:hover {
+  background: #dcdee2;
+}

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "codemirror": "^5.61.0",
+    "color-thief-react": "^2.0.12",
     "dotenv": "^9.0.2",
     "firebase": "^8.6.1",
     "postcss-cli": "^8.3.1",

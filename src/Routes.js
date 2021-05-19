@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Header } from "./components";
 
 // core
-import { FullPage, Home, SavedGradients } from "./core";
+import { FullPage, Generator, Home, SavedGradients } from "./core";
 
 import firebase from "firebase"; //firebase
 import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
@@ -87,6 +87,9 @@ const Routes = () => {
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
               />
+            </Route>
+            <Route path="/generate" exact>
+              <Generator align={align} />
             </Route>
             <Route path="/gradient/:id" exact>
               <FullPage

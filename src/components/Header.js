@@ -68,8 +68,28 @@ const Header = ({
     fetchStarCount();
   }, []);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 40) {
+      console.log("scrolled");
+      setScrolled(true);
+    } else {
+      console.log("top");
+      setScrolled(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  });
+
   return (
-    <div className="px-4 py-2 flex items-center justify-between fixed top-0 left-0 w-full frosted-nav z-10">
+    <header
+      className={`px-4 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  ${
+        scrolled && "frosted-nav"
+      }`}
+    >
       <Link to="/">
         <div className="flex items-center justify-center">
           <Icon />
@@ -233,7 +253,7 @@ const Header = ({
           </Tooltip>
         )}
       </div>
-    </div>
+    </header>
   );
 };
 
