@@ -15,15 +15,18 @@ const Generator = ({ align }) => {
   const [image, setImage] = useState(
     "https://live.staticflickr.com/65535/50237066832_72c7290c5c_c.jpg"
   );
+  const [filename, setFileName] = useState("");
+
   const onChange = (e) => {
     const files = e.target.files;
     const file = files[0];
+
+    setFileName(files[0].name);
     getBase64(file);
   };
 
   const onLoad = (fileString) => {
     setImage(fileString);
-    console.log(fileString);
   };
 
   const getBase64 = (file) => {
@@ -43,13 +46,13 @@ const Generator = ({ align }) => {
   const imgSrc = image;
   return (
     <div className="h-[87.5vh] w-full">
-      <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={4}>
+      <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={3}>
         {({ data, loading }) => {
           if (loading) return "Loading..";
 
           let code =
             data &&
-            `background: ${data[0]};  /* fallback for old browsers */\nbackground: -webkit-linear-gradient(to ${align}, ${data[0]}, ${data[1]});  /* Chrome 10-25, Safari 5.1-6 */\nbackground: linear-gradient(to ${align}, ${data[0]}, ${data[1]}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
+            `background: ${data[0]};  /* fallback for old browsers */\nbackground: -webkit-linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]});  /* Chrome 10-25, Safari 5.1-6 */\nbackground: linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */`;
 
           // copy css func
           const copyCSS = () => {
@@ -66,7 +69,7 @@ const Generator = ({ align }) => {
                   <div className="w-full flex items-center">
                     <Tooltip title={`Copy ${data[0]}`}>
                       <h3
-                        className="text-lg font-medium cursor-pointer"
+                        className="text-lg font-medium cursor-pointer uppercase"
                         onClick={() => copySingleColor(data[0])}
                         style={{ color: `${data[0]}` }}
                       >
@@ -75,44 +78,61 @@ const Generator = ({ align }) => {
                     </Tooltip>
                     <Tooltip title={`Copy ${data[1]}`}>
                       <h3
-                        className="text-lg font-medium cursor-pointer ml-1 uppercase"
+                        className="text-lg font-medium cursor-pointer ml-2 uppercase"
                         onClick={() => copySingleColor(data[1])}
                         style={{ color: `${data[1]}` }}
                       >
                         {data[1]}
                       </h3>
                     </Tooltip>
+                    <Tooltip title={`Copy ${data[2]}`}>
+                      <h3
+                        className="text-lg font-medium cursor-pointer uppercase ml-2"
+                        onClick={() => copySingleColor(data[2])}
+                        style={{ color: `${data[2]}` }}
+                      >
+                        {data[0]}
+                      </h3>
+                    </Tooltip>
                   </div>
                   <img
-                    src="https://live.staticflickr.com/65535/50237066832_72c7290c5c_c.jpg"
+                    src={imgSrc}
                     alt="Gradient"
-                    className="w-[350px] max-h-[300px] rounded-md"
+                    className="max-w-[450px] max-h-[300px] rounded-md"
                   />
-                  <div className="w-full flex items-center justify-start mt-4">
-                    <div class="file-input">
-                      <input type="file" id="file" class="file" />
-                      <label
-                        for="file"
-                        className="p-2 frosted-nav text-md rounded-md cursor-pointer focus:outline-none border border-[#eee] label"
-                      >
-                        Select file
-                      </label>
-                    </div>
-                    <Tooltip title="Copy CSS">
-                      <div
-                        className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2"
-                        onClick={copyCSS}
-                      >
-                        <Button className="btn">
-                          <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
-                            <BsCode className="text-[1.5rem]" />
-                            <h3 className="ml-1 text-md font-normal capitalize">
-                              Copy Code
-                            </h3>
-                          </div>
-                        </Button>
+                  <div className="w-full flex items-center justify-between mt-4">
+                    <div className="flex items-center justify-start ">
+                      <div class="file-input">
+                        <input
+                          type="file"
+                          id="file"
+                          class="file"
+                          onChange={onChange}
+                        />
+                        <label
+                          for="file"
+                          className="p-2 frosted-nav text-md rounded-md cursor-pointer focus:outline-none border border-[#eee] label"
+                        >
+                          Select file
+                        </label>
                       </div>
-                    </Tooltip>
+                      <Tooltip title="Copy CSS">
+                        <div
+                          className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2"
+                          onClick={copyCSS}
+                        >
+                          <Button className="btn">
+                            <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
+                              <BsCode className="text-[1.5rem]" />
+                              <h3 className="ml-1 text-md font-normal capitalize">
+                                Copy Code
+                              </h3>
+                            </div>
+                          </Button>
+                        </div>
+                      </Tooltip>
+                    </div>
+                    <h3>{filename}</h3>
                   </div>
                 </div>
               </div>
@@ -120,7 +140,7 @@ const Generator = ({ align }) => {
                 <div
                   className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow"
                   style={{
-                    background: `linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`,
+                    background: `linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]})`,
                   }}
                 >
                   <div className="w-[90%] overflow-hidden bg-white p-2 gradient-shadow rounded-md">

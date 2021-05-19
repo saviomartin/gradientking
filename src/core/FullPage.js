@@ -32,7 +32,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
 
   useEffect(() => {
     getDoc(gradientId);
-  }, []);
+  }, [gradientId]);
 
   //copy single color to clipboard
   const copySingleColor = (color) => {
