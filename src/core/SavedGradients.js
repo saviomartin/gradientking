@@ -15,6 +15,7 @@ const SavedGradients = ({ align, savedGradients, setSavedGradients }) => {
             setSavedGradients={setSavedGradients}
           />
         ))}
+        {savedGradients.length < 1 && <h3>Save a Gradient to see here!</h3>}
       </div>
     </div>
   );
