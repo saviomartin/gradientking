@@ -116,23 +116,25 @@ const Generator = ({ align }) => {
                   </div>
                 </div>
               </div>
-              <div className="w-6/12 h-full flex items-center justify-center">
+              <div className="w-6/12 h-full flex items-center justify-center pr-10">
                 <div
-                  className="w-[75%] h-[75%] flex items-center justify-center rounded-md gradient-shadow"
+                  className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow"
                   style={{
                     background: `linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]}, ${data[3]})`,
                   }}
                 >
-                  <div className="w-full overflow-hidden rounded-md h-40 mt-2">
-                    <CodeMirror
-                      value={code}
-                      options={{
-                        mode: "css",
-                        lineWrapping: true,
-                        theme: "material-palenight",
-                        lineNumbers: true,
-                      }}
-                    />
+                  <div className="w-[90%] overflow-hidden bg-white p-2 gradient-shadow rounded-md">
+                    <div className="h-60 overflow-hidden rounded-md">
+                      <CodeMirror
+                        value={code}
+                        options={{
+                          mode: "css",
+                          lineWrapping: true,
+                          theme: "material-palenight",
+                          lineNumbers: true,
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
