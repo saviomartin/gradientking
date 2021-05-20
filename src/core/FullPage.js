@@ -129,7 +129,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
           background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
         }}
       >
-        <div className="py-8 rounded-md w-8/12 flex items-start justify-center flex-col px-6 bg-white gradient-shadow">
+        <div className="py-8 rounded-md w-8/12 flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
           <div className="flex items-center">
             <Tooltip title={`Copy ${gradient.colors[0]}`}>
               <h3
@@ -165,7 +165,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
             {gradient.hearts && (
               <Tooltip title={`Likes ${gradient.hearts.length}`}>
                 <div
-                  className="flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200"
+                  className="flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
                   onClick={likeGradient}
                 >
                   <Button className="btn">
@@ -173,11 +173,11 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
                       {isLiked ? (
                         <BsHeartFill className="text-[1rem] text-[#e53935]" />
                       ) : (
-                        <BsHeart className="text-[1rem]" />
+                        <BsHeart className="text-[1rem] dark:text-[#fafafa]" />
                       )}
                       <h3
                         className={`ml-1 text-lg font-semibold capitalize ${
-                          isLiked && "text-[#e53935]"
+                          isLiked ? "text-[#e53935]" : "dark:text-[#fafafa]"
                         }`}
                       >
                         {gradient.hearts.length}
@@ -190,13 +190,13 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
             )}
             <Tooltip title="Copy CSS">
               <div
-                className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2"
+                className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2 dark:border-[#555] dark:bg-[#181718]"
                 onClick={copyCSS}
               >
                 <Button className="btn">
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
-                    <BsCode className="text-[1.5rem]" />
-                    <h3 className="ml-1 text-lg font-semibold capitalize Raleway">
+                    <BsCode className="text-[1.5rem] dark:text-[#fafafa]" />
+                    <h3 className="ml-1 text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
                       Copy Code
                     </h3>
                   </div>
@@ -205,7 +205,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
             </Tooltip>
             <Tooltip title="Bookmark Gradient">
               <div
-                className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2"
+                className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2 dark:border-[#555] dark:bg-[#181718]"
                 onClick={saveGradient}
               >
                 <Button className="btn">
@@ -213,14 +213,14 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
                     {isBookMarked ? (
                       <BsBookmarkCheck className="text-[1.3rem] text-[#fec821]" />
                     ) : (
-                      <BsBookmarkPlus className="text-[1.3rem]" />
+                      <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
                     )}
                     {isBookMarked ? (
                       <h3 className="ml-1 text-lg font-semibold capitalize text-[#fec821] Raleway">
                         Bookmarked
                       </h3>
                     ) : (
-                      <h3 className="ml-1 text-lg font-semibold capitalize Raleway">
+                      <h3 className="ml-1 text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
                         Bookmark
                       </h3>
                     )}

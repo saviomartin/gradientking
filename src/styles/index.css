@@ -887,6 +887,10 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(254, 200, 33, var(--tw-text-opacity));
 }
+.text-\[\#fafafa\] {
+	--tw-text-opacity: 1;
+	color: rgba(250, 250, 250, var(--tw-text-opacity));
+}
 .transition {
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
