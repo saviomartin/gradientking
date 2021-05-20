@@ -1054,6 +1054,26 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(221, 221, 221, var(--tw-text-opacity));
 }
+.dark .dark\:hover\:bg-\[\#ccc\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(204, 204, 204, var(--tw-bg-opacity));
+}
+.dark .dark\:hover\:bg-\[\#000\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
+.dark .dark\:hover\:bg-\[\#222\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(34, 34, 34, var(--tw-bg-opacity));
+}
+.dark .dark\:hover\:bg-\[\#111\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(17, 17, 17, var(--tw-bg-opacity));
+}
+.dark .dark\:hover\:bg-\[\#333\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(51, 51, 51, var(--tw-bg-opacity));
+}
 .dark .dark\:focus\:bg-\[\#222\]:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(34, 34, 34, var(--tw-bg-opacity));

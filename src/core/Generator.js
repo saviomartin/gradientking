@@ -65,7 +65,7 @@ const Generator = ({ align }) => {
           return (
             <div className="h-full w-full flex items-center justify-center">
               <div className="w-6/12 h-full flex items-center justify-center">
-                <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden">
+                <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden  dark:bg-[#222222] border dark:border-[#444]">
                   <div className="w-full flex items-center">
                     <Tooltip title={`Copy ${data[0]}`}>
                       <h3
@@ -111,20 +111,20 @@ const Generator = ({ align }) => {
                         />
                         <label
                           for="file"
-                          className="p-2 frosted-nav text-md rounded-md cursor-pointer focus:outline-none border border-[#eee] label"
+                          className="p-2 frosted-nav text-md rounded-md cursor-pointer focus:outline-none border border-[#eee] label dark:border-[#777] dark:bg-[#24292E] dark:text-[#fafafa] dark:hover:bg-[#333]"
                         >
                           Select file
                         </label>
                       </div>
                       <Tooltip title="Copy CSS">
                         <div
-                          className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2"
+                          className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2 dark:border-[#777] dark:bg-[#24292E] dark:hover:bg-[#333]"
                           onClick={copyCSS}
                         >
                           <Button className="btn">
                             <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
-                              <BsCode className="text-[1.5rem]" />
-                              <h3 className="ml-1 text-md font-normal capitalize">
+                              <BsCode className="text-[1.5rem] dark:text-[#fafafa]" />
+                              <h3 className="ml-1 text-md font-normal capitalize dark:text-[#fafafa]">
                                 Copy Code
                               </h3>
                             </div>
