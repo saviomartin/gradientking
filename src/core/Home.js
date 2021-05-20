@@ -23,8 +23,10 @@ const Home = ({
           }));
 
           // update messages
-          const filteredData = [...new Set(data)];
-          setGradients(filteredData);
+          const filteredArr = data.reduce((acc, curr) => {
+            return acc.includes(curr) ? acc : [...acc, curr];
+          }, []);
+          setGradients(filteredArr);
         });
 
       // despatch
@@ -32,21 +34,9 @@ const Home = ({
     }
   }, []);
 
-  // const addData = () => {
-  //   axios.get("/data.json").then((data) => {
-  //     data.data.forEach((gradient) => {
-  //       db.collection("gradients").add({
-  //         colors: [gradient.colors[0], gradient.colors[1]],
-  //         hearts: ["saviomartin2007@gmail.com"],
-  //         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-  //       });
-  //     });
-  //   });
-  // };
-
   return (
-    <div className="w-full h-full flex justify-center flex-wrap">
-      {gradients
+    <div className="w-full h-full flex justify-center flex-wrap dark:bg-[#333333]">
+      {gradients // eslint-disable-next-line
         .filter((gradient) => {
           if (searchText === "") {
             return gradient;
@@ -64,7 +54,7 @@ const Home = ({
           return (
             <Gradient
               gradient={gradient}
-              key={gradient.id}
+              key={key}
               user={user}
               align={align}
               savedGradients={savedGradients}

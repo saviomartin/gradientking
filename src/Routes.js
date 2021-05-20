@@ -62,7 +62,7 @@ const Routes = () => {
   };
 
   return (
-    <div className="bg-[#f5effc] min-h-screen">
+    <div className="min-h-screen dark bg-[#f5effc]">
       <Router>
         <Header
           signInWithGoogle={signInWithGoogle}
@@ -74,7 +74,7 @@ const Routes = () => {
           setSearchText={setSearchText}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
-        <div className="pt-20 h-full w-full min-h-[85vh]">
+        <div className="pt-20 h-full w-full min-h-[85vh] dark:bg-[#333]">
           <Switch>
             <Route path="/" exact>
               <Home

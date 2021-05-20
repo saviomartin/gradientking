@@ -87,9 +87,7 @@ const Header = ({
   // });
 
   return (
-    <header
-      className={`pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav`}
-    >
+    <header className="pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav dark:border-[#777] dark:bg-[#11111190]">
       <Link to="/">
         <div className="flex items-center justify-center">
           <Icon />
@@ -106,14 +104,14 @@ const Header = ({
           onChange={(e) => setSearchText(e.target.value)}
         />
         <Tooltip title="Generator">
-          <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
+          <div className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1">
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 {dark ? (
-                  <BsBrightnessHigh className="text-[1.57rem] text-[#222]" />
+                  <BsBrightnessHigh className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
                 ) : (
                   <IoMoonOutline
-                    className="text-[1.6rem] text-[#222]"
+                    className="text-[1.6rem] text-[#222] dark:text-[#eee]"
                     style={{ transform: "rotate(15deg)" }}
                   />
                 )}
@@ -128,7 +126,7 @@ const Header = ({
           >
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                <GrRotateRight className="text-[1.57rem] text-[#222]" />
+                <GrRotateRight className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
               </div>
             </Button>
           </div>
@@ -138,7 +136,7 @@ const Header = ({
             <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsLightning className="text-[1.57rem] text-[#222]" />
+                  <BsLightning className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
                 </div>
               </Button>
             </div>
@@ -149,7 +147,7 @@ const Header = ({
             <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsBookmarkCheck className="text-[1.57rem] text-[#222]" />
+                  <BsBookmarkCheck className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
                 </div>
               </Button>
             </div>
@@ -164,7 +162,7 @@ const Header = ({
             <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                  <BsPlusSquare className="text-[1.45rem] text-[#222]" />
+                  <BsPlusSquare className="text-[1.45rem] text-[#222] dark:text-[#eee]" />
                 </div>
               </Button>
             </div>
@@ -181,9 +179,9 @@ const Header = ({
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 {isFullScreen ? (
-                  <BsFullscreenExit className=" text-[1.5rem] text-[#111]" />
+                  <BsFullscreenExit className=" text-[1.5rem] text-[#111] dark:text-[#eee]" />
                 ) : (
-                  <BsArrowsFullscreen className=" text-[1.5rem] text-[#111]" />
+                  <BsArrowsFullscreen className=" text-[1.5rem] text-[#111] dark:text-[#eee]" />
                 )}
               </div>
             </Button>
@@ -194,7 +192,7 @@ const Header = ({
             href="https://github.com/saviomartin/gradientking"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative py-1"
+            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative py-1 dark:border dark:border-[#666]"
           >
             <Button className="track flex twitterBtn">
               <div className="flex items-center justify-center text-sm capitalize text-[#F0E9E2] duration-300">
@@ -221,11 +219,11 @@ const Header = ({
         {user ? (
           <Tooltip title="Sign In With Google">
             <div
-              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1"
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1 dark:bg-[#24292E] dark:border-[#666]"
               onClick={signout}
             >
               <Button className="track flex twitterBtn">
-                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300 dark:text-[#eee]">
                   {user.displayName}
                   <img
                     width="26px"

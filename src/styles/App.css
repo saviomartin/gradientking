@@ -75,3 +75,6 @@ html {
 .label:hover {
   background: #dcdee2;
 }
+.text-red {
+  color: #e53935 !important;
+}

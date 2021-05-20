@@ -120,7 +120,7 @@ const Gradient = ({
   });
 
   return (
-    <div className="p-4 gradient-shadow bg-white m-3 rounded-md transition duration-400 cursor-pointer text-[#222]">
+    <div className="p-4 gradient-shadow bg-white m-3 rounded-md transition duration-400 cursor-pointer text-[#222] dark:bg-[#222222] border dark:border-[#444]">
       <div
         className="h-[200px] w-[280px] rounded-md flex items-start justify-end p-2 relative overflow-hidden"
         style={{
@@ -145,7 +145,7 @@ const Gradient = ({
           </div>
         )}
         <Link to={`/gradient/${gradient.id}`}>
-          <div className="w-10 overflow-hidden flex items-start justify-center rounded-md ml-1 text-white">
+          <div className="w-10 overflow-hidden flex items-start justify-center rounded-md ml-1 text-white ">
             <Tooltip title="View In Full">
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
@@ -156,7 +156,7 @@ const Gradient = ({
           </div>
         </Link>
         <div
-          className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1"
+          className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1 bg-white z-1 dark:border-[#777] dark:bg-[#222] z-[3]"
           onClick={() => saveGradient(gradient.id)}
         >
           <Tooltip title="Save Gradient">
@@ -165,7 +165,7 @@ const Gradient = ({
                 {isBookMarked ? (
                   <BsBookmarkCheck className="text-[1.3rem] text-[#FFDD00]" />
                 ) : (
-                  <BsBookmarkPlus className="text-[1.3rem]" />
+                  <BsBookmarkPlus className="text-[1.3rem] text-[#fafafa]" />
                 )}
               </div>
             </Button>
@@ -196,12 +196,12 @@ const Gradient = ({
         <div className="flex items-center mt-2">
           <Tooltip title="Copy to Clipboard">
             <div
-              className="w-12 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200"
+              className="w-12 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
               onClick={copyCSS}
             >
               <Button className="btn">
                 <div className="w-full h-9 flex items-center justify-center overflow-hidden">
-                  <BsCode className="text-[1.5rem]" />
+                  <BsCode className="text-[1.5rem] dark:text-[#fafafa]" />
                 </div>
               </Button>
             </div>
@@ -209,7 +209,7 @@ const Gradient = ({
           {gradient.hearts && (
             <Tooltip title={`Likes ${gradient.hearts.length}`}>
               <div
-                className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200"
+                className="w-15 overflow-hidden flex items-center justify-center rounded-md border border-[#eee] ml-1 bg-gray-100 transition duration-500 hover:bg-gray-200 dark:border-[#555] dark:bg-[#181718]"
                 onClick={() => likeGradient(gradient.id)}
               >
                 <Button className="btn">
@@ -217,11 +217,11 @@ const Gradient = ({
                     {isLiked ? (
                       <BsHeartFill className="text-[1rem] text-[#e53935]" />
                     ) : (
-                      <BsHeart className="text-[1rem]" />
+                      <BsHeart className="text-[1rem] dark:text-[#fafafa]" />
                     )}
                     <h3
-                      className={`ml-1 text-lg font-normal ${
-                        isLiked && "text-[#e53935]"
+                      className={`ml-1 text-lg font-normal dark:text-[#fafafa] ${
+                        isLiked && "text-red"
                       }`}
                     >
                       {gradient.hearts.length}
