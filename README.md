@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://dev.di7tazxmp7xob.amplifyapp.com/">
+  <a href="https://gradient-king.now.sh/">
     <img alt="Gradient King" src="public/assets/logotext.png" width="300" />
   </a>
 </p>
@@ -21,14 +21,14 @@
 <a href="https://github.com/saviomartin/gradientking/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/saviomartin/gradientking?style=flat-square" alt="gradientking pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=Hey%20there%20%F0%9F%91%8B,%20I%20just%20found%20an%20awesome%20tool%20that%20could%20help%20you%20get%20awesome%20gradients%20for%20your%20next%20project.%20It%20also%20supports%20the%20feature%20to%20generate%20gradients%20from%20local%20images.%20Enjoy%20Yourselves%20%F0%9F%8C%88%20https://dev.di7tazxmp7xob.amplifyapp.com/"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fgradientking"></a>
+<a href="https://twitter.com/intent/tweet?text=Hey%20there%20%F0%9F%91%8B,%20I%20just%20found%20an%20awesome%20tool%20that%20could%20help%20you%20get%20awesome%20gradients%20for%20your%20next%20project.%20It%20also%20supports%20the%20feature%20to%20generate%20gradients%20from%20local%20images.%20Enjoy%20Yourselves%20%F0%9F%8C%88%20https://gradient-king.now.sh/"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fgradientking"></a>
 
 </p>
 
 <p align="center"><img src="public/assets/app.gif" alt="gradientking gif" /></p>
 
 <p align="center">
-    <a href="https://dev.di7tazxmp7xob.amplifyapp.com/" target="blank">View Demo</a>
+    <a href="https://gradient-king.now.sh/" target="blank">View Demo</a>
     ·
     <a href="https://github.com/saviomartin/gradientking/issues/new/choose">Report Bug</a>
     ·
@@ -43,11 +43,11 @@ Gradient king can help you. We provide a huge collection of gradients and you co
 
 ## 🚀 Demo
 
-<a href="https://dev.di7tazxmp7xob.amplifyapp.com/" target="blank">
+<a href="https://gradient-king.now.sh/" target="blank">
 <img src="src/assets/coverImage.png" />
 </a>
 
-Try the tool: [Gradient King](https://dev.di7tazxmp7xob.amplifyapp.com/)
+Try the tool: [Gradient King](https://gradient-king.now.sh/)
 
 ## 🧐 Features
 
