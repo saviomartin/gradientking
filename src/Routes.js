@@ -16,6 +16,9 @@ import { auth } from "./backend"; // backend
 import useLocalStorage from "./hooks/useLocalStorage";
 
 const Routes = () => {
+  // dark mode
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
+
   const [align, setAlign] = useState("left");
   const [searchText, setSearchText] = useState("");
   const [savedGradients, setSavedGradients] = useLocalStorage("saved", []);
@@ -62,7 +65,7 @@ const Routes = () => {
   };
 
   return (
-    <div className="min-h-screen dark">
+    <div className={`min-h-screen ${darkMode && "dark"}`}>
       <Router>
         <Header
           signInWithGoogle={signInWithGoogle}
@@ -71,6 +74,8 @@ const Routes = () => {
           align={align}
           setAlign={setAlign}
           searchText={searchText}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
           setSearchText={setSearchText}
         />
         <Toaster position="bottom-right" reverseOrder={true} />

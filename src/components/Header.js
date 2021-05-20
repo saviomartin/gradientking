@@ -27,7 +27,8 @@ import screenfull from "screenfull";
 import axios from "axios"; // axios
 
 const Header = ({
-  dark = true,
+  darkMode,
+  setDarkMode,
   signInWithGoogle,
   signout,
   user,
@@ -105,10 +106,13 @@ const Header = ({
           onChange={(e) => setSearchText(e.target.value)}
         />
         <Tooltip title="Generator">
-          <div className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1">
+          <div
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1"
+            onClick={() => setDarkMode(!darkMode)}
+          >
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
-                {dark ? (
+                {darkMode ? (
                   <BsBrightnessHigh className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
                 ) : (
                   <IoMoonOutline
