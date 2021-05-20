@@ -1,6 +1,8 @@
-import { Button, Tooltip } from "@material-ui/core";
 import React from "react";
-import { FiTwitter } from "react-icons/fi";
+
+// material design
+import { Button, Tooltip } from "@material-ui/core";
+import { FiTwitter } from "react-icons/fi"; // icons
 
 const Footer = () => {
   const twitterLink =

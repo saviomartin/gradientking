@@ -71,22 +71,6 @@ const Header = ({
     fetchStarCount();
   }, []);
 
-  // const [scrolled, setScrolled] = useState(false);
-
-  // const handleScroll = () => {
-  //   const offset = window.scrollY;
-  //   if (offset > 40) {
-  //     console.log("scrolled");
-  //     setScrolled(true);
-  //   } else {
-  //     console.log("top");
-  //     setScrolled(false);
-  //   }
-  // };
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  // });
-
   return (
     <header className="pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav dark:border-[#777] dark:bg-[#11111190]">
       <Link to="/">

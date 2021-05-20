@@ -1,7 +1,12 @@
-import { Button, Tooltip } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
+
+// material design
+import { Button, Tooltip } from "@material-ui/core";
+
+// to create toast
 import toast from "react-hot-toast";
 
+//icons
 import {
   BsBookmarkCheck,
   BsBookmarkPlus,
@@ -11,7 +16,11 @@ import {
   BsHeartFill,
 } from "react-icons/bs";
 import { HiOutlineExternalLink } from "react-icons/hi";
+
+//react router dom
 import { Link } from "react-router-dom";
+
+// firestore
 import { db } from "../backend";
 
 const Gradient = ({

@@ -1,5 +1,8 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+
+import axios from "axios"; //axios
+
+//icons
 import { FiGithub, FiLink, FiTwitter } from "react-icons/fi";
 
 const Card = ({ contributor }) => {
@@ -22,6 +25,7 @@ const Card = ({ contributor }) => {
     fetchContributor();
     // eslint-disable-next-line
   }, []);
+
   return (
     <div className="p-5 gradient-shadow bg-white m-3 rounded-md transition duration-400 cursor-pointer text-[#222] dark:bg-[#222222] border dark:border-[#444] max-w-[19%]">
       <img
