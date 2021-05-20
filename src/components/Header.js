@@ -99,6 +99,7 @@ const Header = ({
       <div className="flex items-center justify-center h-full">
         <TextField
           label="Search Colors"
+          className="dark:bg-[#ddd] text-[#fff] rounded-md overflow-hidden"
           variant="filled"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
