@@ -1,14 +1,26 @@
-import { Button, Tooltip } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
+
+// material design
+import { Button, Tooltip } from "@material-ui/core";
+
+// create toast
 import toast from "react-hot-toast";
+
+// react router
 import { useParams } from "react-router";
+
+// firestore
 import { db } from "../backend";
+
+// codemirror files
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material-palenight.css";
 import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import { Controlled as CodeMirror } from "react-codemirror2";
+
+// icons
 import {
   BsBookmarkCheck,
   BsBookmarkPlus,
@@ -23,6 +35,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
 
   let params = useParams();
 
+  // get gradient id from the params
   const gradientId = params.id;
 
   const getDoc = async (id) => {
