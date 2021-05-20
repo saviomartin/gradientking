@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
+
+// firestore
 import { db } from "../backend";
+
+// components
 import { Gradient } from "../components";
+
+// creating modal popup
 import "reactjs-popup/dist/index.css";
 import Popup from "reactjs-popup";
+
+// material design
 import { Button } from "@material-ui/core";
 
 const Home = ({
@@ -14,7 +22,7 @@ const Home = ({
   signInWithGoogle,
 }) => {
   const [gradients, setGradients] = useState([]);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // used for popup
 
   useEffect(() => {
     if (db) {
@@ -31,6 +39,7 @@ const Home = ({
           const filteredArr = data.reduce((acc, curr) => {
             return acc.includes(curr) ? acc : [...acc, curr];
           }, []);
+
           setGradients(filteredArr);
         });
 
