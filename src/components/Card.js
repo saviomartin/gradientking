@@ -20,6 +20,7 @@ const Card = ({ contributor }) => {
 
   useEffect(() => {
     fetchContributor();
+    // eslint-disable-next-line
   }, []);
   return (
     <div className="p-5 gradient-shadow bg-white m-3 rounded-md transition duration-400 cursor-pointer text-[#222] dark:bg-[#222222] border dark:border-[#444] max-w-[19%]">
@@ -38,7 +39,7 @@ const Card = ({ contributor }) => {
         <a
           href={data.html_url}
           target="_blank"
-          rel="nonrefferer"
+          rel="noreferrer"
           className="dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
         >
           <FiGithub />
@@ -47,7 +48,7 @@ const Card = ({ contributor }) => {
           <a
             href={`https://twitter.com/${data.twitter_username}`}
             target="_blank"
-            rel="nonrefferer"
+            rel="noreferrer"
             className="ml-2 dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
           >
             <FiTwitter />
@@ -57,7 +58,7 @@ const Card = ({ contributor }) => {
           <a
             href={data.blog}
             target="_blank"
-            rel="nonrefferer"
+            rel="noreferrer"
             className="ml-2 dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
           >
             <FiLink />

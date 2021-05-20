@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // material design
-import { Button, TextField, Tooltip } from "@material-ui/core";
+import { Button, Tooltip } from "@material-ui/core";
 
 import Icon from "./Icon"; // logo icon
 
