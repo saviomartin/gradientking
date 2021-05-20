@@ -49,7 +49,7 @@ const Footer = () => {
             <Button className="track flex twitterBtn">
               <div className="flex items-center justify-center text-md text-[#F0E9E2] duration-300 capitalize Raleway font-bold">
                 Share on Twitter
-                <FiTwitter className="ml-1" />
+                <FiTwitter className="ml-1 text-xl" />
               </div>
             </Button>
           </a>
