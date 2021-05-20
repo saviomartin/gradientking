@@ -165,7 +165,7 @@ const Gradient = ({
                 {isBookMarked ? (
                   <BsBookmarkCheck className="text-[1.3rem] text-[#FFDD00]" />
                 ) : (
-                  <BsBookmarkPlus className="text-[1.3rem] text-[#fafafa]" />
+                  <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
                 )}
               </div>
             </Button>
