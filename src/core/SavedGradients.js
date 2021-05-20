@@ -1,4 +1,6 @@
 import React from "react";
+
+// components
 import { Gradient } from "../components";
 
 const SavedGradients = ({ align, savedGradients, setSavedGradients }) => {
