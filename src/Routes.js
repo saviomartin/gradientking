@@ -5,7 +5,7 @@ import "./styles/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // components
-import { Header } from "./components";
+import { Footer, Header } from "./components";
 
 // core
 import {
@@ -85,7 +85,7 @@ const Routes = () => {
           setSearchText={setSearchText}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
-        <div className="pt-20 h-full w-full bg-[#f5effc] min-h-screen dark:bg-[#333]">
+        <div className="pt-20 pb-8 h-full w-full bg-[#f5effc] min-h-screen dark:bg-[#333]">
           <Switch>
             <Route path="/" exact>
               <Home
@@ -120,6 +120,7 @@ const Routes = () => {
             </Route>
           </Switch>
         </div>
+        <Footer />
       </Router>
     </div>
   );
