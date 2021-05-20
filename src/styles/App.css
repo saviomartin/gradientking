@@ -78,3 +78,6 @@ html {
 .text-red {
   color: #e53935 !important;
 }
+.popup-content {
+  border-radius: 5px;
+}

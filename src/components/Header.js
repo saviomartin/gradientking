@@ -113,12 +113,12 @@ const Header = ({
             <Button className="btn">
               <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                 {darkMode ? (
-                  <BsBrightnessHigh className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
-                ) : (
                   <IoMoonOutline
                     className="text-[1.6rem] text-[#222] dark:text-[#eee]"
                     style={{ transform: "rotate(15deg)" }}
                   />
+                ) : (
+                  <BsBrightnessHigh className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
                 )}
               </div>
             </Button>
@@ -233,7 +233,7 @@ const Header = ({
                   <img
                     width="26px"
                     className="ml-2 rounded-md"
-                    alt="Google sign-in"
+                    alt=""
                     src={user.photoURL}
                   />
                   <FiLogOut className="text-xl ml-1" />
@@ -244,11 +244,11 @@ const Header = ({
         ) : (
           <Tooltip title="Sign In With Google">
             <div
-              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1"
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1 dark:bg-[#24292E] dark:border-[#666]"
               onClick={signInWithGoogle}
             >
               <Button className="track flex twitterBtn">
-                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300 dark:text-[#eee]">
                   Sign In
                   <img
                     width="20px"

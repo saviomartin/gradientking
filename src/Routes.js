@@ -33,7 +33,6 @@ const Routes = () => {
         toast.success(`${user.displayName} logged in!`);
       } else {
         setUser(null);
-        toast.success("logout success!");
       }
     });
 
@@ -59,6 +58,7 @@ const Routes = () => {
   const signout = async () => {
     try {
       await firebase.auth().signOut();
+      await toast.success("logout success!");
     } catch (error) {
       console.log(error.message);
     }
@@ -87,6 +87,7 @@ const Routes = () => {
                 align={align}
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
+                signInWithGoogle={signInWithGoogle}
                 searchText={searchText}
               />
             </Route>

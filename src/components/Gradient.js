@@ -20,6 +20,7 @@ const Gradient = ({
   align,
   savedGradients,
   setSavedGradients,
+  setOpen,
 }) => {
   const [showCopyBg, setShowCopyBg] = useState(false);
   const [showSaveBg, setShowSaveBg] = useState(false);
@@ -101,7 +102,7 @@ const Gradient = ({
           });
       }
     } else {
-      console.log("Please Login");
+      setOpen(true);
     }
   };
 
@@ -129,18 +130,22 @@ const Gradient = ({
       >
         {showCopyBg && (
           <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
-            <div className="w-[92.5%] h-[92.5%] frosted-nav rounded-md flex items-center justify-center flex-col">
-              <BsClipboard className="text-3xl text-[#111]" />
-              <h3 className="text-[#111] mt-2">Copied to Clipboard</h3>
+            <div className="w-[92.5%] h-[92.5%] frosted-nav dark:bg-[#11111190] rounded-md flex items-center justify-center flex-col">
+              <BsClipboard className="text-3xl text-[#111] dark:text-[#fafafa]" />
+              <h3 className="text-[#111] dark:text-[#fafafa] mt-2">
+                Copied to Clipboard
+              </h3>
             </div>
           </div>
         )}
 
         {showSaveBg && (
           <div className="absolute h-full w-full top-0 left-0 flex items-center justify-center">
-            <div className="w-[92.5%] h-[92.5%] frosted-nav rounded-md flex items-center justify-center flex-col">
-              <BsBookmarkCheck className="text-3xl text-[#111]" />
-              <h3 className="text-[#111] mt-2">Saved Gradient</h3>
+            <div className="w-[92.5%] h-[92.5%] frosted-nav dark:bg-[#11111190] rounded-md flex items-center justify-center flex-col">
+              <BsBookmarkCheck className="text-3xl text-[#111] dark:text-[#fafafa]" />
+              <h3 className="text-[#111] dark:text-[#fafafa] mt-2">
+                Saved Gradient
+              </h3>
             </div>
           </div>
         )}
