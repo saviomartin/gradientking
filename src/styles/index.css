@@ -1013,6 +1013,18 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
 }
+.hover\:text-\[\#ccc\]:hover {
+	--tw-text-opacity: 1;
+	color: rgba(204, 204, 204, var(--tw-text-opacity));
+}
+.hover\:text-\[\#444\]:hover {
+	--tw-text-opacity: 1;
+	color: rgba(68, 68, 68, var(--tw-text-opacity));
+}
+.hover\:text-\[\#999\]:hover {
+	--tw-text-opacity: 1;
+	color: rgba(153, 153, 153, var(--tw-text-opacity));
+}
 .focus\:bg-\[\#eee\]:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
@@ -1082,6 +1094,14 @@ video {
 .dark .dark\:hover\:bg-\[\#333\]:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(51, 51, 51, var(--tw-bg-opacity));
+}
+.dark .hover\:dark:hover .dark\:hover\:dark\:text-\[\#ccc\]:hover {
+	--tw-text-opacity: 1;
+	color: rgba(204, 204, 204, var(--tw-text-opacity));
+}
+.dark .dark\:hover\:text-\[\#ccc\]:hover {
+	--tw-text-opacity: 1;
+	color: rgba(204, 204, 204, var(--tw-text-opacity));
 }
 .dark .dark\:focus\:bg-\[\#222\]:focus {
 	--tw-bg-opacity: 1;

@@ -35,7 +35,12 @@ const Card = ({ contributor }) => {
         {data.bio ? data.bio : `${contributor.login} loves to Code`}
       </p>
       <div className="flex items-center pt-4">
-        <a href={data.html_url} target="_blank" rel="nonrefferer">
+        <a
+          href={data.html_url}
+          target="_blank"
+          rel="nonrefferer"
+          className="dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
+        >
           <FiGithub />
         </a>
         {data.twitter_username && (
@@ -43,7 +48,7 @@ const Card = ({ contributor }) => {
             href={`https://twitter.com/${data.twitter_username}`}
             target="_blank"
             rel="nonrefferer"
-            className="ml-2"
+            className="ml-2 dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
           >
             <FiTwitter />
           </a>
@@ -53,7 +58,7 @@ const Card = ({ contributor }) => {
             href={data.blog}
             target="_blank"
             rel="nonrefferer"
-            className="ml-2"
+            className="ml-2 dark:text-[#fafafa] hover:text-[#999] dark:hover:text-[#ccc]"
           >
             <FiLink />
           </a>
