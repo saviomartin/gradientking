@@ -1,9 +1,19 @@
 import React, { useState } from "react";
+
+// color-thief-react
+// this package helps to extract colors from images
 import { Palette } from "color-thief-react";
+
+// material design
 import { Button, Tooltip } from "@material-ui/core";
+
+// create toast
 import toast from "react-hot-toast";
+
+// icons
 import { BsCode } from "react-icons/bs";
 
+// codemirror files
 import "codemirror/lib/codemirror.css";
 import "codemirror/theme/material-palenight.css";
 import "codemirror/mode/xml/xml";
@@ -12,6 +22,7 @@ import "codemirror/mode/css/css";
 import { Controlled as CodeMirror } from "react-codemirror2";
 
 const Generator = ({ align }) => {
+  // demo image from flickr
   const [image, setImage] = useState(
     "https://live.staticflickr.com/65535/50237066832_72c7290c5c_c.jpg"
   );
