@@ -1,5 +1,6 @@
 import React from "react";
 
+// act as gradientking logo
 const Icon = () => {
   return (
     <>

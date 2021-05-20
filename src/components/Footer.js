@@ -1,34 +1,60 @@
-import { Button, Tooltip } from "@material-ui/core";
-import { GitHub, Twitter } from "@material-ui/icons";
 import React from "react";
-import { Link } from "react-router-dom";
+
+// material design
+import { Button, Tooltip } from "@material-ui/core";
+import { FiTwitter } from "react-icons/fi"; // icons
 
 const Footer = () => {
-  const shareTwitter = () => {
-    window.open(
-      "https://twitter.com/intent/tweet?text=Hey%20there%20%F0%9F%91%8B,%20I%20just%20found%20an%20awesome%20tool%20that%20could%20help%20you%20get%20awesome%20gradients%20for%20your%20next%20project.%20It%20also%20supports%20the%20feature%20to%20generate%20gradients%20from%20local%20images.%20Enjoy%20Yourselves%20%F0%9F%8C%88%20https://dev.di7tazxmp7xob.amplifyapp.com/"
-    );
-  };
-  const starGithub = () => {
-    window.open("https://github.com/saviomartin/gradientking");
-  };
+  const twitterLink =
+    "https://twitter.com/intent/tweet?text=Check%20out%20gradientking.now.sh%20by%20@SavioMartin7%E2%9A%A1%EF%B8%8F%0D%0A%0ANever%20Again%20run%20out%20of%20Gradients!%20%F0%9F%8E%A8%20Give%20it%20a%20try!%20You%27ll%20love%20it!%20%F0%9F%94%A5%0D%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23javascript";
+
   return (
-    <div className="footer flex">
-      <h3 className="footer">
-        Made with 💖 by
-        <a href="https://github.com/saviomartin"> Savio Martin.</a> Thanks to
-        all <Link to="/contributors">Contributors.</Link>
-      </h3>
-      <div className="footer_buttons flex">
-        <Tooltip title="Share the happiness">
-          <Button onClick={shareTwitter}>
-            <Twitter />
-          </Button>
+    <div className="w-full px-5 py-3 dark:bg-[#222] flex items-center justify-between">
+      <h1 className="text-lg Raleway font-medium text-[#222] dark:text-[#fafafa]">
+        Built with 💖 by
+        <a
+          href="https://twitter.com/saviomartin7"
+          className="mx-1 font-extrabold cursor-pointer Raleway hover:text-[#8e54e9] duration-500"
+        >
+          Savio Martin
+        </a>
+        and
+        <a
+          href="/contributors"
+          className="ml-1 font-extrabold cursor-pointer Raleway hover:text-[#8e54e9] duration-500"
+        >
+          Contributors
+        </a>
+      </h1>
+      <div className="flex items-center">
+        <Tooltip title="Buy Me A Coffee" arrow>
+          <a
+            href="https://buymeacoffee.com/saviomartin"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative cursor-pointer flex"
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              className="h-[42px]"
+              alt="Buy Me A Coffee"
+            />
+          </a>
         </Tooltip>
-        <Tooltip title="Star the project">
-          <Button onClick={starGithub}>
-            <GitHub />
-          </Button>
+        <Tooltip title="Share to Twitter" arrow>
+          <a
+            href={twitterLink}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-1 items-center bg-[#1A91DA] hover:bg-[#0F84B4] rounded-md relative cursor-pointer hidden lg:flex py-1"
+          >
+            <Button className="track flex twitterBtn">
+              <div className="flex items-center justify-center text-md text-[#F0E9E2] duration-300 capitalize Raleway font-bold">
+                Share on Twitter
+                <FiTwitter className="ml-1 text-xl" />
+              </div>
+            </Button>
+          </a>
         </Tooltip>
       </div>
     </div>

@@ -1,35 +1,35 @@
 {
   "name": "gradientking",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.1",
-    "animate.css": "^4.1.1",
-    "aos": "^2.3.4",
-    "clsx": "^1.1.1",
-    "color-thief-react": "^2.0.11",
-    "grade-js": "^1.0.10",
-    "jquery": "^3.5.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-google-login": "^5.2.2",
+    "@material-ui/core": "^4.11.4",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "codemirror": "^5.61.0",
+    "color-thief-react": "^2.0.12",
+    "dotenv": "^9.0.2",
+    "firebase": "^8.6.1",
+    "postcss-cli": "^8.3.1",
+    "react": "^17.0.2",
+    "react-codemirror2": "^7.2.1",
+    "react-dom": "^17.0.2",
+    "react-hot-toast": "^1.0.2",
+    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
-    "react-smooth-scrollbar": "^8.0.6",
-    "react-toastify": "^7.0.3",
-    "react-virtualized": "^9.22.3",
-    "smooth-scrollbar": "^8.6.0",
-    "web-vitals": "^1.1.0"
+    "react-scripts": "4.0.3",
+    "reactjs-popup": "^2.0.4",
+    "screenfull": "^5.1.0",
+    "web-vitals": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch:css": "postcss -w src/styles/tailwind.css -o src/styles/index.css"
   },
   "eslintConfig": {
     "extends": [
@@ -48,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.10",
+    "tailwindcss": "^2.1.1"
   }
 }

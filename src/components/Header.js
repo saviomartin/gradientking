@@ -1,151 +1,252 @@
+import React, { useEffect, useState } from "react";
+
+// react-router-dom
+import { Link } from "react-router-dom";
+
+// material design
 import { Button, Tooltip } from "@material-ui/core";
+
+import Icon from "./Icon"; // logo icon
+
+// Icons
 import {
-  AddToPhotos,
-  Brightness4,
-  FormatColorFill,
-  RotateRight,
-  Star,
-} from "@material-ui/icons";
-import React from "react";
-import { useHistory } from "react-router-dom";
-import Search from "./Search";
+  BsArrowsFullscreen,
+  BsBookmarkCheck,
+  BsBrightnessHigh,
+  BsFullscreenExit,
+  BsLightning,
+  BsPlusSquare,
+} from "react-icons/bs";
+import { GrRotateRight } from "react-icons/gr";
+import { IoMoonOutline } from "react-icons/io5";
+import { FiGithub, FiLogOut } from "react-icons/fi";
 
-import Icon from "./Icon";
+// full screen
+import screenfull from "screenfull";
 
-// const clientId =
-//   "121772990060-n4vkt1p76epmjdmk4o0uptpq4jiekkld.apps.googleusercontent.com";
+import axios from "axios"; // axios
 
-const Header = ({ rotate, changeMode }) => {
-  // //guest avatars
-  // const avatars = [
-  //   "https://avataaars.io/?avatarStyle=Circle&accessoriesType=Round&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=Hijab&accessoriesType=Sunglasses&hatColor=Red&clotheType=ShirtScoopNeck&clotheColor=Blue02&eyeType=Surprised&eyebrowType=RaisedExcited&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=WinterHat1&accessoriesType=Wayfarers&hatColor=Blue02&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Blue03&graphicType=Deer&eyeType=Close&eyebrowType=SadConcerned&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=LongHairBigHair&accessoriesType=Prescription01&hairColor=Brown&facialHairType=BeardLight&facialHairColor=Auburn&clotheType=ShirtVNeck&clotheColor=Gray01&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Sunglasses&hairColor=BrownDark&facialHairType=BeardMedium&facialHairColor=Black&clotheType=Hoodie&clotheColor=PastelYellow&eyeType=Happy&eyebrowType=FlatNatural&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairFrizzle&accessoriesType=Sunglasses&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Surprised&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Light",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=Hat&accessoriesType=Wayfarers&hairColor=Auburn&facialHairType=Blank&clotheType=BlazerShirt&eyeType=WinkWacky&eyebrowType=UpDown&mouthType=Default&skinColor=Pale",
-  //   "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Kurt&hairColor=Brown&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Cry&eyebrowType=SadConcernedNatural&mouthType=Smile&skinColor=Light",
-  // ];
+const Header = ({
+  darkMode,
+  setDarkMode,
+  signInWithGoogle,
+  signout,
+  user,
+  align,
+  setAlign,
+  searchText,
+  setSearchText,
+}) => {
+  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [starCount, setStarCount] = useState(1);
 
-  // const guestAvatar = avatars[Math.floor(Math.random() * avatars.length)];
-
-  // const [name, setName] = useState("");
-  // const [profilePic, setProfilePic] = useState("");
-  // const [guestName, setGuestName] = useState("Guest User");
-  // const [guestProfilePic, setGuestProfilePic] = useLocalStorage(
-  //   "avatar:",
-  //   guestAvatar
-  // );
-
-  // // login
-  // const onSuccess = (res) => {
-  //   setName(res.profileObj.name);
-  //   setProfilePic(res.profileObj.imageUrl);
-
-  //   console.log(res);
-  //   refreshTokenSetup(res);
-  // };
-
-  // const onFailure = (res) => {
-  //   console.log("Login failed: res:", res);
-  // };
-
-  // const { signIn } = useGoogleLogin({
-  //   onSuccess,
-  //   onFailure,
-  //   clientId,
-  //   isSignedIn: true,
-  //   accessType: "offline",
-  // });
-
-  // // logout
-  // const onLogoutSuccess = (res) => {
-  //   setName("");
-  //   setProfilePic("");
-
-  //   console.log("Logged out Success");
-  // };
-
-  // const { signOut } = useGoogleLogout({
-  //   clientId,
-  //   onLogoutSuccess,
-  //   onFailure,
-  // });
-
-  let history = useHistory();
-
-  const gotoGenerator = () => {
-    history.push("/gradient_generator");
+  const fetchStarCount = () => {
+    axios
+      .get("https://api.github.com/repos/saviomartin/gradientking", {
+        headers: {},
+      })
+      .then((response) => {
+        setStarCount(response.data.stargazers_count);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  const gotoHome = () => {
-    history.push("/");
-  };
-  const gototGithub = () => {
-    window.open("https://github.com/saviomartin/gradientking#-contributing");
+  // rotate
+  const rotate = () => {
+    if (align === "left") {
+      setAlign("right");
+    } else if (align === "right") {
+      setAlign("top");
+    } else if (align === "top") {
+      setAlign("bottom");
+    } else {
+      setAlign("left");
+    }
   };
 
-  const goToSaved = () => {
-    history.push("/saved");
-  };
+  // fetch on load once
+  useEffect(() => {
+    fetchStarCount();
+  }, []);
 
   return (
-    <div className="header flex">
-      <div className="logo flex" onClick={gotoHome}>
-        <Icon />
-        <h1>Gradient King</h1>
-      </div>
-      <div className="rightBtns flex">
-        <Tooltip title="Search" aria-label="add">
-          <Search />
-        </Tooltip>
-        <Tooltip title="Rotate" aria-label="add">
-          <Button onClick={rotate} className="navbtns rotateBtn">
-            <RotateRight />
-          </Button>
-        </Tooltip>
-        <Tooltip title="Add Gradient" aria-label="add">
-          <Button onClick={gototGithub} className="navbtns addBtn">
-            <AddToPhotos />
-          </Button>
-        </Tooltip>
-        <Tooltip title="Dark Mode" aria-label="add">
-          <Button onClick={changeMode} className="navbtns">
-            <Brightness4 />
-          </Button>
-        </Tooltip>
-        <Tooltip title="Gradient Generator" aria-label="add">
-          <Button onClick={gotoGenerator} className="navbtns">
-            <FormatColorFill />
-          </Button>
-        </Tooltip>
-        <Tooltip title="Saved Gradients" aria-label="add">
-          <Button onClick={goToSaved} className="navbtns">
-            <Star />
-          </Button>
-        </Tooltip>
-        {/* <div className="profile flex">
-          {name ? (
-            <>
-              <img src={profilePic} alt={name} />
-              <div className="profileComp">
-                <h4>{name}</h4>
-                <Button onClick={signOut}>Sign out</Button>
+    <header className="pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav dark:border-[#777] dark:bg-[#11111190]">
+      <Link to="/">
+        <div className="flex items-center justify-center">
+          <Icon />
+          <h1 className="logo Raleway font-extrabold text-3xl ml-2">
+            Gradient King
+          </h1>
+        </div>
+      </Link>
+      <div className="flex items-center justify-center h-full">
+        <input
+          type="text"
+          className="p-3 rounded-md dark:bg-[#24292E] border focus:bg-[#eee] border-[#ccc] dark:text-[#fafafa] dark:border-[#666] dark:focus:bg-[#222] text-sm"
+          placeholder="Search Colors"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
+        <Tooltip title="Generator">
+          <div
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                {darkMode ? (
+                  <IoMoonOutline
+                    className="text-[1.6rem] text-[#222] dark:text-[#eee]"
+                    style={{ transform: "rotate(15deg)" }}
+                  />
+                ) : (
+                  <BsBrightnessHigh className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
+                )}
               </div>
-            </>
-          ) : (
-            <>
-              <img src={guestProfilePic} alt={guestName} />
-              <div className="profileComp">
-                <h4>{guestName}</h4>
-                <Button onClick={signIn}>Sign in with Google</Button>
+            </Button>
+          </div>
+        </Tooltip>
+        <Tooltip title="Rotate Gradient">
+          <div
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md"
+            onClick={rotate}
+          >
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                <GrRotateRight className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
               </div>
-            </>
-          )}
-        </div> */}
+            </Button>
+          </div>
+        </Tooltip>
+        <Link to="/generate" className="flex items-center">
+          <Tooltip title="Gradient Generator">
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
+              <Button className="btn">
+                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                  <BsLightning className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        </Link>
+        <Link to="/saved" className="flex items-center">
+          <Tooltip title="Saved Gradients">
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
+              <Button className="btn">
+                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                  <BsBookmarkCheck className="text-[1.57rem] text-[#222] dark:text-[#eee]" />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        </Link>
+        <Tooltip title="Add New Gradient">
+          <a
+            href="https://github.com/saviomartin/gradientking"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
+              <Button className="btn">
+                <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                  <BsPlusSquare className="text-[1.45rem] text-[#222] dark:text-[#eee]" />
+                </div>
+              </Button>
+            </div>
+          </a>
+        </Tooltip>
+        <Tooltip title="Toogle FullScreen">
+          <div
+            className="w-10 overflow-hidden flex items-center justify-center rounded-md"
+            onClick={() => {
+              setIsFullScreen(!isFullScreen);
+              screenfull.toggle();
+            }}
+          >
+            <Button className="btn">
+              <div className="w-full h-12 flex items-center justify-center overflow-hidden">
+                {isFullScreen ? (
+                  <BsFullscreenExit className=" text-[1.5rem] text-[#111] dark:text-[#eee]" />
+                ) : (
+                  <BsArrowsFullscreen className=" text-[1.5rem] text-[#111] dark:text-[#eee]" />
+                )}
+              </div>
+            </Button>
+          </div>
+        </Tooltip>
+        <Tooltip title="Star On Github">
+          <a
+            href="https://github.com/saviomartin/gradientking"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative py-1 dark:border dark:border-[#666]"
+          >
+            <Button className="track flex twitterBtn">
+              <div className="flex items-center justify-center text-sm capitalize text-[#F0E9E2] duration-300">
+                Stars {starCount}
+                <FiGithub className="ml-1" />
+              </div>
+            </Button>
+          </a>
+        </Tooltip>
+        <Tooltip title="Buy Me A Coffee">
+          <a
+            href="https://buymeacoffee.com/saviomartin"
+            target="_blank"
+            rel="noreferrer"
+            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative cursor-pointer flex"
+          >
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              className="h-[42px]"
+              alt="Buy Me A Coffee"
+            />
+          </a>
+        </Tooltip>
+        {user ? (
+          <Tooltip title="Sign In With Google">
+            <div
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1 dark:bg-[#24292E] dark:border-[#666]"
+              onClick={signout}
+            >
+              <Button className="track flex twitterBtn">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300 dark:text-[#eee]">
+                  {user.displayName}
+                  <img
+                    width="26px"
+                    className="ml-2 rounded-md"
+                    alt=""
+                    src={user.photoURL}
+                  />
+                  <FiLogOut className="text-xl ml-1" />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        ) : (
+          <Tooltip title="Sign In With Google">
+            <div
+              className="ml-1 items-center bg-[#fff] hover:bg-[#eee] border border-[#ddd] rounded-md relative py-1 dark:bg-[#24292E] dark:border-[#666]"
+              onClick={signInWithGoogle}
+            >
+              <Button className="track flex twitterBtn">
+                <div className="flex items-center justify-center text-sm capitalize text-[#111] duration-300 dark:text-[#eee]">
+                  Sign In
+                  <img
+                    width="20px"
+                    className="ml-2"
+                    alt="Google sign-in"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+                  />
+                </div>
+              </Button>
+            </div>
+          </Tooltip>
+        )}
       </div>
-    </div>
+    </header>
   );
 };
 
