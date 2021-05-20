@@ -735,6 +735,10 @@ video {
 	--tw-border-opacity: 1;
 	border-color: rgba(221, 221, 221, var(--tw-border-opacity));
 }
+.border-\[\#ccc\] {
+	--tw-border-opacity: 1;
+	border-color: rgba(204, 204, 204, var(--tw-border-opacity));
+}
 .bg-\[\#f5effc\] {
 	--tw-bg-opacity: 1;
 	background-color: rgba(245, 239, 252, var(--tw-bg-opacity));
@@ -768,6 +772,12 @@ video {
 .p-5 {
 	padding: 1.25rem;
 }
+.p-1 {
+	padding: 0.25rem;
+}
+.p-3 {
+	padding: 0.75rem;
+}
 .py-2 {
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
@@ -783,6 +793,10 @@ video {
 .px-6 {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+}
+.py-3 {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
 }
 .pt-20 {
 	padding-top: 5rem;
@@ -833,6 +847,10 @@ video {
 .text-4xl {
 	font-size: 2.25rem;
 	line-height: 2.5rem;
+}
+.text-base {
+	font-size: 1rem;
+	line-height: 1.5rem;
 }
 .font-medium {
 	font-weight: 500;
@@ -913,6 +931,14 @@ video {
 	background-color: rgba(34, 34, 34, var(--tw-bg-opacity));
 }
 .hover\:bg-\[\#eee\]:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
+}
+.focus\:bg-\[\#ccc\]:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(204, 204, 204, var(--tw-bg-opacity));
+}
+.focus\:bg-\[\#eee\]:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
 }
@@ -1027,4 +1053,8 @@ video {
 .dark .dark\:text-\[\#ddd\] {
 	--tw-text-opacity: 1;
 	color: rgba(221, 221, 221, var(--tw-text-opacity));
+}
+.dark .dark\:focus\:bg-\[\#222\]:focus {
+	--tw-bg-opacity: 1;
+	background-color: rgba(34, 34, 34, var(--tw-bg-opacity));
 }
