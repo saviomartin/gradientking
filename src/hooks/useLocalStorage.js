@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const PREFIX = "gradientking-";
 
+// this hook is used to add a new instance to window.localStorage
 export default function useLocalStorage(key, initialValue) {
   const prefixedKey = PREFIX + key;
 
