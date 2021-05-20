@@ -1075,6 +1075,10 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(238, 238, 238, var(--tw-text-opacity));
 }
+.dark .dark\:text-\[\#ccc\] {
+	--tw-text-opacity: 1;
+	color: rgba(204, 204, 204, var(--tw-text-opacity));
+}
 .dark .dark\:hover\:bg-\[\#333\]:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(51, 51, 51, var(--tw-bg-opacity));

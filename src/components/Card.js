@@ -31,7 +31,7 @@ const Card = ({ contributor }) => {
       <h1 className="text-2xl font-bold Raleway mt-1 truncate capitalize dark:text-[#fafafa]">
         {data.name ? data.name : contributor.login}
       </h1>
-      <p className="text-xs overflow-ellipsis overflow-hidden h-[36px] Raleway text-[#666]">
+      <p className="text-xs overflow-ellipsis overflow-hidden h-[36px] Raleway text-[#666] dark:text-[#ccc]">
         {data.bio ? data.bio : `${contributor.login} loves to Code`}
       </p>
       <div className="flex items-center pt-4">
