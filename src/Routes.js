@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+
+// css
 import "./styles/App.css";
 
 // react router
@@ -17,8 +19,11 @@ import {
 } from "./core";
 
 import firebase from "firebase"; //firebase
-import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
 import { auth } from "./backend"; // backend
+
+import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
+
+// custom hook
 import useLocalStorage from "./hooks/useLocalStorage";
 
 const Routes = () => {
