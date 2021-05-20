@@ -4,7 +4,7 @@ import { FiTwitter } from "react-icons/fi";
 
 const Footer = () => {
   const twitterLink =
-    "https://twitter.com/intent/tweet?text=Check%20out%20loficlub.now.sh%20by%20@SavioMartin7%E2%9A%A1%EF%B8%8F%0D%0A%0AThe%20best%20place%20to%20enjoy%20Hip%20hop%20beats%20to%20Relax%20or%20Study!%20%F0%9F%8E%A7%20Give%20it%20a%20try!%20You%27ll%20love%20it!%20%F0%9F%94%A5%0D%0A%0A%23lofi%20%23chillbeats";
+    "https://twitter.com/intent/tweet?text=Check%20out%20gradientking.now.sh%20by%20@SavioMartin7%E2%9A%A1%EF%B8%8F%0D%0A%0ANever%20Again%20run%20out%20of%20Gradients!%20%F0%9F%8E%A8%20Give%20it%20a%20try!%20You%27ll%20love%20it!%20%F0%9F%94%A5%0D%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23javascript";
 
   return (
     <div className="w-full px-5 py-3 dark:bg-[#222] flex items-center justify-between">
@@ -47,7 +47,7 @@ const Footer = () => {
             className="ml-1 items-center bg-[#1A91DA] hover:bg-[#0F84B4] rounded-md relative cursor-pointer hidden lg:flex py-1"
           >
             <Button className="track flex twitterBtn">
-              <div className="flex items-center justify-center text-md text-[#F0E9E2] duration-300 capitalize">
+              <div className="flex items-center justify-center text-md text-[#F0E9E2] duration-300 capitalize Raleway font-bold">
                 Share on Twitter
                 <FiTwitter className="ml-1" />
               </div>
