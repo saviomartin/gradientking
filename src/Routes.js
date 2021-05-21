@@ -7,7 +7,7 @@ import "./styles/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // components
-import { CategoryBanner, Footer, Header } from "./components";
+import { CategoryBanner, Footer, Header, Modal } from "./components";
 
 // core
 import {
@@ -30,6 +30,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 const Routes = () => {
   // dark mode
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
+
+  const [open, setOpen] = useState(false); // used for popup
 
   const [align, setAlign] = useState("left");
   const [searchText, setSearchText] = useState("");
@@ -91,6 +93,11 @@ const Routes = () => {
           setSearchText={setSearchText}
         />
         <Toaster position="bottom-right" reverseOrder={true} />
+        <Modal
+          open={open}
+          setOpen={setOpen}
+          signInWithGoogle={signInWithGoogle}
+        />
         <div className="pt-20 pb-8 h-full w-full bg-[#f5effc] min-h-screen dark:bg-[#333]">
           <Switch>
             <Route path="/" exact>
@@ -98,6 +105,7 @@ const Routes = () => {
               <Home
                 user={user}
                 align={align}
+                setOpen={setOpen}
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
                 signInWithGoogle={signInWithGoogle}
@@ -120,6 +128,7 @@ const Routes = () => {
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
                 user={user}
+                setOpen={setOpen}
               />
             </Route>
             <Route path="/contributors" exact>
@@ -130,6 +139,7 @@ const Routes = () => {
               <Category
                 align={align}
                 savedGradients={savedGradients}
+                setOpen={setOpen}
                 setSavedGradients={setSavedGradients}
               />
             </Route>

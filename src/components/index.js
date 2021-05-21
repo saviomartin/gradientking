@@ -5,3 +5,4 @@ export { default as Card } from "./Card";
 export { default as Footer } from "./Footer";
 export { default as CategoryBanner } from "./CategoryBanner";
 export { default as CategoryItem } from "./CategoryItem";
+export { default as Modal } from "./Modal";

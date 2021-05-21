@@ -4,7 +4,7 @@ import { db } from "../backend";
 import { Gradient } from "../components";
 import { generateCategory } from "../helpers/CategoryHelper";
 
-const Category = ({ align, savedGradients, setSavedGradients }) => {
+const Category = ({ align, savedGradients, setSavedGradients, setOpen }) => {
   const [gradients, setGradients] = useState([]);
 
   let params = useParams();
@@ -80,6 +80,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
             <Gradient
               gradient={gradient}
               key={gradient.id}
+              setOpen={setOpen}
               align={align}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
@@ -91,6 +92,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
               gradient={gradient}
               key={gradient.id}
               align={align}
+              setOpen={setOpen}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
             />
@@ -101,6 +103,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
               gradient={gradient}
               key={gradient.id}
               align={align}
+              setOpen={setOpen}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
             />
@@ -111,6 +114,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
               gradient={gradient}
               key={gradient.id}
               align={align}
+              setOpen={setOpen}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
             />
@@ -121,6 +125,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
               gradient={gradient}
               key={gradient.id}
               align={align}
+              setOpen={setOpen}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
             />
@@ -130,6 +135,7 @@ const Category = ({ align, savedGradients, setSavedGradients }) => {
               gradient={gradient}
               key={gradient.id}
               align={align}
+              setOpen={setOpen}
               savedGradients={savedGradients}
               setSavedGradients={setSavedGradients}
             />

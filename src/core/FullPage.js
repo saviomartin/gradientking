@@ -30,7 +30,13 @@ import {
   BsHeartFill,
 } from "react-icons/bs";
 
-const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
+const FullPage = ({
+  align,
+  user,
+  savedGradients,
+  setSavedGradients,
+  setOpen,
+}) => {
   const [gradient, setGradient] = useState([]);
   const [isBookMarked, setIsBookMarked] = useState(false);
 
@@ -98,7 +104,7 @@ const FullPage = ({ align, user, savedGradients, setSavedGradients }) => {
         getDoc(gradientId);
       }
     } else {
-      console.log("Please Login");
+      setOpen(true);
     }
   };
 
