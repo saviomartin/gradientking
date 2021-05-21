@@ -11,6 +11,7 @@ import { Footer, Header } from "./components";
 
 // core
 import {
+  Category,
   Contributors,
   FullPage,
   Generator,
@@ -122,6 +123,9 @@ const Routes = () => {
             </Route>
             <Route path="/contributors" exact>
               <Contributors />
+            </Route>
+            <Route path="/category/:name" exact>
+              <Category />
             </Route>
           </Switch>
         </div>
