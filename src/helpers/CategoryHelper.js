@@ -21,18 +21,18 @@ export const generateCategory = (hex) => {
   const { r, g, b } = RGB;
 
   if (r > 200 && g > 200 && b > 200) {
-    return "White";
+    return "white";
   } else if (r > g && g > b && r > 200 && g > 100 && g < 200) {
-    return "Yellow";
-  } else if (r > g && r > b && r > 125) {
+    return "yellow";
+  } else if (r > g && r > b && r > 150) {
     return "red";
-  } else if (g > b && g > r && g > 125) {
+  } else if (g > b && g > r && g > 150) {
     return "green";
-  } else if (b > r && b > g && b > 125) {
+  } else if (b > r && b > g && b > 150) {
     return "blue";
   } else if (r < 90 && g < 90 && b < 90) {
     return "black";
   } else {
-    return "Grey";
+    return "none";
   }
 };
