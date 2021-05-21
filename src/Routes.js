@@ -7,7 +7,7 @@ import "./styles/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // components
-import { Footer, Header } from "./components";
+import { CategoryBanner, Footer, Header } from "./components";
 
 // core
 import {
@@ -125,6 +125,7 @@ const Routes = () => {
               <Contributors />
             </Route>
             <Route path="/category/:name" exact>
+              <CategoryBanner />
               <Category
                 align={align}
                 savedGradients={savedGradients}
