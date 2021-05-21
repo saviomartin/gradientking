@@ -125,7 +125,11 @@ const Routes = () => {
               <Contributors />
             </Route>
             <Route path="/category/:name" exact>
-              <Category />
+              <Category
+                align={align}
+                savedGradients={savedGradients}
+                setSavedGradients={setSavedGradients}
+              />
             </Route>
           </Switch>
         </div>

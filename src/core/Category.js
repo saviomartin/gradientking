@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../backend";
+import { Gradient } from "../components";
 import { generateCategory } from "../helpers/CategoryHelper";
 
-const Category = () => {
+const Category = ({ align, savedGradients, setSavedGradients }) => {
   const [gradients, setGradients] = useState([]);
 
   useEffect(() => {
@@ -29,10 +30,23 @@ const Category = () => {
     }
   }, []);
 
+  const redGradients = gradients.filter((gradient) => {
+    return (
+      generateCategory(gradient.colors[0]) === "red" ||
+      generateCategory(gradient.colors[1]) === "red"
+    );
+  });
+
   return (
-    <div>
-      {gradients.map((gradient) => (
-        <h1 className="text-4xl">{generateCategory(gradient.colors[1])}</h1>
+    <div className="w-full h-full flex justify-center flex-wrap">
+      {redGradients.map((gradient) => (
+        <Gradient
+          gradient={gradient}
+          key={gradient.id}
+          align={align}
+          savedGradients={savedGradients}
+          setSavedGradients={setSavedGradients}
+        />
       ))}
     </div>
   );
