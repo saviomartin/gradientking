@@ -1,7 +1,10 @@
 import React from "react";
+
+// components
 import { CategoryItem } from ".";
 
 const CategoryBanner = () => {
+  // list of categories
   const categories = [
     {
       name: "red",
