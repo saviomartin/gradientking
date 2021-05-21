@@ -1,10 +1,11 @@
 import React from "react";
+import { CategoryItem } from ".";
 
 const CategoryBanner = () => {
   const categories = [
     {
       name: "red",
-      color: "#e5383b",
+      color: "#FF025E",
     },
     {
       name: "yellow",
@@ -30,19 +31,7 @@ const CategoryBanner = () => {
   return (
     <div className="px-3 pt-1 pb-3 w-full flex items-center justify-center flex-wrap">
       {categories.map((category, key) => (
-        <div
-          className="h-10 w-[11%] p-1 gradient-shadow rounded-md flex items-center justify-center mx-1"
-          key={key}
-          style={{ background: category.color }}
-        >
-          <h3
-            className={`text-md font-bold capitalize Raleway ${
-              category.name === "white" ? "text-[#000]" : "text-white"
-            }`}
-          >
-            {category.name}
-          </h3>
-        </div>
+        <CategoryItem key={key} category={category} />
       ))}
     </div>
   );

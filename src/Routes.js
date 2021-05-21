@@ -94,6 +94,7 @@ const Routes = () => {
         <div className="pt-20 pb-8 h-full w-full bg-[#f5effc] min-h-screen dark:bg-[#333]">
           <Switch>
             <Route path="/" exact>
+              <CategoryBanner />
               <Home
                 user={user}
                 align={align}
