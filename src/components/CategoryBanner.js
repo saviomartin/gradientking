@@ -44,11 +44,11 @@ const CategoryBanner = ({ sort, setSort }) => {
       {categories.map((category, key) => (
         <CategoryItem key={key} category={category} />
       ))}
-      <div className="bg-white rounded-md gradient-shadow ml-2">
+      <div className="bg-white dark:bg-[#24292E] rounded-md gradient-shadow ml-2">
         <Select
           value={sort}
           onChange={(e) => setSort(e.target.value)}
-          className="py-2 px-4 Raleway"
+          className="py-2 px-4 Raleway dark:text-white border border-white dark:border-gray-600 rounded-md"
         >
           <MenuItem value="likes">Most Loved</MenuItem>
           <MenuItem value="oldest">Oldest</MenuItem>
