@@ -1,12 +1,5 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  withStyles,
-} from "@material-ui/core";
+import { MenuItem, Select } from "@material-ui/core";
 import React from "react";
-import InputBase from "@material-ui/core/InputBase";
 // components
 import { CategoryItem } from ".";
 
