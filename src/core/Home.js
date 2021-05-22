@@ -13,14 +13,16 @@ const Home = ({
   setSavedGradients,
   searchText,
   setOpen,
+  sort,
 }) => {
   const [gradients, setGradients] = useState([]);
 
   useEffect(() => {
+    const timestampSort = sort === "oldest" ? "asc" : "desc";
     if (db) {
       const unsubscribe = db
         .collection("gradients")
-        .orderBy("timestamp", "desc")
+        .orderBy("timestamp", timestampSort)
         .onSnapshot((querySnapshot) => {
           const data = querySnapshot.docs.map((doc) => ({
             ...doc.data(),
@@ -36,13 +38,17 @@ const Home = ({
             }
           }
 
-          setGradients(data.sort(myAbcSort));
+          if (sort === "likes") {
+            setGradients(data.sort(myAbcSort));
+          } else {
+            setGradients(data);
+          }
         });
 
       // despatch
       return unsubscribe;
     }
-  }, []);
+  }, [sort]);
 
   return (
     <div className="w-full h-full flex justify-center flex-wrap dark:bg-[#333333]">

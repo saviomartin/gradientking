@@ -28,6 +28,9 @@ import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
 import useLocalStorage from "./hooks/useLocalStorage";
 
 const Routes = () => {
+  // sorting
+  const [sort, setSort] = useState("likes");
+
   // dark mode
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
 
@@ -101,11 +104,12 @@ const Routes = () => {
         <div className="pt-20 pb-8 h-full w-full bg-[#f5effc] min-h-screen dark:bg-[#333]">
           <Switch>
             <Route path="/" exact>
-              <CategoryBanner />
+              <CategoryBanner setSort={setSort} sort={sort} />
               <Home
                 user={user}
                 align={align}
                 setOpen={setOpen}
+                sort={sort}
                 savedGradients={savedGradients}
                 setSavedGradients={setSavedGradients}
                 signInWithGoogle={signInWithGoogle}
@@ -135,7 +139,7 @@ const Routes = () => {
               <Contributors />
             </Route>
             <Route path="/category/:name" exact>
-              <CategoryBanner />
+              <CategoryBanner sort={sort} setSort={setSort} />
               <Category
                 align={align}
                 savedGradients={savedGradients}
