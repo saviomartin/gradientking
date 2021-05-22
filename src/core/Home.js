@@ -20,7 +20,7 @@ const Home = ({
     if (db) {
       const unsubscribe = db
         .collection("gradients")
-        .orderBy("timestamp", "asc")
+        .orderBy("timestamp", "desc")
         .onSnapshot((querySnapshot) => {
           const data = querySnapshot.docs.map((doc) => ({
             ...doc.data(),
@@ -28,11 +28,15 @@ const Home = ({
           }));
 
           // update messages
-          const filteredArr = data.reduce((acc, curr) => {
-            return acc.includes(curr) ? acc : [...acc, curr];
-          }, []);
+          function myAbcSort(a, b) {
+            if (a.hearts.length > b.hearts.length) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
 
-          setGradients(filteredArr);
+          setGradients(data.sort(myAbcSort));
         });
 
       // despatch
