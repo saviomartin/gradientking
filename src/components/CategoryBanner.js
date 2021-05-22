@@ -39,28 +39,6 @@ const CategoryBanner = ({ sort, setSort }) => {
     },
   ];
 
-  const BootstrapInput = withStyles((theme) => ({
-    root: {
-      "label + &": {
-        marginTop: theme.spacing(3),
-      },
-    },
-    input: {
-      borderRadius: 4,
-      position: "relative",
-      backgroundColor: theme.palette.background.paper,
-      border: "1px solid #ced4da",
-      fontSize: 16,
-      padding: "12px 26px 12px 12px",
-      transition: theme.transitions.create(["border-color", "box-shadow"]),
-      "&:focus": {
-        borderRadius: 4,
-        borderColor: "#80bdff",
-        boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
-      },
-    },
-  }))(InputBase);
-
   return (
     <div className="px-3 pt-1 pb-3 w-full flex items-center justify-center flex-wrap">
       {categories.map((category, key) => (
@@ -69,8 +47,8 @@ const CategoryBanner = ({ sort, setSort }) => {
       <div className="bg-white rounded-md gradient-shadow ml-2">
         <Select
           value={sort}
-          input={<BootstrapInput />}
           onChange={(e) => setSort(e.target.value)}
+          className="py-2 px-4 Raleway"
         >
           <MenuItem value="likes">Most Loved</MenuItem>
           <MenuItem value="oldest">Oldest</MenuItem>

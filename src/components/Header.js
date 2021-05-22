@@ -84,7 +84,7 @@ const Header = ({
       <div className="flex items-center justify-center h-full">
         <input
           type="text"
-          className="p-3 rounded-md dark:bg-[#24292E] border focus:bg-[#eee] border-[#ccc] dark:text-[#fafafa] dark:border-[#666] dark:focus:bg-[#222] text-sm"
+          className="Poppins p-3 rounded-md dark:bg-[#24292E] border focus:bg-[#eee] border-[#ccc] dark:text-[#fafafa] dark:border-[#666] dark:focus:bg-[#222] text-sm w-40"
           placeholder="Search Colors"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}

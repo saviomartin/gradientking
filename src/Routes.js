@@ -144,6 +144,7 @@ const Routes = () => {
                 align={align}
                 savedGradients={savedGradients}
                 setOpen={setOpen}
+                sort={sort}
                 setSavedGradients={setSavedGradients}
               />
             </Route>

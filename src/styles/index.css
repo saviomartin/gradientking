@@ -598,9 +598,6 @@ video {
 .mt-4 {
 	margin-top: 1rem;
 }
-.ml-4 {
-	margin-left: 1rem;
-}
 .flex {
 	display: flex;
 }
@@ -845,21 +842,9 @@ video {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
-.px-2 {
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-}
-.py-\[1em\] {
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-.py-\[0\.7em\] {
-	padding-top: 0.7em;
-	padding-bottom: 0.7em;
-}
-.py-\[0\.5em\] {
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+.px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
 }
 .pt-20 {
 	padding-top: 5rem;

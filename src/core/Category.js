@@ -4,7 +4,13 @@ import { db } from "../backend";
 import { Gradient } from "../components";
 import { generateCategory } from "../helpers/CategoryHelper";
 
-const Category = ({ align, savedGradients, setSavedGradients, setOpen }) => {
+const Category = ({
+  align,
+  savedGradients,
+  setSavedGradients,
+  setOpen,
+  sort,
+}) => {
   const [gradients, setGradients] = useState([]);
 
   let params = useParams();
@@ -13,10 +19,11 @@ const Category = ({ align, savedGradients, setSavedGradients, setOpen }) => {
   const categoryName = params.name;
 
   useEffect(() => {
+    const timestampSort = sort === "oldest" ? "asc" : "desc";
     if (db) {
       const unsubscribe = db
         .collection("gradients")
-        .orderBy("timestamp", "asc")
+        .orderBy("timestamp", timestampSort)
         .onSnapshot((querySnapshot) => {
           const data = querySnapshot.docs.map((doc) => ({
             ...doc.data(),
@@ -24,17 +31,25 @@ const Category = ({ align, savedGradients, setSavedGradients, setOpen }) => {
           }));
 
           // update messages
-          const filteredArr = data.reduce((acc, curr) => {
-            return acc.includes(curr) ? acc : [...acc, curr];
-          }, []);
+          function myAbcSort(a, b) {
+            if (a.hearts.length > b.hearts.length) {
+              return -1;
+            } else {
+              return 1;
+            }
+          }
 
-          setGradients(filteredArr);
+          if (sort === "likes") {
+            setGradients(data.sort(myAbcSort));
+          } else {
+            setGradients(data);
+          }
         });
 
       // despatch
       return unsubscribe;
     }
-  }, []);
+  }, [sort]);
 
   const whiteGradients = gradients.filter((gradient) => {
     return (
