@@ -29,6 +29,7 @@ import {
   BsHeart,
   BsHeartFill,
 } from "react-icons/bs";
+import { Loading } from "../components";
 
 const FullPage = ({
   align,
@@ -156,7 +157,7 @@ const FullPage = ({
     <div className="flex items-center justify-center h-[87.5vh] w-full">
       <ComponentToPrint ref={componentRef} />
       <div
-        className="w-[85%] h-[85%] flex items-center justify-center rounded-md gradient-shadow"
+        className="w-[85%] h-[85%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeIn"
         style={{
           background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
         }}
@@ -284,7 +285,7 @@ const FullPage = ({
       </div>
     </div>
   ) : (
-    "loading"
+    <Loading />
   );
 };
 

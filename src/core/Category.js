@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { db } from "../backend";
-import { Gradient } from "../components";
+import { Gradient, Loading } from "../components";
 import { generateCategory } from "../helpers/CategoryHelper";
 
 const Category = ({
@@ -12,6 +12,7 @@ const Category = ({
   sort,
 }) => {
   const [gradients, setGradients] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let params = useParams();
 
@@ -19,6 +20,7 @@ const Category = ({
   const categoryName = params.name;
 
   useEffect(() => {
+    setLoading(true);
     const timestampSort = sort === "oldest" ? "asc" : "desc";
     if (db) {
       const unsubscribe = db
@@ -40,8 +42,10 @@ const Category = ({
           }
 
           if (sort === "likes") {
+            setLoading(false);
             setGradients(data.sort(myAbcSort));
           } else {
+            setLoading(false);
             setGradients(data);
           }
         });
@@ -49,7 +53,7 @@ const Category = ({
       // despatch
       return unsubscribe;
     }
-  }, [sort]);
+  }, [sort, categoryName]);
 
   const whiteGradients = gradients.filter((gradient) => {
     return (
@@ -90,71 +94,77 @@ const Category = ({
 
   return (
     <div className="w-full h-full flex justify-center flex-wrap">
-      {categoryName === "red"
-        ? redGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              setOpen={setOpen}
-              align={align}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))
-        : categoryName === "green"
-        ? greenGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              align={align}
-              setOpen={setOpen}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))
-        : categoryName === "blue"
-        ? blueGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              align={align}
-              setOpen={setOpen}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))
-        : categoryName === "white"
-        ? whiteGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              align={align}
-              setOpen={setOpen}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))
-        : categoryName === "yellow"
-        ? yellowGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              align={align}
-              setOpen={setOpen}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))
-        : blackGradients.map((gradient) => (
-            <Gradient
-              gradient={gradient}
-              key={gradient.id}
-              align={align}
-              setOpen={setOpen}
-              savedGradients={savedGradients}
-              setSavedGradients={setSavedGradients}
-            />
-          ))}
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="w-full h-full flex justify-center flex-wrap">
+          {categoryName === "red"
+            ? redGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  setOpen={setOpen}
+                  align={align}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))
+            : categoryName === "green"
+            ? greenGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  align={align}
+                  setOpen={setOpen}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))
+            : categoryName === "blue"
+            ? blueGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  align={align}
+                  setOpen={setOpen}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))
+            : categoryName === "white"
+            ? whiteGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  align={align}
+                  setOpen={setOpen}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))
+            : categoryName === "yellow"
+            ? yellowGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  align={align}
+                  setOpen={setOpen}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))
+            : blackGradients.map((gradient) => (
+                <Gradient
+                  gradient={gradient}
+                  key={gradient.id}
+                  align={align}
+                  setOpen={setOpen}
+                  savedGradients={savedGradients}
+                  setSavedGradients={setSavedGradients}
+                />
+              ))}
+        </div>
+      )}
     </div>
   );
 };

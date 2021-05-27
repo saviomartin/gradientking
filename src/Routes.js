@@ -27,9 +27,15 @@ import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
 // custom hook
 import useLocalStorage from "./hooks/useLocalStorage";
 
+// aos
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+// animate.css
+import "animate.css";
 const Routes = () => {
   // sorting
-  const [sort, setSort] = useState("likes");
+  const [sort, setSort] = useState("latest");
 
   // dark mode
   const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
@@ -80,6 +86,8 @@ const Routes = () => {
       console.log(error.message);
     }
   };
+
+  Aos.init();
 
   return (
     <div className={`min-h-screen overflow-x-hidden ${darkMode && "dark"}`}>

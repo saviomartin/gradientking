@@ -89,7 +89,7 @@ const Header = ({
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <Tooltip title="Generator">
+        <Tooltip title={darkMode ? "Dark Mode" : "Light Mode"}>
           <div
             className="w-10 overflow-hidden flex items-center justify-center rounded-md ml-1"
             onClick={() => setDarkMode(!darkMode)}

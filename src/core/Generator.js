@@ -20,6 +20,7 @@ import "codemirror/mode/xml/xml";
 import "codemirror/mode/javascript/javascript";
 import "codemirror/mode/css/css";
 import { Controlled as CodeMirror } from "react-codemirror2";
+import { Loading } from "../components";
 
 const Generator = ({ align }) => {
   // demo image from flickr
@@ -59,7 +60,7 @@ const Generator = ({ align }) => {
     <div className="h-[87.5vh] w-full">
       <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={3}>
         {({ data, loading }) => {
-          if (loading) return "Loading..";
+          if (loading) return <Loading />;
 
           let code =
             data &&
@@ -76,7 +77,7 @@ const Generator = ({ align }) => {
           return (
             <div className="h-full w-full flex items-center justify-center">
               <div className="w-6/12 h-full flex items-center justify-center">
-                <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden  dark:bg-[#222222] border dark:border-[#444]">
+                <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden  dark:bg-[#222222] border dark:border-[#444] animate__animated animate__fadeInLeft">
                   <div className="w-full flex items-center">
                     <Tooltip title={`Copy ${data[0]}`}>
                       <h3
@@ -143,13 +144,13 @@ const Generator = ({ align }) => {
                         </div>
                       </Tooltip>
                     </div>
-                    <h3>{filename}</h3>
+                    <h3 className="text-black dark:text-white">{filename}</h3>
                   </div>
                 </div>
               </div>
               <div className="w-6/12 h-full flex items-center justify-center pr-10">
                 <div
-                  className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow"
+                  className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeInRight"
                   style={{
                     background: `linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]})`,
                   }}
