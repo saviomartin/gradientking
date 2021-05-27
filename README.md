@@ -56,10 +56,13 @@ Provides you a huge collection of awesome, elegant gradients. You can use it abs
 > Also provides a gradient generator which would help you generate gradients from your local image.
 
 - **100+ gradients**
-- **Generate your own gradients**
-- **Search for colors or authors**
+- **Generate your gradient local Images**
+- **Export Gradients as PNG**
+- **BookMark Gradients**
+- **Like Gradients ❤️**
+- **Search for colors**
 - **Seperate page for each gradient**
-- **Copy CSS code of gradients**
+- **Copy High Quality CSS code of gradients**
 - **Check for browser support**
 - **Contributor page, and see your name on the main page and all other pages**[ >>Contributing](#-contributing)
 - **Elegant animations**
@@ -100,20 +103,17 @@ npm start
 
 ## 🍰 Contributing
 
-Head over to [`public/data.json`](public/data.json) and add your gradient at the bottom of the list. Here is an example contribution 👇
+Head over to [`data.json`](data.json) and add your gradient at the bottom of the list. Here is an example contribution 👇
 
 > Make sure that you have all the required items
 
 ```json
 {
-  "id": 104,
-  "githubUsername": "saviomatin",
-  "colors": [
-    "#3CA55C",
-    "#B5AC49"
-  ]
+  "colors": ["#3CA55C", "#B5AC49"]
 },
 ```
+
+After your PR got merged, you'll be automatically appared on [contributors page](https://gradient-king.vercel.app/contributors). Works through Github API. 
 
 Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/saviomartin/gradientking/compare).
 
@@ -133,12 +133,9 @@ Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDU
 
 I'm pretty sure that I will be constantly adding more and more extrordinary features as I consider this as my biggest project till date. These all are the things I have planned to do in next days
 
-- Voting (user can upvote a gradient)
-- User authentication
 - Comments
 - Generate gradient from a website URL (in progress ⚠️)
 - Generate gradient from a word, eg: love - red gradient
-- Download Gradient (in progress ⚠️)
 - Chrome extension which does all the features
 
 ## 🛡️ License
@@ -157,6 +154,7 @@ Gradient King will not occur without you. Thanking all the amazing contributors.
   <img src="https://contrib.rocks/image?repo=saviomartin/gradientking" />
 </a>
 
+Also, check them on [gradient-king.now.sh/contributors](https://gradient-king.vercel.app/contributors)
 ## 🙏 Support
 
 This project needs a 🌟 from you
