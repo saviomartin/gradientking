@@ -137,3 +137,7 @@ html {
     transform: scale(1);
   }
 }
+
+.pixelated {
+  image-rendering: pixelated;
+}

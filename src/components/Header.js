@@ -200,7 +200,7 @@ const Header = ({
           >
             <img
               src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-              className="h-[42px]"
+              className="h-[42px] pixelated"
               alt="Buy Me A Coffee"
             />
           </a>
