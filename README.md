@@ -3,7 +3,7 @@
     <img alt="Lofi Club" src="public/assets/logo.gif" width="150" height="150" />
   </a>
 </p>
-<h1 align="center">Gradient King</h1>
+<h2 align="center">Gradient King</h1>
 <h4 align="center">Never again run out of Gradients✨️</h4>
 
 <p align="center">
@@ -45,7 +45,7 @@ Gradient king can help you. We provide a huge collection of gradients and you co
 ## 🚀 Demo
 
 <a href="https://gradient-king.now.sh/" target="blank">
-<img src="src/assets/coverImage.png" />
+<img src="src/assets/banner.png" />
 </a>
 
 Try the tool: [Gradient King](https://gradient-king.now.sh/)
