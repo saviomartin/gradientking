@@ -22,7 +22,7 @@
 <a href="https://github.com/saviomartin/gradientking/pulls" target="blank">
 <img src="https://img.shields.io/github/issues-pr/saviomartin/gradientking?style=flat-square" alt="gradientking pull-requests"/>
 </a>
-<a href="https://twitter.com/intent/tweet?text=Hey%20there%20%F0%9F%91%8B,%20I%20just%20found%20an%20awesome%20tool%20that%20could%20help%20you%20get%20awesome%20gradients%20for%20your%20next%20project.%20It%20also%20supports%20the%20feature%20to%20generate%20gradients%20from%20local%20images.%20Enjoy%20Yourselves%20%F0%9F%8C%88%20https://gradient-king.now.sh/"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fgradientking"></a>
+<a href="https://twitter.com/intent/tweet?text=Check%20out%20gradientking.now.sh%20by%20@SavioMartin7%E2%9A%A1%EF%B8%8F%0D%0A%0ANever%20Again%20run%20out%20of%20Gradients!%20%F0%9F%8E%A8%20Give%20it%20a%20try!%20You%27ll%20love%20it!%20%F0%9F%94%A5%0D%0A%0A%23DEVCommunity%20%23100DaysOfCode%20%23javascript"><img src="https://img.shields.io/twitter/url?label=Share%20on%20Twitter&style=social&url=https%3A%2F%2Fgithub.com%2Fsaviomartin%2Fgradientking"></a>
 
 </p>
 
