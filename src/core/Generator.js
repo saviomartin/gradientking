@@ -57,7 +57,7 @@ const Generator = ({ align }) => {
 
   const imgSrc = image;
   return (
-    <div className="h-[87.5vh] w-full">
+    <div className="h-full lg:h-[87.5vh] w-full">
       <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={3}>
         {({ data, loading }) => {
           if (loading) return <Loading />;
@@ -75,8 +75,8 @@ const Generator = ({ align }) => {
           };
 
           return (
-            <div className="h-full w-full flex items-center justify-center">
-              <div className="w-6/12 h-full flex items-center justify-center">
+            <div className="h-full w-full block lg:flex items-center justify-center">
+              <div className="w-full lg:w-6/12 h-auto lg:h-full flex items-center justify-center">
                 <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden  dark:bg-[#222222] border dark:border-[#444] animate__animated animate__fadeInLeft">
                   <div className="w-full flex items-center">
                     <Tooltip title={`Copy ${data[0]}`}>
@@ -112,7 +112,7 @@ const Generator = ({ align }) => {
                     alt="Gradient"
                     className="w-[450px] max-w-[450px] overflow-hidden max-h-[300px] rounded-md"
                   />
-                  <div className="w-full flex items-center justify-between mt-4">
+                  <div className="w-full flex items-center justify-between mt-4 flex-wrap">
                     <div className="flex items-center justify-start">
                       <div class="file-input">
                         <input
@@ -148,9 +148,9 @@ const Generator = ({ align }) => {
                   </div>
                 </div>
               </div>
-              <div className="w-6/12 h-full flex items-center justify-center pr-10">
+              <div className="mt-2 lg:mt-0 w-full lg:w-6/12 h-auto lg:h-full flex items-center justify-center pr-0 lg:pr-10">
                 <div
-                  className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeInRight"
+                  className="w-[100%] h-[75%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeInRight py-10 lg:py-0"
                   style={{
                     background: `linear-gradient(to ${align}, ${data[0]}, ${data[1]}, ${data[2]})`,
                   }}

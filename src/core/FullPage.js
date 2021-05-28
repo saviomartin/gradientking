@@ -49,7 +49,7 @@ const FullPage = ({
 
   const ComponentToPrint = forwardRef((props, ref) => (
     <div
-      className="h-[400px] w-[800px] overflow-hidden absolute top-0 left-0 z-[-10]"
+      className="h-[400px] w-[200px] lg:w-[800px] overflow-hidden absolute top-0 left-0 z-[-10]"
       ref={ref}
       style={{
         background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
@@ -154,19 +154,19 @@ const FullPage = ({
   });
 
   return gradient.colors ? (
-    <div className="flex items-center justify-center h-[87.5vh] w-full">
+    <div className="flex items-center justify-center h-full lg:h-[87.5vh] w-full">
       <ComponentToPrint ref={componentRef} />
       <div
-        className="w-[85%] h-[85%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeIn"
+        className="w-11/12 lg:w-[85%] h-full lg:h-[85%] flex items-center justify-center rounded-md gradient-shadow animate__animated animate__fadeIn py-10 lg:py-0"
         style={{
           background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
         }}
       >
-        <div className="py-8 rounded-md w-8/12 flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
+        <div className="py-8 rounded-md w-11/12 lg:w-8/12 flex items-start justify-center flex-col px-6 bg-white gradient-shadow dark:bg-[#333] border dark:border-[#444]">
           <div className="flex items-center">
             <Tooltip title={`Copy ${gradient.colors[0]}`}>
               <h3
-                className="text-4xl font-bold  cursor-pointer"
+                className="text-xl lg:text-4xl font-bold  cursor-pointer"
                 onClick={() => copySingleColor(gradient.colors[0])}
                 style={{ color: `${gradient.colors[0]}` }}
               >
@@ -175,7 +175,7 @@ const FullPage = ({
             </Tooltip>
             <Tooltip title={`Copy ${gradient.colors[1]}`}>
               <h3
-                className="text-4xl font-bold ml-1 cursor-pointer"
+                className="text-xl lg:text-4xl font-bold ml-1 cursor-pointer"
                 onClick={() => copySingleColor(gradient.colors[1])}
                 style={{ color: `${gradient.colors[1]}` }}
               >
@@ -194,7 +194,7 @@ const FullPage = ({
               }}
             />
           </div>
-          <div className="flex items-center justify-center mt-2">
+          <div className="flex items-center justify-center mt-2 flex-wrap">
             {gradient.hearts && (
               <Tooltip title={`Likes ${gradient.hearts.length}`}>
                 <div
@@ -209,7 +209,7 @@ const FullPage = ({
                         <BsHeart className="text-[1rem] dark:text-[#fafafa]" />
                       )}
                       <h3
-                        className={`ml-1 text-lg font-semibold capitalize ${
+                        className={`ml-1 text-sm lg:text-lg font-semibold capitalize ${
                           isLiked ? "text-[#e53935]" : "dark:text-[#fafafa]"
                         }`}
                       >
@@ -229,7 +229,7 @@ const FullPage = ({
                 <Button className="btn">
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
                     <BsCode className="text-[1.5rem] dark:text-[#fafafa]" />
-                    <h3 className="ml-1 text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
+                    <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
                       Copy Code
                     </h3>
                   </div>
@@ -249,11 +249,11 @@ const FullPage = ({
                       <BsBookmarkPlus className="text-[1.3rem] dark:text-[#fafafa]" />
                     )}
                     {isBookMarked ? (
-                      <h3 className="ml-1 text-lg font-semibold capitalize text-[#fec821] Raleway">
+                      <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize text-[#fec821] Raleway">
                         Bookmarked
                       </h3>
                     ) : (
-                      <h3 className="ml-1 text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
+                      <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
                         Bookmark
                       </h3>
                     )}
@@ -261,7 +261,7 @@ const FullPage = ({
                 </Button>
               </div>
             </Tooltip>
-            <Tooltip title="Bookmark Gradient">
+            <Tooltip title="Download Gradient">
               <div
                 className="overflow-hidden flex items-center justify-center rounded-md border border-[#eee] bg-gray-100 transition duration-500 hover:bg-gray-200 ml-2 dark:border-[#555] dark:bg-[#181718]"
                 onClick={() =>
@@ -273,7 +273,7 @@ const FullPage = ({
                 <Button className="btn">
                   <div className="w-40 h-9 flex items-center justify-center overflow-hidden">
                     <BsDownload className="text-[1.3rem] dark:text-[#fafafa]" />
-                    <h3 className="ml-1 text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
+                    <h3 className="ml-1 text-sm lg:text-lg font-semibold capitalize Raleway dark:text-[#fafafa]">
                       Download
                     </h3>
                   </div>

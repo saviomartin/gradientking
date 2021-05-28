@@ -72,7 +72,7 @@ const Header = ({
   }, []);
 
   return (
-    <header className="pl-4 pr-2 py-2 flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav dark:border-[#777] dark:bg-[#11111190]">
+    <header className="pl-4 pr-2 py-2 block lg:flex items-center justify-between fixed top-0 left-0 w-full z-10  frosted-nav dark:border-[#777] dark:bg-[#11111190]">
       <Link to="/">
         <div className="flex items-center justify-center">
           <Icon />
@@ -84,7 +84,7 @@ const Header = ({
       <div className="flex items-center justify-center h-full">
         <input
           type="text"
-          className="Poppins p-3 rounded-md dark:bg-[#24292E] border focus:bg-[#eee] border-[#ccc] dark:text-[#fafafa] dark:border-[#666] dark:focus:bg-[#222] text-sm w-40"
+          className="Poppins p-3 rounded-md dark:bg-[#24292E] border focus:bg-[#eee] border-[#ccc] dark:text-[#fafafa] dark:border-[#666] dark:focus:bg-[#222] text-sm w-40 hidden lg:block"
           placeholder="Search Colors"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
@@ -148,7 +148,7 @@ const Header = ({
             target="_blank"
             rel="noreferrer"
           >
-            <div className="w-10 overflow-hidden flex items-center justify-center rounded-md">
+            <div className="w-10 overflow-hidden items-center justify-center rounded-md hidden lg:flex">
               <Button className="btn">
                 <div className="w-full h-12 flex items-center justify-center overflow-hidden">
                   <BsPlusSquare className="text-[1.45rem] text-[#222] dark:text-[#eee]" />
@@ -159,7 +159,7 @@ const Header = ({
         </Tooltip>
         <Tooltip title="Toogle FullScreen">
           <div
-            className="w-10 overflow-hidden flex items-center justify-center rounded-md"
+            className="w-10 overflow-hidden items-center justify-center rounded-md hidden lg:flex"
             onClick={() => {
               setIsFullScreen(!isFullScreen);
               screenfull.toggle();
@@ -181,7 +181,7 @@ const Header = ({
             href="https://github.com/saviomartin/gradientking"
             target="_blank"
             rel="noreferrer"
-            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative py-1 dark:border dark:border-[#666]"
+            className="ml-1 items-center bg-[#24292E] hover:bg-[#222] rounded-md relative py-1 dark:border dark:border-[#666] hidden lg:flex"
           >
             <Button className="track flex twitterBtn">
               <div className="flex items-center justify-center text-sm capitalize text-[#F0E9E2] duration-300">
