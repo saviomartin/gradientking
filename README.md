@@ -45,7 +45,7 @@ Gradient king can help you. We provide a huge collection of gradients and you co
 ## 🚀 Demo
 
 <a href="https://gradient-king.now.sh/" target="blank">
-<img src="src/assets/banner.png" />
+<img src="public/assets/banner.png" />
 </a>
 
 Try the tool: [Gradient King](https://gradient-king.now.sh/)
