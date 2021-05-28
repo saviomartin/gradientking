@@ -145,7 +145,9 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 
 ## 🦄 Deploy
 
-<a href="https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/saviomartin/gradientking"><img src="src/assets/delpoy-btn.svg"></a>
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/saviomartin/loficlub)
+[![netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/saviomartin/loficlub)
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/saviomartin/loficlub)
 
 ## 👨‍💻 Thanks to the Awesome Contributors
 
