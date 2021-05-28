@@ -7,7 +7,7 @@ const CategoryItem = ({ category }) => {
   return (
     <Link
       to={`/category/${category.name}`}
-      className="h-10 w-[11%] p-1 gradient-shadow rounded-md flex items-center justify-center mx-1"
+      className="h-10 w-20 lg:w-[11%] p-1 gradient-shadow rounded-md flex items-center justify-center mx-1"
       style={{ background: category.color }}
     >
       <h3
