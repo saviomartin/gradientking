@@ -1,8 +1,9 @@
 <p align="center">
-  <a href="https://gradient-king.now.sh/">
-    <img alt="Gradient King" src="public/assets/logotext.png" width="300" />
+  <a href="public/assets/logo.gif">
+    <img alt="Lofi Club" src="public/loficlub.gif" width="150" height="150" />
   </a>
 </p>
+<h1 align="center">Gradient King</h1>
 <h4 align="center">Never again run out of Gradients✨️</h4>
 
 <p align="center">
@@ -113,7 +114,7 @@ Head over to [`data.json`](data.json) and add your gradient at the bottom of the
 },
 ```
 
-After your PR got merged, you'll be automatically appared on [contributors page](https://gradient-king.vercel.app/contributors). Works through Github API. 
+After your PR got merged, you'll be automatically appared on [contributors page](https://gradient-king.vercel.app/contributors). Works through Github API.
 
 Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/saviomartin/gradientking/compare).
 
@@ -155,6 +156,7 @@ Gradient King will not occur without you. Thanking all the amazing contributors.
 </a>
 
 Also, check them on [gradient-king.now.sh/contributors](https://gradient-king.vercel.app/contributors)
+
 ## 🙏 Support
 
 This project needs a 🌟 from you
