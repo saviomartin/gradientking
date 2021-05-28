@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="public/assets/logo.gif">
-    <img alt="Lofi Club" src="public/loficlub.gif" width="150" height="150" />
+  <a href="https://gradient-king.now.sh/">
+    <img alt="Lofi Club" src="public/assets/logo.gif" width="150" height="150" />
   </a>
 </p>
 <h1 align="center">Gradient King</h1>
