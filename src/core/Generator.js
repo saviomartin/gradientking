@@ -55,9 +55,28 @@ const Generator = ({ align }) => {
     toast.success("Copied to clipboard!"); // toaster
   };
 
+  const onDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const onDrop = (e) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    const file = files[0];
+
+    setFileName(files[0].name);
+    getBase64(file);
+  };
+
   const imgSrc = image;
   return (
     <div className="h-full lg:h-[87.5vh] w-full">
+      <div
+        onDragOver={onDragOver}
+        onDrop={onDrop}
+        className="h-full w-full z-10 absolute top-0 left-0"
+      ></div>
       <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={3}>
         {({ data, loading }) => {
           if (loading) return <Loading />;
