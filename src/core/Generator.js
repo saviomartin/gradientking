@@ -72,11 +72,6 @@ const Generator = ({ align }) => {
   const imgSrc = image;
   return (
     <div className="h-full lg:h-[87.5vh] w-full">
-      <div
-        onDragOver={onDragOver}
-        onDrop={onDrop}
-        className="h-full w-full z-10 absolute top-0 left-0"
-      ></div>
       <Palette src={imgSrc} crossOrigin="anonymous" format="hex" colorCount={3}>
         {({ data, loading }) => {
           if (loading) return <Loading />;
@@ -94,7 +89,11 @@ const Generator = ({ align }) => {
           };
 
           return (
-            <div className="h-full w-full block lg:flex items-center justify-center">
+            <div
+              className="h-full w-full block lg:flex items-center justify-center"
+              onDragOver={onDragOver}
+              onDrop={onDrop}
+            >
               <div className="w-full lg:w-6/12 h-auto lg:h-full flex items-center justify-center">
                 <div className="bg-white gradient-shadow rounded-md p-5 max-w-[90%] overflow-hidden  dark:bg-[#222222] border dark:border-[#444] animate__animated animate__fadeInLeft">
                   <div className="w-full flex items-center">
