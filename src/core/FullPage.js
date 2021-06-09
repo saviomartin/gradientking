@@ -49,7 +49,7 @@ const FullPage = ({
 
   const ComponentToPrint = forwardRef((props, ref) => (
     <div
-      className="h-[400px] w-[200px] lg:w-[800px] overflow-hidden absolute top-0 left-0 z-[-10]"
+      className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute top-0 left-0 z-[-10]"
       ref={ref}
       style={{
         background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
