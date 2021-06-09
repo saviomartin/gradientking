@@ -51,7 +51,7 @@ const FullPage = ({
     <div
       className="h-[400px] w-[200px] lg:h-[1200px] lg:w-[630px] overflow-hidden absolute top-0 left-0 z-[-10]"
       ref={ref}
-      style={{
+      style={{ width: "630px", height: "1200px",
         background: `linear-gradient(to ${align}, ${gradient.colors[0]}, ${gradient.colors[1]})`,
       }}
     ></div>
