@@ -145,9 +145,9 @@ This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) fi
 
 ## 🦄 Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/saviomartin/loficlub)
-[![netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/saviomartin/loficlub)
-[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/saviomartin/loficlub)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/saviomartin/gradientking)
+[![netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/saviomartin/gradientking) 
+[![Deploy to DO](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/saviomartin/gradientking)
 
 ## 👨‍💻 Thanks to the Awesome Contributors
 
