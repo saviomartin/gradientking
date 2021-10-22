@@ -19,7 +19,7 @@ import {
   SavedGradients,
 } from "./core";
 
-import firebase from "firebase"; //firebase
+import firebase from "firebase/compat/app"; //firebase
 import { auth } from "./backend"; // backend
 
 import toast, { Toaster } from "react-hot-toast"; // toaster for notifications
